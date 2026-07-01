@@ -53,6 +53,9 @@ public class Cubanol {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(ModItems.GRAPE);
         }
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.ANISE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

@@ -19,6 +19,10 @@ public class ModItems {
             )
     ));
 
+    public static final DeferredItem<Item> ANISE = ITEMS.register("anise", () -> new Item(
+            new Item.Properties()
+    ));
+
     public static void register(IEventBus event_bus){
         ITEMS.register(event_bus);
     }
