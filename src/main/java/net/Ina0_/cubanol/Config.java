@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package net.Ina0_.cubanol;
 
 import java.util.List;
 import java.util.Set;
