@@ -1,4 +1,4 @@
-package net.Ina0_.cubanol.items;
+package net.Ina0_.cubanol.item;
 
 import net.Ina0_.cubanol.Cubanol;
 import net.minecraft.world.food.FoodProperties;
@@ -8,7 +8,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 //this is there to access the vanilla examples
-import net.minecraft.world.item.Items;
+
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Cubanol.MOD_ID);

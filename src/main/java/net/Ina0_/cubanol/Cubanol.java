@@ -1,6 +1,6 @@
 package net.Ina0_.cubanol;
 
-import net.Ina0_.cubanol.items.ModItems;
+import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
