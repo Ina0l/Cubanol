@@ -1,7 +1,6 @@
 package net.Ina0_.cubanol.datagen;
 
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
