@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cubanol:fake_wine_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}

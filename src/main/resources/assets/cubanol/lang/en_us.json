@@ -3,5 +3,16 @@
     "item.cubanol.anise": "Anise",
 
     "block.cubanol.fake_wine_bottle": "Decorative Wine Bottle",
-    "block.cubanol.table": "Table"
+
+    "block.cubanol.oak_table": "Oak Table",
+    "block.cubanol.spruce_table": "Spruce Table",
+    "block.cubanol.birch_table": "Birch Table",
+    "block.cubanol.jungle_table": "Jungle Table",
+    "block.cubanol.acacia_table": "Acacia Table",
+    "block.cubanol.dark_oak_table": "Dark Oak Table",
+    "block.cubanol.mangrove_table": "Mangrove Table",
+    "block.cubanol.cherry_table": "Cherry Table",
+    "block.cubanol.crimson_table": "Crimson Table",
+    "block.cubanol.warped_table": "Warped Table",
+    "block.cubanol.bamboo_table": "Bamboo Table"
 }

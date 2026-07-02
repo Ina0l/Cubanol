@@ -59,7 +59,17 @@ public class Cubanol {
             event.accept(ModItems.ANISE);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-            event.accept(ModBlocks.TABLE);
+            event.accept(ModBlocks.OAK_TABLE);
+            event.accept(ModBlocks.SPRUCE_TABLE);
+            event.accept(ModBlocks.BIRCH_TABLE);
+            event.accept(ModBlocks.JUNGLE_TABLE);
+            event.accept(ModBlocks.ACACIA_TABLE);
+            event.accept(ModBlocks.DARK_OAK_TABLE);
+            event.accept(ModBlocks.MANGROVE_TABLE);
+            event.accept(ModBlocks.CHERRY_TABLE);
+            event.accept(ModBlocks.BAMBOO_TABLE);
+            event.accept(ModBlocks.CRIMSON_TABLE);
+            event.accept(ModBlocks.WARPED_TABLE);
             event.accept(ModBlocks.FAKE_WINE_BOTTLE);
         }
     }

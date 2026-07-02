@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -21,7 +22,7 @@ public class FakeBottle extends DirectionalBlock{
 
     protected @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         Vec3 vec3 = state.getOffset(level, pos);
-        Direction direction = state.getValue(FACING);
+        Direction direction = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
         if(direction == Direction.NORTH){
             vec3 = vec3.add((double) 1 /16, 0, (double) 1 /16);
         }

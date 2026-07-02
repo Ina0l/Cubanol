@@ -26,9 +26,9 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Cubanol.MOD_ID);
 
 
-    public static final DeferredBlock<Block> TABLE = registerBlock("table", () -> new Table(
+    public static final DeferredBlock<Block> OAK_TABLE = registerBlock("oak_table", () -> new Table(
             BlockBehaviour.Properties.of()
-                    .mapColor(Blocks.OAK_LOG.defaultMapColor())
+                    .mapColor(Blocks.OAK_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
                     .isRedstoneConductor(ModBlocks::never)
                     .forceSolidOn()
@@ -36,6 +36,115 @@ public class ModBlocks {
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
     ));
+
+    public static final DeferredBlock<Block> SPRUCE_TABLE = registerBlock("spruce_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.SPRUCE_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> BIRCH_TABLE = registerBlock("birch_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.BIRCH_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> JUNGLE_TABLE = registerBlock("jungle_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.JUNGLE_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> ACACIA_TABLE = registerBlock("acacia_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.ACACIA_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> DARK_OAK_TABLE = registerBlock("dark_oak_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.DARK_OAK_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> MANGROVE_TABLE = registerBlock("mangrove_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.MANGROVE_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> CHERRY_TABLE = registerBlock("cherry_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.CHERRY_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> CRIMSON_TABLE = registerBlock("crimson_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.CRIMSON_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> WARPED_TABLE = registerBlock("warped_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.WARPED_PLANKS.defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<Block> BAMBOO_TABLE = registerBlock("bamboo_table", () -> new Table(
+            BlockBehaviour.Properties.of()
+                    .mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor())
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
 
     public static final DeferredBlock<Block> FAKE_WINE_BOTTLE = registerBlock("fake_wine_bottle", () -> new FakeBottle(
             BlockBehaviour.Properties.of()
