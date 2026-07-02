@@ -8,6 +8,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 //this is there to access the vanilla examples
+import net.minecraft.world.item.Items;
 
 
 public class ModItems {

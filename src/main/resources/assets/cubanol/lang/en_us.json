@@ -1,4 +1,7 @@
 {
-  "item.cubanol.grape": "Grape",
-  "item.cubanol.anise": "Anise"
+    "item.cubanol.grape": "Grape",
+    "item.cubanol.anise": "Anise",
+
+    "block.cubanol.fake_wine_bottle": "Decorative Wine Bottle",
+    "block.cubanol.table": "Table"
 }
