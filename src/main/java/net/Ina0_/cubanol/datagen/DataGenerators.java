@@ -34,6 +34,8 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
 
+        generator.addProvider(event.includeServer(), new ModDataMapsProvider(packOutput, lookupProvider));
+
         ModBlockTagProvider modBlockTagProvider = new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), modBlockTagProvider);
         generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, modBlockTagProvider.contentsGetter(), existingFileHelper));
