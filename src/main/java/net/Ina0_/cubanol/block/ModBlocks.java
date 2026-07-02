@@ -34,6 +34,7 @@ public class ModBlocks {
                     .forceSolidOn()
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
     ));
 
     public static final DeferredBlock<Block> FAKE_WINE_BOTTLE = registerBlock("fake_wine_bottle", () -> new FakeBottle(
@@ -45,7 +46,7 @@ public class ModBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .dynamicShape()
                     .instabreak()
-                    .strength(1.0F),
+                    .strength(0.5F),
             () -> {
                 VoxelShape base = Block.box(6.0, 0.0, 6.0, 9.0, 10.0, 9.0);
                 VoxelShape neck = Block.box(7.0, 10.0, 7.0, 8.0, 15.0, 8.0);
