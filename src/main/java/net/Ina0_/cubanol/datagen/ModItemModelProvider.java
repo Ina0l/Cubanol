@@ -15,6 +15,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.GRAPE.get());
         basicItem(ModItems.ANISE.get());
-
+        basicItem(ModItems.AGAVE_SEEDS.get());
     }
 }

@@ -10,7 +10,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 
-public class Table extends Block {
+public class TableBlock extends Block {
     private static final VoxelShape LEG_1;
     private static final VoxelShape LEG_2;
     private static final VoxelShape LEG_3;
@@ -19,7 +19,7 @@ public class Table extends Block {
     private static final VoxelShape AABB;
 
 
-    public Table(Properties properties) {
+    public TableBlock(Properties properties) {
         super(properties);
     }
 

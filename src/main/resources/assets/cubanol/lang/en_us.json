@@ -1,6 +1,7 @@
 {
     "item.cubanol.grape": "Grape",
     "item.cubanol.anise": "Anise",
+    "item.cubanol.agave_seeds": "Agave Seeds",
 
     "block.cubanol.fake_wine_bottle": "Decorative Wine Bottle",
 
@@ -14,5 +15,9 @@
     "block.cubanol.cherry_table": "Cherry Table",
     "block.cubanol.crimson_table": "Crimson Table",
     "block.cubanol.warped_table": "Warped Table",
-    "block.cubanol.bamboo_table": "Bamboo Table"
+    "block.cubanol.bamboo_table": "Bamboo Table",
+
+    "block.cubanol.agave_crop": "Agave",
+    "block.cubanol.agave_stem": "Agave Stem",
+    "block.cubanol.agave_flower": "Agave Flowers"
 }

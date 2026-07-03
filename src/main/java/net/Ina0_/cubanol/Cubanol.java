@@ -72,6 +72,9 @@ public class Cubanol {
             event.accept(ModBlocks.WARPED_TABLE);
             event.accept(ModBlocks.FAKE_WINE_BOTTLE);
         }
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
+            event.accept(ModItems.AGAVE_SEEDS);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
