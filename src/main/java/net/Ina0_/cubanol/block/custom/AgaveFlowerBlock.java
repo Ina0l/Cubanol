@@ -101,7 +101,7 @@ public class AgaveFlowerBlock extends CropBlock {
 
     @Override
     public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state) {
-        if(state.getValue(DRIED)){
+        if(state.getValue(CUT)){
             return false;
         }
         return super.isValidBonemealTarget(level, pos, state);
@@ -114,17 +114,17 @@ public class AgaveFlowerBlock extends CropBlock {
             return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
         } else if (level.isClientSide()) {
             if (stack.canPerformAction(ItemAbilities.SHEARS_TRIM)) {
-                if(!state.getValue(CUT)){
+                if(!state.getValue(CUT) && state.getValue(AGE) < this.getMaxAge()){
                     level.playSound(player, pos, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS);
                 }
             }
-            if (stack.is(Items.GLASS_BOTTLE)) {
+            if (stack.is(Items.GLASS_BOTTLE) && state.getValue(CUT)) {
                 level.playSound(player, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS);
             }
             return ItemInteractionResult.sidedSuccess(level.isClientSide());
         } else {
             if (stack.canPerformAction(ItemAbilities.SHEARS_TRIM)) {
-                if(!state.getValue(CUT)){
+                if(!state.getValue(CUT) && state.getValue(AGE) < this.getMaxAge()){
                     level.playSound(player, pos, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS);
                     AgaveCropBlock.setCut(level, state, pos);
                     stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
@@ -132,7 +132,7 @@ public class AgaveFlowerBlock extends CropBlock {
                     return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
                 }
             }
-            if (stack.is(Items.GLASS_BOTTLE)) {
+            if (stack.is(Items.GLASS_BOTTLE) && state.getValue(CUT)) {
                 level.playSound(player, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS);
                 AgaveCropBlock.setDried(level, state, pos);
                 if(!player.hasInfiniteMaterials()){

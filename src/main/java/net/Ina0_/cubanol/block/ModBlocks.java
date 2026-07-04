@@ -147,7 +147,7 @@ public class ModBlocks {
     ));
 
 
-    public static final DeferredBlock<Block> FAKE_WINE_BOTTLE = registerBlock("fake_wine_bottle", () -> new FakeBottle(
+    public static final DeferredBlock<Block> FAKE_WINE_BOTTLE = registerBlock("fake_wine_bottle", () -> new FakeBottleBlock(
             BlockBehaviour.Properties.of()
                     .sound(SoundType.GLASS)
                     .forceSolidOn()

@@ -109,7 +109,7 @@ public class AgaveStemBlock extends CropBlock {
                     level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 2);
                 }
             } else if(!level.getBlockState(pos.above()).is(ModBlocks.AGAVE_STEM) && !level.getBlockState(pos.above()).is(ModBlocks.AGAVE_FLOWER)){
-                level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 2);
+                level.setBlock(pos, state.setValue(AGE, this.getMaxAge() - 1), 2);
             }
         }
     }
@@ -118,9 +118,11 @@ public class AgaveStemBlock extends CropBlock {
     protected void neighborChanged(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
         super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
         if(!level.isClientSide()){
-            if (!level.getBlockState(pos.above()).is(ModBlocks.AGAVE_STEM.get()) && ! level.getBlockState(pos.above()).is(ModBlocks.AGAVE_FLOWER.get())){
-                if(this.isMaxAge(level.getBlockState(pos))){
-                    level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 2);
+            if (!level.getBlockState(pos.above()).is(ModBlocks.AGAVE_STEM.get()) && !level.getBlockState(pos.above()).is(ModBlocks.AGAVE_FLOWER.get())){
+                if(state.getValue(DRIED)){
+                    level.destroyBlock(pos, false);
+                } else if(this.isMaxAge(level.getBlockState(pos))){
+                    level.setBlock(pos, state.setValue(AGE, this.getMaxAge() - 1), 2);
                 }
             }
         }
@@ -157,7 +159,7 @@ public class AgaveStemBlock extends CropBlock {
 
     @Override
     public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state) {
-        if(state.getValue(DRIED)){
+        if(state.getValue(CUT)){
             return false;
         }
         return super.isValidBonemealTarget(level, pos, state);
