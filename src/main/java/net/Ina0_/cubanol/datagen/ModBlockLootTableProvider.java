@@ -44,7 +44,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.AGAVE_CROP.get());
 
         LootItemCondition.Builder lootItemCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.AGAVE_FLOWER.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(AgaveFlowerBlock.AGE, ((AgaveFlowerBlock) ModBlocks.AGAVE_FLOWER.get()).getMaxAge()));
+                .setProperties(
+                        StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(AgaveFlowerBlock.AGE, ((AgaveFlowerBlock) ModBlocks.AGAVE_FLOWER.get()).getMaxAge())
+                                .hasProperty(AgaveFlowerBlock.CUT, false)
+                );
         HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         this.add(
                 ModBlocks.AGAVE_FLOWER.get(),

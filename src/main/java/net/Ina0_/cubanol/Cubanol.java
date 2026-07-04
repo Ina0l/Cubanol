@@ -54,6 +54,7 @@ public class Cubanol {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(ModItems.GRAPE);
+            event.accept(ModItems.AGAVE_SYRUP);
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.ANISE);
