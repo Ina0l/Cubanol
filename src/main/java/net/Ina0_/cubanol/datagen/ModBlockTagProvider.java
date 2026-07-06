@@ -19,7 +19,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE);
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.FAKE_WINE_BOTTLE.get());
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.OAK_TABLE.get())
                 .add(ModBlocks.SPRUCE_TABLE.get())

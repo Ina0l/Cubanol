@@ -118,7 +118,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CRIMSON_TABLE = registerBlock("crimson_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.CRIMSON_PLANKS.defaultMapColor())
-                    .sound(SoundType.WOOD)
+                    .sound(SoundType.NETHER_WOOD)
                     .isRedstoneConductor(ModBlocks::never)
                     .forceSolidOn()
                     .isViewBlocking(ModBlocks::never)
@@ -128,7 +128,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> WARPED_TABLE = registerBlock("warped_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.WARPED_PLANKS.defaultMapColor())
-                    .sound(SoundType.WOOD)
+                    .sound(SoundType.NETHER_WOOD)
                     .isRedstoneConductor(ModBlocks::never)
                     .forceSolidOn()
                     .isViewBlocking(ModBlocks::never)
@@ -197,7 +197,7 @@ public class ModBlocks {
 
 
     /**
-     * Used instead of the Block::never, which is private, used in vanilla BlockProperties
+     * Used instead of the Block::never used in vanilla BlockProperties, which is private
      * @return false
      */
     private static boolean never(BlockState state, BlockGetter blockGetter, BlockPos pos){

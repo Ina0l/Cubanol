@@ -43,7 +43,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.FAKE_WINE_BOTTLE.get());
         dropSelf(ModBlocks.AGAVE_CROP.get());
 
-        LootItemCondition.Builder lootItemCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.AGAVE_FLOWER.get())
+        LootItemCondition.Builder lootItemConditionForAgaveFlower = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.AGAVE_FLOWER.get())
                 .setProperties(
                         StatePropertiesPredicate.Builder.properties()
                                 .hasProperty(AgaveFlowerBlock.AGE, ((AgaveFlowerBlock) ModBlocks.AGAVE_FLOWER.get()).getMaxAge())

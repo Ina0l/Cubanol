@@ -48,9 +48,9 @@ public class AgaveCropBlock extends CropBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
-        builder.add(AGE);
-        builder.add(CUT);
-        builder.add(DRIED);
+        builder.add(AGE)
+                .add(CUT)
+                .add(DRIED);
     }
 
     @Override
@@ -146,6 +146,12 @@ public class AgaveCropBlock extends CropBlock {
         return !state.getValue(DRIED);
     }
 
+    /**
+     * Marks a whole agave with the cut blockState by only designating one of its blocks
+     * @param level The minecraft world in which the agave is
+     * @param state The agave part's blockState
+     * @param pos The position of the agave
+     */
     public static void setCut(Level level, BlockState state, BlockPos pos){
         level.setBlock(pos, state.setValue(CUT, true), 2);
         BlockState stateAbove = level.getBlockState(pos.above());
@@ -170,6 +176,12 @@ public class AgaveCropBlock extends CropBlock {
         }
     }
 
+    /**
+     * Marks a whole agave with the dried blockState by only designating one of its blocks
+     * @param level The minecraft world in which the agave is
+     * @param state The agave part's blockState
+     * @param pos The position of the agave
+     */
     public static void setDried(Level level, BlockState state, BlockPos pos){
         level.setBlock(pos, state.setValue(DRIED, true), 2);
         BlockState stateAbove = level.getBlockState(pos.above());

@@ -48,9 +48,9 @@ public class AgaveStemBlock extends CropBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
-        builder.add(AGE);
-        builder.add(CUT);
-        builder.add(DRIED);
+        builder.add(AGE)
+                .add(CUT)
+                .add(DRIED);
     }
 
     @Override

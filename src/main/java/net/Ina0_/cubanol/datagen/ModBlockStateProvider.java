@@ -91,9 +91,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
             ConfiguredModel[] configuredModels = new ConfiguredModel[1];
             StringBuilder blockStatesPropertiesValues = new StringBuilder();
             for(Property<?> property: properties){
-                blockStatesPropertiesValues.append("_");
-                blockStatesPropertiesValues.append(property.getName());
-                blockStatesPropertiesValues.append(state.getValue(property));
+                if(!(property instanceof BooleanProperty)){
+                    blockStatesPropertiesValues.append("_");
+                    blockStatesPropertiesValues.append(property.getName());
+                    blockStatesPropertiesValues.append(state.getValue(property));
+                } else {
+                    if(state.getValue((BooleanProperty) property)) {
+                        blockStatesPropertiesValues.append("_");
+                        blockStatesPropertiesValues.append(property.getName());
+                    }
+                }
             }
             configuredModels[0] = new ConfiguredModel(modelType.apply(
                     Pair.of(

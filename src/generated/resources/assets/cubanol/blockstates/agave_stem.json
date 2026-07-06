@@ -1,88 +1,88 @@
 {
   "variants": {
     "age=0,cut=false,dried=false": {
-      "model": "cubanol:block/agave_stem_age0_driedfalse"
+      "model": "cubanol:block/agave_stem_age0"
     },
     "age=0,cut=false,dried=true": {
-      "model": "cubanol:block/agave_stem_age0_driedtrue"
+      "model": "cubanol:block/agave_stem_age0_dried"
     },
     "age=0,cut=true,dried=false": {
-      "model": "cubanol:block/agave_stem_age0_driedfalse"
+      "model": "cubanol:block/agave_stem_age0"
     },
     "age=0,cut=true,dried=true": {
-      "model": "cubanol:block/agave_stem_age0_driedtrue"
+      "model": "cubanol:block/agave_stem_age0_dried"
     },
     "age=1,cut=false,dried=false": {
-      "model": "cubanol:block/agave_stem_age1_driedfalse"
+      "model": "cubanol:block/agave_stem_age1"
     },
     "age=1,cut=false,dried=true": {
-      "model": "cubanol:block/agave_stem_age1_driedtrue"
+      "model": "cubanol:block/agave_stem_age1_dried"
     },
     "age=1,cut=true,dried=false": {
-      "model": "cubanol:block/agave_stem_age1_driedfalse"
+      "model": "cubanol:block/agave_stem_age1"
     },
     "age=1,cut=true,dried=true": {
-      "model": "cubanol:block/agave_stem_age1_driedtrue"
+      "model": "cubanol:block/agave_stem_age1_dried"
     },
     "age=2,cut=false,dried=false": {
-      "model": "cubanol:block/agave_stem_age2_driedfalse"
+      "model": "cubanol:block/agave_stem_age2"
     },
     "age=2,cut=false,dried=true": {
-      "model": "cubanol:block/agave_stem_age2_driedtrue"
+      "model": "cubanol:block/agave_stem_age2_dried"
     },
     "age=2,cut=true,dried=false": {
-      "model": "cubanol:block/agave_stem_age2_driedfalse"
+      "model": "cubanol:block/agave_stem_age2"
     },
     "age=2,cut=true,dried=true": {
-      "model": "cubanol:block/agave_stem_age2_driedtrue"
+      "model": "cubanol:block/agave_stem_age2_dried"
     },
     "age=3,cut=false,dried=false": {
-      "model": "cubanol:block/agave_stem_age3_driedfalse"
+      "model": "cubanol:block/agave_stem_age3"
     },
     "age=3,cut=false,dried=true": {
-      "model": "cubanol:block/agave_stem_age3_driedtrue"
+      "model": "cubanol:block/agave_stem_age3_dried"
     },
     "age=3,cut=true,dried=false": {
-      "model": "cubanol:block/agave_stem_age3_driedfalse"
+      "model": "cubanol:block/agave_stem_age3"
     },
     "age=3,cut=true,dried=true": {
-      "model": "cubanol:block/agave_stem_age3_driedtrue"
+      "model": "cubanol:block/agave_stem_age3_dried"
     },
     "age=4,cut=false,dried=false": {
-      "model": "cubanol:block/agave_stem_age4_driedfalse"
+      "model": "cubanol:block/agave_stem_age4"
     },
     "age=4,cut=false,dried=true": {
-      "model": "cubanol:block/agave_stem_age4_driedtrue"
+      "model": "cubanol:block/agave_stem_age4_dried"
     },
     "age=4,cut=true,dried=false": {
-      "model": "cubanol:block/agave_stem_age4_driedfalse"
+      "model": "cubanol:block/agave_stem_age4"
     },
     "age=4,cut=true,dried=true": {
-      "model": "cubanol:block/agave_stem_age4_driedtrue"
+      "model": "cubanol:block/agave_stem_age4_dried"
     },
     "age=5,cut=false,dried=false": {
-      "model": "cubanol:block/agave_stem_age5_driedfalse"
+      "model": "cubanol:block/agave_stem_age5"
     },
     "age=5,cut=false,dried=true": {
-      "model": "cubanol:block/agave_stem_age5_driedtrue"
+      "model": "cubanol:block/agave_stem_age5_dried"
     },
     "age=5,cut=true,dried=false": {
-      "model": "cubanol:block/agave_stem_age5_driedfalse"
+      "model": "cubanol:block/agave_stem_age5"
     },
     "age=5,cut=true,dried=true": {
-      "model": "cubanol:block/agave_stem_age5_driedtrue"
+      "model": "cubanol:block/agave_stem_age5_dried"
     },
     "age=6,cut=false,dried=false": {
-      "model": "cubanol:block/agave_stem_age6_driedfalse"
+      "model": "cubanol:block/agave_stem_age6"
     },
     "age=6,cut=false,dried=true": {
-      "model": "cubanol:block/agave_stem_age6_driedtrue"
+      "model": "cubanol:block/agave_stem_age6_dried"
     },
     "age=6,cut=true,dried=false": {
-      "model": "cubanol:block/agave_stem_age6_driedfalse"
+      "model": "cubanol:block/agave_stem_age6"
     },
     "age=6,cut=true,dried=true": {
-      "model": "cubanol:block/agave_stem_age6_driedtrue"
+      "model": "cubanol:block/agave_stem_age6_dried"
     }
   }
 }
