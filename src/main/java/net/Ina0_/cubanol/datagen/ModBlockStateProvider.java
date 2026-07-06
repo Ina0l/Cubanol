@@ -6,11 +6,13 @@ import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.AgaveCropBlock;
 import net.Ina0_.cubanol.block.custom.AgaveFlowerBlock;
 import net.Ina0_.cubanol.block.custom.AgaveStemBlock;
+import net.Ina0_.cubanol.block.custom.CropSupportBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -64,6 +66,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 AgaveFlowerBlock.AGE,
                 AgaveFlowerBlock.DRIED
         );
+
+        blockBasedOnBlockStates(
+                ModBlocks.CROP_SUPPORT.get(),
+                "crop_support",
+                "crop_support",
+                pair -> models().getExistingFile(pair.getSecond()),
+                CropSupportBlock.NORTH,
+                CropSupportBlock.SOUTH,
+                CropSupportBlock.EAST,
+                CropSupportBlock.WEST
+        );
+        simpleBlockItem(ModBlocks.CROP_SUPPORT.get(), models().getExistingFile(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/crop_support")));
     }
 
     public void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){

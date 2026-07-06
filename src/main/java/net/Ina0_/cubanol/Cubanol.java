@@ -76,6 +76,10 @@ public class Cubanol {
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
             event.accept(ModItems.AGAVE_SEEDS);
         }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.accept(ModBlocks.CROP_SUPPORT);
+            event.accept(ModItems.WIRE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

@@ -3,6 +3,7 @@ package net.Ina0_.cubanol.item;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.item.custom.AgaveSyrupItem;
+import net.Ina0_.cubanol.item.custom.WireItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -34,6 +35,10 @@ public class ModItems {
     public static final DeferredItem<Item> AGAVE_SYRUP = ITEMS.register("agave_syrup", () -> new AgaveSyrupItem(
             new Item.Properties()
                     .food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.1F).build())
+    ));
+
+    public static final DeferredItem<Item> WIRE = ITEMS.register("wire", () -> new WireItem(
+            new Item.Properties()
     ));
 
     public static void register(IEventBus event_bus){

@@ -2,6 +2,7 @@ package net.Ina0_.cubanol.datagen;
 
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.AgaveFlowerBlock;
+import net.Ina0_.cubanol.block.custom.CropSupportBlock;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
@@ -61,7 +62,38 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                                         0.5714286F,
                                                         3
                                                 ))
-                                        ).when(lootItemCondition))
+                                        ).when(lootItemConditionForAgaveFlower))
+                )
+        );
+
+        LootItemCondition.Builder lootItemConditionForCropSupportNORTH = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.NORTH, true));
+        LootItemCondition.Builder lootItemConditionForCropSupportSOUTH = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.SOUTH, true));
+        LootItemCondition.Builder lootItemConditionForCropSupportEAST = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.EAST, true));
+        LootItemCondition.Builder lootItemConditionForCropSupportWEST = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.WEST, true));
+        this.add(
+                ModBlocks.CROP_SUPPORT.get(),
+                this.applyExplosionDecay(
+                        ModBlocks.CROP_SUPPORT,
+                        LootTable.lootTable()
+                                .withPool(LootPool.lootPool().add(
+                                        LootItem.lootTableItem(ModBlocks.CROP_SUPPORT)
+                                ))
+                                .withPool(LootPool.lootPool().add(
+                                        LootItem.lootTableItem(ModItems.WIRE)
+                                ).when(lootItemConditionForCropSupportNORTH))
+                                .withPool(LootPool.lootPool().add(
+                                        LootItem.lootTableItem(ModItems.WIRE)
+                                ).when(lootItemConditionForCropSupportSOUTH))
+                                .withPool(LootPool.lootPool().add(
+                                        LootItem.lootTableItem(ModItems.WIRE)
+                                ).when(lootItemConditionForCropSupportEAST))
+                                .withPool(LootPool.lootPool().add(
+                                        LootItem.lootTableItem(ModItems.WIRE)
+                                ).when(lootItemConditionForCropSupportWEST))
                 )
         );
     }

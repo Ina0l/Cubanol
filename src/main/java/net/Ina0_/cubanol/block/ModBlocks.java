@@ -172,6 +172,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(ModBlocks::never)
     ));
 
     public static final DeferredBlock<Block> AGAVE_STEM = BLOCKS.register("agave_stem", () -> new AgaveStemBlock(
@@ -183,6 +184,7 @@ public class ModBlocks {
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
                     .noLootTable()
+                    .isRedstoneConductor(ModBlocks::never)
     ));
 
     public static final DeferredBlock<Block> AGAVE_FLOWER = BLOCKS.register("agave_flower", () -> new AgaveFlowerBlock(
@@ -193,6 +195,20 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(ModBlocks::never)
+    ));
+
+
+    public static final DeferredBlock<Block> CROP_SUPPORT = registerBlock("crop_support", () -> new CropSupportBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .pushReaction(PushReaction.DESTROY)
+                    .isViewBlocking(ModBlocks::never)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .strength(0.1f)
     ));
 
 

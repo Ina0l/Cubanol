@@ -1,6 +1,7 @@
 package net.Ina0_.cubanol.datagen;
 
 import net.Ina0_.cubanol.block.ModBlocks;
+import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -105,6 +106,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('P', Blocks.BAMBOO_PLANKS)
                 .define('S', Items.STICK)
                 .unlockedBy("has_bamboo_planks", has(Blocks.BAMBOO_PLANKS))
+                .save(recipeOutput);
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WIRE)
+                .pattern(" I ")
+                .pattern("ISI")
+                .pattern(" I ")
+                .define('I', Items.IRON_NUGGET)
+                .define('S', Items.STRING)
+                .unlockedBy("has_iron_nugget", has(Items.IRON_NUGGET))
                 .save(recipeOutput);
 
 

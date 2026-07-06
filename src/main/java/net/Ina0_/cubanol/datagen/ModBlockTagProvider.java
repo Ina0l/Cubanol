@@ -32,6 +32,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHERRY_TABLE.get())
                 .add(ModBlocks.CRIMSON_TABLE.get())
                 .add(ModBlocks.WARPED_TABLE.get())
-                .add(ModBlocks.BAMBOO_TABLE.get());
+                .add(ModBlocks.BAMBOO_TABLE.get())
+                .add(ModBlocks.CROP_SUPPORT.get());
     }
 }

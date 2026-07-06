@@ -17,5 +17,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ANISE.get());
         basicItem(ModItems.AGAVE_SEEDS.get());
         basicItem(ModItems.AGAVE_SYRUP.get());
+        basicItem(ModItems.WIRE.get());
     }
 }

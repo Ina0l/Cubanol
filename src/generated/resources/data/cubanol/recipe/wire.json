@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " I ",
+    "ISI",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "cubanol:wire"
+  }
+}
