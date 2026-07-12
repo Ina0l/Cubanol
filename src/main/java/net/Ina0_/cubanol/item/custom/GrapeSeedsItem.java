@@ -18,8 +18,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Function;
 
 public class GrapeSeedsItem extends Item {
-    public GrapeSeedsItem(Properties properties) {
+    public final Boolean isGrapeWhite;
+
+    public GrapeSeedsItem(Properties properties, Boolean isGrapeWhite) {
         super(properties);
+        this.isGrapeWhite = isGrapeWhite;
     }
 
     @Override
@@ -72,7 +75,8 @@ public class GrapeSeedsItem extends Item {
                         throw new NullPointerException("vineHangingSide is null");
                     }
                     BlockState newState = GrapeCropBlock.getBlockStateFromCropSupportState(state)
-                            .setValue(GrapeCropBlock.VINE_HANGING_SIDE, vineHangingSide);
+                            .setValue(GrapeCropBlock.VINE_HANGING_SIDE, vineHangingSide)
+                            .setValue(GrapeCropBlock.WHITE, this.isGrapeWhite);
                     if(newState.canSurvive(level, pos)){
                         level.setBlock(pos, newState, 3);
                         stack.consume(1, player);

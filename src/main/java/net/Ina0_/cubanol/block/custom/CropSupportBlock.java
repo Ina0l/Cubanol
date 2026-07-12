@@ -7,7 +7,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -110,6 +112,13 @@ public class CropSupportBlock extends Block{
             case Direction.SOUTH -> BlockStateProperties.SOUTH;
             default -> throw new IllegalStateException("Unexpected value: " + direction);
         };
+    }
+
+    @Override
+    protected boolean canSurvive(@NotNull BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos blockpos = pos.below();
+        BlockState blockstate = level.getBlockState(blockpos);
+        return blockstate.isFaceSturdy(level, blockpos, Direction.UP) || blockstate.is(Blocks.FARMLAND);
     }
 
     public static BlockState getBlockStateFromGrapeCropState(@NotNull BlockState state){

@@ -53,7 +53,8 @@ public class Cubanol {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
-            event.accept(ModItems.GRAPE);
+            event.accept(ModItems.BLACK_GRAPE);
+            event.accept(ModItems.WHITE_GRAPE);
             event.accept(ModItems.AGAVE_SYRUP);
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
@@ -75,6 +76,8 @@ public class Cubanol {
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
             event.accept(ModItems.AGAVE_SEEDS);
+            event.accept(ModItems.BLACK_GRAPE_SEEDS);
+            event.accept(ModItems.WHITE_GRAPE_SEEDS);
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
             event.accept(ModBlocks.CROP_SUPPORT);

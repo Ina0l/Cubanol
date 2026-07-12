@@ -220,7 +220,7 @@ public class ModBlocks {
                     .strength(0.1f)
     ));
 
-    public static final DeferredBlock<Block> GRAPE_CROP = registerBlock("grape_crop", () -> new GrapeCropBlock(
+    public static final DeferredBlock<Block> GRAPE_CROP = BLOCKS.register("grape_crop", () -> new GrapeCropBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .sound(SoundType.WOOD)
@@ -288,10 +288,10 @@ public class ModBlocks {
      */
     public static Integer collectOrDropItemsFromState(ServerLevel level, Player player, BlockState state, BlockPos pos){
         List<ItemStack> drops = state.getDrops(new LootParams.Builder(level).withParameter(LootContextParams.TOOL, player.getMainHandItem()).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)));
-        return collectOrDropItemsFromState(level, player, pos, drops);
+        return collectOrDropItems(level, player, pos, drops);
     }
 
-    public static Integer collectOrDropItemsFromState(ServerLevel level, Player player, BlockPos pos, List<ItemStack> drops){
+    public static Integer collectOrDropItems(ServerLevel level, Player player, BlockPos pos, List<ItemStack> drops){
         if(player.hasInfiniteMaterials()){
             return 0;
         }

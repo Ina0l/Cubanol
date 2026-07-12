@@ -1,10 +1,12 @@
 {
-    "item.cubanol.grape": "Grape",
+    "item.cubanol.black_grape": "Black Grape",
+    "item.cubanol.white_grape": "White Grape",
     "item.cubanol.anise": "Anise",
     "item.cubanol.agave_seeds": "Agave Seeds",
     "item.cubanol.agave_syrup": "Agave Syrup",
     "item.cubanol.wire": "Iron Wire",
-    "item.cubanol.grape_seeds": "Grape Seeds",
+    "item.cubanol.black_grape_seeds": "Black Grape Seeds",
+    "item.cubanol.white_grape_seeds": "White Grape Seeds",
 
     "block.cubanol.fake_wine_bottle": "Decorative Wine Bottle",
 

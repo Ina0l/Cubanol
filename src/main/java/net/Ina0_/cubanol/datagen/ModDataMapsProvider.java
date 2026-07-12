@@ -18,6 +18,11 @@ public class ModDataMapsProvider extends DataMapProvider {
     @Override
     protected void gather(HolderLookup.@NotNull Provider provider) {
         this.builder(NeoForgeDataMaps.COMPOSTABLES)
-                .add(ModItems.AGAVE_SEEDS.getId(), new Compostable(0.65f), false);
+                .add(ModItems.AGAVE_SEEDS.getId(), new Compostable(0.5f), false)
+                .add(ModItems.ANISE.getId(), new Compostable(0.3f), false)
+                .add(ModItems.BLACK_GRAPE.getId(), new Compostable(0.3f), false)
+                .add(ModItems.WHITE_GRAPE.getId(), new Compostable(0.3f), false)
+                .add(ModItems.BLACK_GRAPE_SEEDS.getId(), new Compostable(0.3f), false)
+                .add(ModItems.WHITE_GRAPE_SEEDS.getId(), new Compostable(0.3f), false);
     }
 }

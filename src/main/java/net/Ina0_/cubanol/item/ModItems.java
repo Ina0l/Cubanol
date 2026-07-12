@@ -18,7 +18,13 @@ import net.minecraft.world.item.Items;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Cubanol.MOD_ID);
 
-    public static final DeferredItem<Item> GRAPE = ITEMS.register("grape", () -> new Item(
+    public static final DeferredItem<Item> BLACK_GRAPE = ITEMS.register("black_grape", () -> new Item(
+            new Item.Properties().food(
+                    (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.1F).build()
+            )
+    ));
+
+    public static final DeferredItem<Item> WHITE_GRAPE = ITEMS.register("white_grape", () -> new Item(
             new Item.Properties().food(
                     (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.1F).build()
             )
@@ -42,8 +48,14 @@ public class ModItems {
             new Item.Properties()
     ));
 
-    public static final DeferredItem<Item> GRAPE_SEEDS = ITEMS.register("grape_seeds", () -> new GrapeSeedsItem(
-            new Item.Properties()
+    public static final DeferredItem<Item> BLACK_GRAPE_SEEDS = ITEMS.register("black_grape_seeds", () -> new GrapeSeedsItem(
+            new Item.Properties(),
+            false
+    ));
+
+    public static final DeferredItem<Item> WHITE_GRAPE_SEEDS = ITEMS.register("white_grape_seeds", () -> new GrapeSeedsItem(
+            new Item.Properties(),
+            true
     ));
 
     public static void register(IEventBus event_bus){

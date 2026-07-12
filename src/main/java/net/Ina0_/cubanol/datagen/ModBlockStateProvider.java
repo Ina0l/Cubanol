@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.*;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -16,7 +17,6 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
 import javax.annotation.Nullable;
-import java.util.Arrays;
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -47,6 +47,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "agave_crop",
                 pair -> models().cross(pair.getFirst(), pair.getSecond()).renderType("cutout"),
                 null,
+                null,
                 AgaveCropBlock.AGE,
                 AgaveCropBlock.DRIED
         );
@@ -56,6 +57,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "agave_stem",
                 pair -> models().cross(pair.getFirst(), pair.getSecond()).renderType("cutout"),
                 null,
+                null,
                 AgaveStemBlock.AGE,
                 AgaveStemBlock.DRIED
         );
@@ -64,6 +66,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "agave_flower",
                 "agave_flower",
                 pair -> models().cross(pair.getFirst(), pair.getSecond()).renderType("cutout"),
+                null,
                 null,
                 AgaveFlowerBlock.AGE,
                 AgaveFlowerBlock.DRIED
@@ -75,6 +78,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "crop_support",
                 pair -> models().getExistingFile(pair.getSecond()),
                 null,
+                null,
                 CropSupportBlock.NORTH,
                 CropSupportBlock.SOUTH,
                 CropSupportBlock.EAST,
@@ -82,13 +86,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
         simpleBlockItem(ModBlocks.CROP_SUPPORT.get(), models().getExistingFile(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/crop_support")));
 
-        Function<String, Boolean> isExistingFileForGrapeCrop = filePath -> {
-            String[] splitFilePath = filePath.split("/");
-            String fileName = splitFilePath[splitFilePath.length - 1];
-            String[] splitFileName = fileName.split("_");
-            String facing = splitFileName[3].substring(6);
-            String[] cableFacings = Arrays.copyOfRange(splitFileName, 4, splitFileName.length);
-            return Arrays.asList(cableFacings).contains(facing);
+        Function<BlockState, Boolean> isExistingFileForGrapeCrop = state -> (
+                    (state.getValue(GrapeCropBlock.NORTH) && state.getValue(GrapeCropBlock.VINE_HANGING_SIDE) == Direction.NORTH) ||
+                    (state.getValue(GrapeCropBlock.SOUTH) && state.getValue(GrapeCropBlock.VINE_HANGING_SIDE) == Direction.SOUTH) ||
+                    (state.getValue(GrapeCropBlock.EAST) && state.getValue(GrapeCropBlock.VINE_HANGING_SIDE) == Direction.EAST) ||
+                    (state.getValue(GrapeCropBlock.WEST) && state.getValue(GrapeCropBlock.VINE_HANGING_SIDE) == Direction.WEST)
+                );
+        Function<BlockState, BlockState> getReplacingStateForGrapeCrop = state -> {
+            if(state.getValue(GrapeCropBlock.WHITE) && state.getValue(GrapeCropBlock.AGE) <= 8){
+                return state.setValue(GrapeCropBlock.WHITE, false);
+            }
+            return state;
         };
         blockBasedOnBlockStates(
                 ModBlocks.GRAPE_CROP.get(),
@@ -96,12 +104,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "grape_crop",
                 pair -> models().getExistingFile(pair.getSecond()),
                 isExistingFileForGrapeCrop,
+                getReplacingStateForGrapeCrop,
                 GrapeCropBlock.AGE,
                 GrapeCropBlock.VINE_HANGING_SIDE,
                 GrapeCropBlock.NORTH,
                 GrapeCropBlock.SOUTH,
                 GrapeCropBlock.EAST,
-                GrapeCropBlock.WEST
+                GrapeCropBlock.WEST,
+                GrapeCropBlock.WHITE
         );
     }
 
@@ -125,12 +135,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block).forAllStates(function);
     }
 
-    public void blockBasedOnBlockStates(Block block, String modelName, String textureName, Function<Pair<String, ResourceLocation>, ModelFile> modelType, @Nullable Function<String, Boolean> isExistingFile, Property<?>... properties){
+    public void blockBasedOnBlockStates(Block block, String modelName, String textureName, Function<Pair<String, ResourceLocation>, ModelFile> modelType, @Nullable Function<BlockState, Boolean> isExistingFile, @Nullable Function<BlockState, BlockState> getReplacingState, Property<?>... properties){
         if(isExistingFile==null){
-            isExistingFile = filePath -> true;
+            isExistingFile = state -> true;
         }
-        Function<String, Boolean> finalIsExistingFile = isExistingFile;
+        if(getReplacingState==null){
+            getReplacingState = state -> state;
+        }
+        Function<BlockState, Boolean> finalIsExistingFile = isExistingFile;
+        Function<BlockState, BlockState> finalGetReplacingState = getReplacingState;
         Function<BlockState, ConfiguredModel[]> function = state -> {
+            state = finalGetReplacingState.apply(state);
             ConfiguredModel[] configuredModels = new ConfiguredModel[1];
             StringBuilder blockStatesPropertiesValues = new StringBuilder();
             for(Property<?> property: properties){
@@ -146,10 +161,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 }
             }
             String filePath = "block/" + textureName + blockStatesPropertiesValues;
+            ResourceLocation resourceLocation = ResourceLocation.fromNamespaceAndPath(
+                    Cubanol.MOD_ID,
+                    finalIsExistingFile.apply(state)? filePath: "block/null"
+            );
             configuredModels[0] = new ConfiguredModel(modelType.apply(
                     Pair.of(
                             modelName + blockStatesPropertiesValues,
-                            ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, finalIsExistingFile.apply(filePath)? filePath: "block/null")
+                            resourceLocation
                     ))
             );
             return configuredModels;

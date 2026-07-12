@@ -10,7 +10,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
@@ -30,8 +29,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
 public class GrapeCropBlock extends CropBlock{
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 12);
     public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
@@ -39,6 +36,8 @@ public class GrapeCropBlock extends CropBlock{
     public static final BooleanProperty EAST = BlockStateProperties.EAST;
     public static final BooleanProperty WEST = BlockStateProperties.WEST;
     public static final DirectionProperty VINE_HANGING_SIDE = BlockStateProperties.HORIZONTAL_FACING;
+
+    public static final BooleanProperty WHITE = BooleanProperty.create("white");
 
 
     private static final VoxelShape BASE_SHAPE;
@@ -55,7 +54,8 @@ public class GrapeCropBlock extends CropBlock{
                 .setValue(SOUTH, false)
                 .setValue(EAST, false)
                 .setValue(WEST, false)
-                .setValue(VINE_HANGING_SIDE, Direction.NORTH));
+                .setValue(VINE_HANGING_SIDE, Direction.NORTH)
+                .setValue(WHITE, false));
     }
 
     @Override
@@ -65,7 +65,8 @@ public class GrapeCropBlock extends CropBlock{
                 .add(SOUTH)
                 .add(EAST)
                 .add(WEST)
-                .add(VINE_HANGING_SIDE);
+                .add(VINE_HANGING_SIDE)
+                .add(WHITE);
     }
 
     @Override
@@ -80,7 +81,7 @@ public class GrapeCropBlock extends CropBlock{
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return ModItems.GRAPE_SEEDS;
+        return ModItems.BLACK_GRAPE_SEEDS;
     }
 
     @Override
@@ -121,25 +122,31 @@ public class GrapeCropBlock extends CropBlock{
                 if (level.getBlockState(neighborPos).getBlock() instanceof CropSupportBlock || level.getBlockState(neighborPos).getBlock() instanceof GrapeCropBlock) {
                     if (!state.getValue(CropSupportBlock.getPropertyFromDirection(neighborDirection)) && level.getBlockState(neighborPos).getValue(CropSupportBlock.getPropertyFromDirection(neighborDirection.getOpposite()))) {
                         level.playSound(null, pos, SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS);
-                        BlockState newState = CropSupportBlock.getBlockStateFromGrapeCropState(
-                                state.setValue(CropSupportBlock.getPropertyFromDirection(neighborDirection.getOpposite()), false)
-                        );
-                        level.setBlock(neighborPos, newState, 3);
+                        BlockState newState = state.setValue(CropSupportBlock.getPropertyFromDirection(neighborDirection.getOpposite()), false);
+                        if(newState.is(ModBlocks.GRAPE_CROP) && !newState.getValue(CropSupportBlock.getPropertyFromDirection(newState.getValue(VINE_HANGING_SIDE)))){
+                            this.destroy(level, neighborPos, newState);
+                        } else {
+                            level.setBlock(neighborPos, newState, 3);
+                        }
                     }
                     if (state.getValue(CropSupportBlock.getPropertyFromDirection(neighborDirection)) && !level.getBlockState(neighborPos).getValue(CropSupportBlock.getPropertyFromDirection(neighborDirection.getOpposite()))) {
                         level.playSound(null, pos, SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS);
-                        BlockState newState = CropSupportBlock.getBlockStateFromGrapeCropState(
-                                state.setValue(CropSupportBlock.getPropertyFromDirection(neighborDirection), false)
-                        );
-                        level.setBlock(pos, newState, 3);
+                        BlockState newState = state.setValue(CropSupportBlock.getPropertyFromDirection(neighborDirection), false);
+                        if(newState.is(ModBlocks.GRAPE_CROP) && !newState.getValue(CropSupportBlock.getPropertyFromDirection(newState.getValue(VINE_HANGING_SIDE)))){
+                            this.destroy(level, pos, newState);
+                        } else {
+                            level.setBlock(pos, newState, 3);
+                        }
                     }
                 } else {
                     if (state.getValue(CropSupportBlock.getPropertyFromDirection(neighborDirection))) {
                         level.playSound(null, pos, SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS);
-                        BlockState newState = CropSupportBlock.getBlockStateFromGrapeCropState(
-                                state.setValue(CropSupportBlock.getPropertyFromDirection(neighborDirection), false)
-                        );
-                        level.setBlock(pos, newState, 3);
+                        BlockState newState = state.setValue(CropSupportBlock.getPropertyFromDirection(neighborDirection), false);
+                        if(newState.is(ModBlocks.GRAPE_CROP) && !newState.getValue(CropSupportBlock.getPropertyFromDirection(newState.getValue(VINE_HANGING_SIDE)))){
+                            this.destroy(level, pos, newState);
+                        } else {
+                            level.setBlock(pos, newState, 3);
+                        }
                     }
                 }
             }
@@ -151,8 +158,7 @@ public class GrapeCropBlock extends CropBlock{
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
         if(!level.isClientSide()){
             if(state.getValue(AGE) == this.getMaxAge()){
-                List<ItemStack> drops = List.of(new ItemStack(ModItems.GRAPE.get(), level.getRandom().nextIntBetweenInclusive(1, 3)));
-                if(ModBlocks.collectOrDropItemsFromState((ServerLevel) level, player, pos, drops) > 0 || player.hasInfiniteMaterials()){
+                if(ModBlocks.collectOrDropItemsFromState((ServerLevel) level, player, state, pos) > 0 || player.hasInfiniteMaterials()){
                     level.setBlock(pos, state.setValue(AGE, 8), 3);
                     return InteractionResult.SUCCESS;
                 }

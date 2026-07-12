@@ -13,11 +13,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModItems.GRAPE.get());
+        basicItem(ModItems.BLACK_GRAPE.get());
+        basicItem(ModItems.WHITE_GRAPE.get());
         basicItem(ModItems.ANISE.get());
         basicItem(ModItems.AGAVE_SEEDS.get());
         basicItem(ModItems.AGAVE_SYRUP.get());
         basicItem(ModItems.WIRE.get());
-        basicItem(ModItems.GRAPE_SEEDS.get());
+        basicItem(ModItems.BLACK_GRAPE_SEEDS.get());
+        basicItem(ModItems.WHITE_GRAPE_SEEDS.get());
     }
 }

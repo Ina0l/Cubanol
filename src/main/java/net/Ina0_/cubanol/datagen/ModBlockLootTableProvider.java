@@ -98,11 +98,55 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )
         );
 
-        LootItemCondition.Builder lootItemConditionForGrapeCrop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GRAPE_CROP.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GrapeCropBlock.AGE, ((GrapeCropBlock) ModBlocks.GRAPE_CROP.get()).getMaxAge()));
+
+        LootItemCondition.Builder lootItemConditionForGrapeCrop = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.GRAPE_CROP.get())
+                .setProperties(
+                        StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(GrapeCropBlock.AGE, ((GrapeCropBlock) ModBlocks.GRAPE_CROP.get()).getMaxAge()));
+        LootItemCondition.Builder lootItemConditionForWhiteGrape = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.GRAPE_CROP.get())
+                .setProperties(
+                        StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(GrapeCropBlock.WHITE, true)
+                );
+        LootItemCondition.Builder lootItemConditionForBlackGrape = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.GRAPE_CROP.get())
+                .setProperties(
+                        StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(GrapeCropBlock.WHITE, false)
+                );
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         this.add(
                 ModBlocks.GRAPE_CROP.get(),
-                this.createCropDrops(ModBlocks.GRAPE_CROP.get(), ModItems.GRAPE.get(), ModItems.GRAPE_SEEDS.get(), lootItemConditionForGrapeCrop)
+                this.applyExplosionDecay(
+                        ModItems.BLACK_GRAPE,
+                        LootTable.lootTable()
+                                .withPool(LootPool.lootPool()
+                                        .add(LootItem.lootTableItem(ModItems.BLACK_GRAPE)
+                                                .when(lootItemConditionForGrapeCrop)
+                                                .otherwise(LootItem.lootTableItem(ModItems.BLACK_GRAPE_SEEDS)))
+                                        .when(lootItemConditionForBlackGrape))
+                                .withPool(LootPool.lootPool()
+                                        .add(LootItem.lootTableItem(ModItems.BLACK_GRAPE_SEEDS)
+                                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+                                                        registrylookup.getOrThrow(Enchantments.FORTUNE),0.5714286F, 3
+                                                )))
+                                        .when(lootItemConditionForBlackGrape)
+                                        .when(lootItemConditionForGrapeCrop))
+                                .withPool(LootPool.lootPool()
+                                        .add(LootItem.lootTableItem(ModItems.WHITE_GRAPE)
+                                                .when(lootItemConditionForGrapeCrop)
+                                                .otherwise(LootItem.lootTableItem(ModItems.WHITE_GRAPE_SEEDS)))
+                                        .when(lootItemConditionForWhiteGrape))
+                                .withPool(LootPool.lootPool()
+                                        .add(LootItem.lootTableItem(ModItems.WHITE_GRAPE_SEEDS)
+                                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+                                                        registrylookup.getOrThrow(Enchantments.FORTUNE),0.5714286F,3
+                                                )))
+                                        .when(lootItemConditionForWhiteGrape)
+                                        .when(lootItemConditionForGrapeCrop))
+                )
         );
     }
 
