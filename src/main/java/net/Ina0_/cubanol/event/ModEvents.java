@@ -51,4 +51,20 @@ public class ModEvents {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onBlockDestroyed(BlockEvent.BreakEvent event){
+        LevelAccessor level = event.getLevel();
+        BlockPos pos = event.getPos();
+        BlockState state = level.getBlockState(pos);
+        @Nullable Player player = event.getPlayer();
+
+        if(state.is(ModBlocks.GRAPE_CROP)){
+            event.setCanceled(true);
+            if(!level.isClientSide()){
+                ModBlocks.dropItemsFromState((ServerLevel) level, state, pos, player);
+                level.setBlock(pos, CropSupportBlock.getBlockStateFromGrapeCropState(state), 3);
+            }
+        }
+    }
 }
