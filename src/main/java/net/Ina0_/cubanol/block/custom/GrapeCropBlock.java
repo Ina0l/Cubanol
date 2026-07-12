@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
@@ -28,6 +29,8 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class GrapeCropBlock extends CropBlock{
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 12);
@@ -148,7 +151,8 @@ public class GrapeCropBlock extends CropBlock{
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
         if(!level.isClientSide()){
             if(state.getValue(AGE) == this.getMaxAge()){
-                if(ModBlocks.collectOrDropItemsFromState(((ServerLevel) level), player, state, pos) > 0){
+                List<ItemStack> drops = List.of(new ItemStack(ModItems.GRAPE.get(), level.getRandom().nextIntBetweenInclusive(1, 3)));
+                if(ModBlocks.collectOrDropItemsFromState((ServerLevel) level, player, pos, drops) > 0 || player.hasInfiniteMaterials()){
                     level.setBlock(pos, state.setValue(AGE, 8), 3);
                     return InteractionResult.SUCCESS;
                 }

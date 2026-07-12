@@ -271,7 +271,11 @@ public class ModBlocks {
         if(player!=null && player.hasInfiniteMaterials()){
             return 0;
         }
-        List<ItemStack> drops = state.getDrops(new LootParams.Builder(level).withOptionalParameter(LootContextParams.TOOL, player!=null? player.getMainHandItem(): ItemStack.EMPTY).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)));
+        List<ItemStack> drops = state.getDrops(
+                new LootParams.Builder(level)
+                        .withOptionalParameter(LootContextParams.TOOL, player!=null? player.getMainHandItem(): ItemStack.EMPTY)
+                        .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
+        );
         for(ItemStack stack: drops){
             level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
@@ -283,10 +287,14 @@ public class ModBlocks {
      * @return the number of drops
      */
     public static Integer collectOrDropItemsFromState(ServerLevel level, Player player, BlockState state, BlockPos pos){
+        List<ItemStack> drops = state.getDrops(new LootParams.Builder(level).withParameter(LootContextParams.TOOL, player.getMainHandItem()).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)));
+        return collectOrDropItemsFromState(level, player, pos, drops);
+    }
+
+    public static Integer collectOrDropItemsFromState(ServerLevel level, Player player, BlockPos pos, List<ItemStack> drops){
         if(player.hasInfiniteMaterials()){
             return 0;
         }
-        List<ItemStack> drops = state.getDrops(new LootParams.Builder(level).withParameter(LootContextParams.TOOL, player.getMainHandItem()).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)));
         for(ItemStack stack: drops){
             player.getInventory().add(stack);
             if(stack.isEmpty()){
