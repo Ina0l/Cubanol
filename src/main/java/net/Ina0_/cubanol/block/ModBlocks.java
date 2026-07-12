@@ -4,8 +4,12 @@ import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.custom.*;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -14,12 +18,17 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import javax.annotation.Nullable;
+import java.util.List;
 import java.util.function.Supplier;
 
 
@@ -239,5 +248,48 @@ public class ModBlocks {
 
     public static void register(IEventBus event_bus){
         BLOCKS.register(event_bus);
+    }
+
+
+    /**
+     *
+     * @return the number of drops
+     */
+    public static Integer dropItemsFromState(ServerLevel level, BlockState state, BlockPos pos, @Nullable Player player){
+        if(player!=null && player.hasInfiniteMaterials()){
+            return 0;
+        }
+        List<ItemStack> drops = state.getDrops(new LootParams.Builder(level).withOptionalParameter(LootContextParams.TOOL, player!=null? player.getMainHandItem(): ItemStack.EMPTY).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)));
+        for(ItemStack stack: drops){
+            level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
+        }
+        return drops.size();
+    }
+
+    /**
+     *
+     * @return the number of drops
+     */
+    public static Integer collectOrDropItemsFromState(ServerLevel level, Player player, BlockState state, BlockPos pos){
+        if(player.hasInfiniteMaterials()){
+            return 0;
+        }
+        List<ItemStack> drops = state.getDrops(new LootParams.Builder(level).withParameter(LootContextParams.TOOL, player.getMainHandItem()).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)));
+        for(ItemStack stack: drops){
+            player.getInventory().add(stack);
+            if(stack.isEmpty()){
+                continue;
+            }
+            level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
+        }
+        return drops.size();
+    }
+
+    public static Double getLocalizedRandom(BlockPos pos){
+        int sum = pos.getX() * 228479 + pos.getY() * 780287 + pos.getZ() * 2470777;
+        sum = sum ^ (sum >> 3) * 6610;
+        sum = sum ^ (sum << 14) * 40366;
+        sum = sum ^ (sum >> 1) * 71033;
+        return Math.abs(sum / Math.pow(2, 31));
     }
 }

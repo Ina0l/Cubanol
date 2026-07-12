@@ -18,6 +18,7 @@ import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
+import javax.annotation.Nullable;
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -47,6 +48,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "agave_crop",
                 "agave_crop",
                 pair -> models().cross(pair.getFirst(), pair.getSecond()).renderType("cutout"),
+                null,
                 AgaveCropBlock.AGE,
                 AgaveCropBlock.DRIED
         );
@@ -55,6 +57,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "agave_stem",
                 "agave_stem",
                 pair -> models().cross(pair.getFirst(), pair.getSecond()).renderType("cutout"),
+                null,
                 AgaveStemBlock.AGE,
                 AgaveStemBlock.DRIED
         );
@@ -63,6 +66,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "agave_flower",
                 "agave_flower",
                 pair -> models().cross(pair.getFirst(), pair.getSecond()).renderType("cutout"),
+                null,
                 AgaveFlowerBlock.AGE,
                 AgaveFlowerBlock.DRIED
         );
@@ -72,6 +76,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "crop_support",
                 "crop_support",
                 pair -> models().getExistingFile(pair.getSecond()),
+                null,
                 CropSupportBlock.NORTH,
                 CropSupportBlock.SOUTH,
                 CropSupportBlock.EAST,
@@ -100,7 +105,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block).forAllStates(function);
     }
 
-    public void blockBasedOnBlockStates(Block block, String modelName, String textureName, Function<Pair<String, ResourceLocation>, ModelFile> modelType, Property<?>... properties){
+    public void blockBasedOnBlockStates(Block block, String modelName, String textureName, Function<Pair<String, ResourceLocation>, ModelFile> modelType, @Nullable Function<String, Boolean> isExistingFile, Property<?>... properties){
+        if(isExistingFile==null){
+            isExistingFile = filePath -> true;
+        }
+        Function<String, Boolean> finalIsExistingFile = isExistingFile;
         Function<BlockState, ConfiguredModel[]> function = state -> {
             ConfiguredModel[] configuredModels = new ConfiguredModel[1];
             StringBuilder blockStatesPropertiesValues = new StringBuilder();
@@ -116,10 +125,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     }
                 }
             }
+            String filePath = "block/" + textureName + blockStatesPropertiesValues;
             configuredModels[0] = new ConfiguredModel(modelType.apply(
                     Pair.of(
-                            modelName + String.join("_", blockStatesPropertiesValues.toString()),
-                            ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/" + textureName + blockStatesPropertiesValues)
+                            modelName + blockStatesPropertiesValues,
+                            ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, finalIsExistingFile.apply(filePath)? filePath: "block/null")
                     ))
             );
             return configuredModels;
