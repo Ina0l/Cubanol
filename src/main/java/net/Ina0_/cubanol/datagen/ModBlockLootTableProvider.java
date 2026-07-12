@@ -3,6 +3,7 @@ package net.Ina0_.cubanol.datagen;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.AgaveFlowerBlock;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
+import net.Ina0_.cubanol.block.custom.GrapeCropBlock;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
@@ -95,6 +96,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                         LootItem.lootTableItem(ModItems.WIRE)
                                 ).when(lootItemConditionForCropSupportWEST))
                 )
+        );
+
+        LootItemCondition.Builder lootItemConditionForGrapeCrop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GRAPE_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GrapeCropBlock.AGE, ((GrapeCropBlock) ModBlocks.GRAPE_CROP.get()).getMaxAge()));
+        this.add(
+                ModBlocks.GRAPE_CROP.get(),
+                this.createCropDrops(ModBlocks.GRAPE_CROP.get(), ModItems.GRAPE.get(), ModItems.GRAPE_SEEDS.get(), lootItemConditionForGrapeCrop)
         );
     }
 

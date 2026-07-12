@@ -220,6 +220,18 @@ public class ModBlocks {
                     .strength(0.1f)
     ));
 
+    public static final DeferredBlock<Block> GRAPE_CROP = registerBlock("grape_crop", () -> new GrapeCropBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+                    .dynamicShape()
+                    .pushReaction(PushReaction.DESTROY)
+                    .isViewBlocking(ModBlocks::never)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .strength(0.5f)
+    ));
+
 
     /**
      * Used instead of the Block::never used in vanilla BlockProperties, which is private

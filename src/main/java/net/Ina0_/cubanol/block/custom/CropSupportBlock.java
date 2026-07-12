@@ -1,5 +1,6 @@
 package net.Ina0_.cubanol.block.custom;
 
+import net.Ina0_.cubanol.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -109,5 +110,16 @@ public class CropSupportBlock extends Block{
             case Direction.SOUTH -> BlockStateProperties.SOUTH;
             default -> throw new IllegalStateException("Unexpected value: " + direction);
         };
+    }
+
+    public static BlockState getBlockStateFromGrapeCropState(@NotNull BlockState state){
+        if(!state.is(ModBlocks.GRAPE_CROP)){
+            throw new IllegalArgumentException("state argument should be a grape crop state, got "+state.getBlock().getName()+" instead");
+        }
+        return ModBlocks.CROP_SUPPORT.get().defaultBlockState()
+                .setValue(NORTH, state.getValue(NORTH))
+                .setValue(SOUTH, state.getValue(SOUTH))
+                .setValue(EAST, state.getValue(EAST))
+                .setValue(WEST, state.getValue(WEST));
     }
 }

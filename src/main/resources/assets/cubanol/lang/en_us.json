@@ -4,6 +4,7 @@
     "item.cubanol.agave_seeds": "Agave Seeds",
     "item.cubanol.agave_syrup": "Agave Syrup",
     "item.cubanol.wire": "Iron Wire",
+    "item.cubanol.grape_seeds": "Grape Seeds",
 
     "block.cubanol.fake_wine_bottle": "Decorative Wine Bottle",
 
@@ -23,5 +24,6 @@
     "block.cubanol.agave_stem": "Agave Stem",
     "block.cubanol.agave_flower": "Agave Flowers",
 
-    "block.cubanol.crop_support": "Crop Support"
+    "block.cubanol.crop_support": "Crop Support",
+    "block.cubanol.grape_crop": "Grape Crop"
 }

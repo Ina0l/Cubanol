@@ -143,7 +143,7 @@ public class AgaveCropBlock extends CropBlock {
 
     @Override
     protected boolean isRandomlyTicking(BlockState state) {
-        return !state.getValue(DRIED);
+        return !state.getValue(DRIED) && super.isRandomlyTicking(state);
     }
 
     /**

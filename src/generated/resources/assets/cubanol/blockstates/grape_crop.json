@@ -1,0 +1,2500 @@
+{
+  "variants": {
+    "age=0,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north"
+    },
+    "age=0,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north_west"
+    },
+    "age=0,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north_south"
+    },
+    "age=0,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north_south_west"
+    },
+    "age=0,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_south"
+    },
+    "age=0,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_south_west"
+    },
+    "age=0,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_north_south"
+    },
+    "age=0,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_north_south_west"
+    },
+    "age=0,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_west"
+    },
+    "age=0,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_south_west"
+    },
+    "age=0,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_north_west"
+    },
+    "age=0,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_north_south_west"
+    },
+    "age=0,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_east"
+    },
+    "age=0,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_east_west"
+    },
+    "age=0,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_south_east"
+    },
+    "age=0,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_south_east_west"
+    },
+    "age=0,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_north_east"
+    },
+    "age=0,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_north_east_west"
+    },
+    "age=0,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_north_south_east"
+    },
+    "age=0,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingeast_north_south_east_west"
+    },
+    "age=0,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north_east"
+    },
+    "age=0,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north_east_west"
+    },
+    "age=0,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north_south_east"
+    },
+    "age=0,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingnorth_north_south_east_west"
+    },
+    "age=0,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_south_east"
+    },
+    "age=0,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_south_east_west"
+    },
+    "age=0,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_north_south_east"
+    },
+    "age=0,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingsouth_north_south_east_west"
+    },
+    "age=0,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_east_west"
+    },
+    "age=0,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_south_east_west"
+    },
+    "age=0,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_north_east_west"
+    },
+    "age=0,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=0,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age0_facingwest_north_south_east_west"
+    },
+    "age=1,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north"
+    },
+    "age=1,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north_west"
+    },
+    "age=1,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north_south"
+    },
+    "age=1,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north_south_west"
+    },
+    "age=1,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_south"
+    },
+    "age=1,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_south_west"
+    },
+    "age=1,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_north_south"
+    },
+    "age=1,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_north_south_west"
+    },
+    "age=1,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_west"
+    },
+    "age=1,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_south_west"
+    },
+    "age=1,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_north_west"
+    },
+    "age=1,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_north_south_west"
+    },
+    "age=1,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_east"
+    },
+    "age=1,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_east_west"
+    },
+    "age=1,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_south_east"
+    },
+    "age=1,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_south_east_west"
+    },
+    "age=1,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_north_east"
+    },
+    "age=1,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_north_east_west"
+    },
+    "age=1,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_north_south_east"
+    },
+    "age=1,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingeast_north_south_east_west"
+    },
+    "age=1,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north_east"
+    },
+    "age=1,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north_east_west"
+    },
+    "age=1,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north_south_east"
+    },
+    "age=1,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingnorth_north_south_east_west"
+    },
+    "age=1,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_south_east"
+    },
+    "age=1,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_south_east_west"
+    },
+    "age=1,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_north_south_east"
+    },
+    "age=1,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingsouth_north_south_east_west"
+    },
+    "age=1,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_east_west"
+    },
+    "age=1,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_south_east_west"
+    },
+    "age=1,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_north_east_west"
+    },
+    "age=1,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=1,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age1_facingwest_north_south_east_west"
+    },
+    "age=10,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north"
+    },
+    "age=10,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north_west"
+    },
+    "age=10,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north_south"
+    },
+    "age=10,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north_south_west"
+    },
+    "age=10,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_south"
+    },
+    "age=10,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_south_west"
+    },
+    "age=10,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_north_south"
+    },
+    "age=10,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_north_south_west"
+    },
+    "age=10,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_west"
+    },
+    "age=10,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_south_west"
+    },
+    "age=10,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_north_west"
+    },
+    "age=10,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_north_south_west"
+    },
+    "age=10,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_east"
+    },
+    "age=10,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_east_west"
+    },
+    "age=10,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_south_east"
+    },
+    "age=10,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_south_east_west"
+    },
+    "age=10,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_north_east"
+    },
+    "age=10,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_north_east_west"
+    },
+    "age=10,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_north_south_east"
+    },
+    "age=10,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingeast_north_south_east_west"
+    },
+    "age=10,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north_east"
+    },
+    "age=10,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north_east_west"
+    },
+    "age=10,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north_south_east"
+    },
+    "age=10,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingnorth_north_south_east_west"
+    },
+    "age=10,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_south_east"
+    },
+    "age=10,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_south_east_west"
+    },
+    "age=10,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_north_south_east"
+    },
+    "age=10,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingsouth_north_south_east_west"
+    },
+    "age=10,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_east_west"
+    },
+    "age=10,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_south_east_west"
+    },
+    "age=10,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_north_east_west"
+    },
+    "age=10,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=10,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age10_facingwest_north_south_east_west"
+    },
+    "age=11,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north"
+    },
+    "age=11,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north_west"
+    },
+    "age=11,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north_south"
+    },
+    "age=11,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north_south_west"
+    },
+    "age=11,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_south"
+    },
+    "age=11,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_south_west"
+    },
+    "age=11,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_north_south"
+    },
+    "age=11,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_north_south_west"
+    },
+    "age=11,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_west"
+    },
+    "age=11,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_south_west"
+    },
+    "age=11,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_north_west"
+    },
+    "age=11,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_north_south_west"
+    },
+    "age=11,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_east"
+    },
+    "age=11,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_east_west"
+    },
+    "age=11,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_south_east"
+    },
+    "age=11,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_south_east_west"
+    },
+    "age=11,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_north_east"
+    },
+    "age=11,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_north_east_west"
+    },
+    "age=11,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_north_south_east"
+    },
+    "age=11,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingeast_north_south_east_west"
+    },
+    "age=11,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north_east"
+    },
+    "age=11,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north_east_west"
+    },
+    "age=11,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north_south_east"
+    },
+    "age=11,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingnorth_north_south_east_west"
+    },
+    "age=11,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_south_east"
+    },
+    "age=11,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_south_east_west"
+    },
+    "age=11,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_north_south_east"
+    },
+    "age=11,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingsouth_north_south_east_west"
+    },
+    "age=11,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_east_west"
+    },
+    "age=11,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_south_east_west"
+    },
+    "age=11,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_north_east_west"
+    },
+    "age=11,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=11,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age11_facingwest_north_south_east_west"
+    },
+    "age=12,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north"
+    },
+    "age=12,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north_west"
+    },
+    "age=12,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north_south"
+    },
+    "age=12,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north_south_west"
+    },
+    "age=12,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_south"
+    },
+    "age=12,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_south_west"
+    },
+    "age=12,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_north_south"
+    },
+    "age=12,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_north_south_west"
+    },
+    "age=12,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_west"
+    },
+    "age=12,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_south_west"
+    },
+    "age=12,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_north_west"
+    },
+    "age=12,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_north_south_west"
+    },
+    "age=12,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_east"
+    },
+    "age=12,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_east_west"
+    },
+    "age=12,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_south_east"
+    },
+    "age=12,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_south_east_west"
+    },
+    "age=12,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_north_east"
+    },
+    "age=12,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_north_east_west"
+    },
+    "age=12,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_north_south_east"
+    },
+    "age=12,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingeast_north_south_east_west"
+    },
+    "age=12,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north_east"
+    },
+    "age=12,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north_east_west"
+    },
+    "age=12,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north_south_east"
+    },
+    "age=12,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingnorth_north_south_east_west"
+    },
+    "age=12,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_south_east"
+    },
+    "age=12,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_south_east_west"
+    },
+    "age=12,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_north_south_east"
+    },
+    "age=12,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingsouth_north_south_east_west"
+    },
+    "age=12,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_east_west"
+    },
+    "age=12,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_south_east_west"
+    },
+    "age=12,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_north_east_west"
+    },
+    "age=12,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=12,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age12_facingwest_north_south_east_west"
+    },
+    "age=2,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north"
+    },
+    "age=2,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north_west"
+    },
+    "age=2,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north_south"
+    },
+    "age=2,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north_south_west"
+    },
+    "age=2,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_south"
+    },
+    "age=2,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_south_west"
+    },
+    "age=2,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_north_south"
+    },
+    "age=2,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_north_south_west"
+    },
+    "age=2,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_west"
+    },
+    "age=2,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_south_west"
+    },
+    "age=2,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_north_west"
+    },
+    "age=2,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_north_south_west"
+    },
+    "age=2,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_east"
+    },
+    "age=2,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_east_west"
+    },
+    "age=2,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_south_east"
+    },
+    "age=2,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_south_east_west"
+    },
+    "age=2,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_north_east"
+    },
+    "age=2,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_north_east_west"
+    },
+    "age=2,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_north_south_east"
+    },
+    "age=2,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingeast_north_south_east_west"
+    },
+    "age=2,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north_east"
+    },
+    "age=2,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north_east_west"
+    },
+    "age=2,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north_south_east"
+    },
+    "age=2,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingnorth_north_south_east_west"
+    },
+    "age=2,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_south_east"
+    },
+    "age=2,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_south_east_west"
+    },
+    "age=2,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_north_south_east"
+    },
+    "age=2,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingsouth_north_south_east_west"
+    },
+    "age=2,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_east_west"
+    },
+    "age=2,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_south_east_west"
+    },
+    "age=2,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_north_east_west"
+    },
+    "age=2,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=2,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age2_facingwest_north_south_east_west"
+    },
+    "age=3,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north"
+    },
+    "age=3,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north_west"
+    },
+    "age=3,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north_south"
+    },
+    "age=3,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north_south_west"
+    },
+    "age=3,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_south"
+    },
+    "age=3,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_south_west"
+    },
+    "age=3,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_north_south"
+    },
+    "age=3,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_north_south_west"
+    },
+    "age=3,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_west"
+    },
+    "age=3,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_south_west"
+    },
+    "age=3,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_north_west"
+    },
+    "age=3,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_north_south_west"
+    },
+    "age=3,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_east"
+    },
+    "age=3,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_east_west"
+    },
+    "age=3,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_south_east"
+    },
+    "age=3,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_south_east_west"
+    },
+    "age=3,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_north_east"
+    },
+    "age=3,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_north_east_west"
+    },
+    "age=3,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_north_south_east"
+    },
+    "age=3,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingeast_north_south_east_west"
+    },
+    "age=3,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north_east"
+    },
+    "age=3,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north_east_west"
+    },
+    "age=3,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north_south_east"
+    },
+    "age=3,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingnorth_north_south_east_west"
+    },
+    "age=3,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_south_east"
+    },
+    "age=3,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_south_east_west"
+    },
+    "age=3,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_north_south_east"
+    },
+    "age=3,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingsouth_north_south_east_west"
+    },
+    "age=3,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_east_west"
+    },
+    "age=3,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_south_east_west"
+    },
+    "age=3,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_north_east_west"
+    },
+    "age=3,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=3,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age3_facingwest_north_south_east_west"
+    },
+    "age=4,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north"
+    },
+    "age=4,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north_west"
+    },
+    "age=4,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north_south"
+    },
+    "age=4,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north_south_west"
+    },
+    "age=4,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_south"
+    },
+    "age=4,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_south_west"
+    },
+    "age=4,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_north_south"
+    },
+    "age=4,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_north_south_west"
+    },
+    "age=4,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_west"
+    },
+    "age=4,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_south_west"
+    },
+    "age=4,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_north_west"
+    },
+    "age=4,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_north_south_west"
+    },
+    "age=4,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_east"
+    },
+    "age=4,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_east_west"
+    },
+    "age=4,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_south_east"
+    },
+    "age=4,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_south_east_west"
+    },
+    "age=4,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_north_east"
+    },
+    "age=4,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_north_east_west"
+    },
+    "age=4,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_north_south_east"
+    },
+    "age=4,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingeast_north_south_east_west"
+    },
+    "age=4,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north_east"
+    },
+    "age=4,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north_east_west"
+    },
+    "age=4,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north_south_east"
+    },
+    "age=4,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingnorth_north_south_east_west"
+    },
+    "age=4,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_south_east"
+    },
+    "age=4,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_south_east_west"
+    },
+    "age=4,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_north_south_east"
+    },
+    "age=4,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingsouth_north_south_east_west"
+    },
+    "age=4,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_east_west"
+    },
+    "age=4,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_south_east_west"
+    },
+    "age=4,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_north_east_west"
+    },
+    "age=4,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=4,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age4_facingwest_north_south_east_west"
+    },
+    "age=5,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north"
+    },
+    "age=5,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north_west"
+    },
+    "age=5,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north_south"
+    },
+    "age=5,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north_south_west"
+    },
+    "age=5,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_south"
+    },
+    "age=5,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_south_west"
+    },
+    "age=5,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_north_south"
+    },
+    "age=5,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_north_south_west"
+    },
+    "age=5,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_west"
+    },
+    "age=5,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_south_west"
+    },
+    "age=5,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_north_west"
+    },
+    "age=5,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_north_south_west"
+    },
+    "age=5,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_east"
+    },
+    "age=5,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_east_west"
+    },
+    "age=5,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_south_east"
+    },
+    "age=5,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_south_east_west"
+    },
+    "age=5,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_north_east"
+    },
+    "age=5,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_north_east_west"
+    },
+    "age=5,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_north_south_east"
+    },
+    "age=5,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingeast_north_south_east_west"
+    },
+    "age=5,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north_east"
+    },
+    "age=5,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north_east_west"
+    },
+    "age=5,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north_south_east"
+    },
+    "age=5,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingnorth_north_south_east_west"
+    },
+    "age=5,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_south_east"
+    },
+    "age=5,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_south_east_west"
+    },
+    "age=5,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_north_south_east"
+    },
+    "age=5,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingsouth_north_south_east_west"
+    },
+    "age=5,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_east_west"
+    },
+    "age=5,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_south_east_west"
+    },
+    "age=5,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_north_east_west"
+    },
+    "age=5,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=5,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age5_facingwest_north_south_east_west"
+    },
+    "age=6,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north"
+    },
+    "age=6,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north_west"
+    },
+    "age=6,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north_south"
+    },
+    "age=6,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north_south_west"
+    },
+    "age=6,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_south"
+    },
+    "age=6,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_south_west"
+    },
+    "age=6,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_north_south"
+    },
+    "age=6,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_north_south_west"
+    },
+    "age=6,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_west"
+    },
+    "age=6,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_south_west"
+    },
+    "age=6,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_north_west"
+    },
+    "age=6,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_north_south_west"
+    },
+    "age=6,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_east"
+    },
+    "age=6,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_east_west"
+    },
+    "age=6,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_south_east"
+    },
+    "age=6,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_south_east_west"
+    },
+    "age=6,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_north_east"
+    },
+    "age=6,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_north_east_west"
+    },
+    "age=6,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_north_south_east"
+    },
+    "age=6,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingeast_north_south_east_west"
+    },
+    "age=6,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north_east"
+    },
+    "age=6,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north_east_west"
+    },
+    "age=6,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north_south_east"
+    },
+    "age=6,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingnorth_north_south_east_west"
+    },
+    "age=6,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_south_east"
+    },
+    "age=6,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_south_east_west"
+    },
+    "age=6,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_north_south_east"
+    },
+    "age=6,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingsouth_north_south_east_west"
+    },
+    "age=6,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_east_west"
+    },
+    "age=6,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_south_east_west"
+    },
+    "age=6,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_north_east_west"
+    },
+    "age=6,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=6,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age6_facingwest_north_south_east_west"
+    },
+    "age=7,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north"
+    },
+    "age=7,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north_west"
+    },
+    "age=7,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north_south"
+    },
+    "age=7,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north_south_west"
+    },
+    "age=7,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_south"
+    },
+    "age=7,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_south_west"
+    },
+    "age=7,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_north_south"
+    },
+    "age=7,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_north_south_west"
+    },
+    "age=7,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_west"
+    },
+    "age=7,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_south_west"
+    },
+    "age=7,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_north_west"
+    },
+    "age=7,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_north_south_west"
+    },
+    "age=7,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_east"
+    },
+    "age=7,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_east_west"
+    },
+    "age=7,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_south_east"
+    },
+    "age=7,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_south_east_west"
+    },
+    "age=7,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_north_east"
+    },
+    "age=7,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_north_east_west"
+    },
+    "age=7,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_north_south_east"
+    },
+    "age=7,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingeast_north_south_east_west"
+    },
+    "age=7,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north_east"
+    },
+    "age=7,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north_east_west"
+    },
+    "age=7,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north_south_east"
+    },
+    "age=7,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingnorth_north_south_east_west"
+    },
+    "age=7,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_south_east"
+    },
+    "age=7,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_south_east_west"
+    },
+    "age=7,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_north_south_east"
+    },
+    "age=7,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingsouth_north_south_east_west"
+    },
+    "age=7,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_east_west"
+    },
+    "age=7,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_south_east_west"
+    },
+    "age=7,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_north_east_west"
+    },
+    "age=7,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=7,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age7_facingwest_north_south_east_west"
+    },
+    "age=8,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north"
+    },
+    "age=8,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north_west"
+    },
+    "age=8,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north_south"
+    },
+    "age=8,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north_south_west"
+    },
+    "age=8,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_south"
+    },
+    "age=8,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_south_west"
+    },
+    "age=8,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_north_south"
+    },
+    "age=8,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_north_south_west"
+    },
+    "age=8,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_west"
+    },
+    "age=8,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_south_west"
+    },
+    "age=8,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_north_west"
+    },
+    "age=8,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_north_south_west"
+    },
+    "age=8,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_east"
+    },
+    "age=8,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_east_west"
+    },
+    "age=8,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_south_east"
+    },
+    "age=8,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_south_east_west"
+    },
+    "age=8,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_north_east"
+    },
+    "age=8,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_north_east_west"
+    },
+    "age=8,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_north_south_east"
+    },
+    "age=8,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingeast_north_south_east_west"
+    },
+    "age=8,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north_east"
+    },
+    "age=8,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north_east_west"
+    },
+    "age=8,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north_south_east"
+    },
+    "age=8,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingnorth_north_south_east_west"
+    },
+    "age=8,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_south_east"
+    },
+    "age=8,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_south_east_west"
+    },
+    "age=8,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_north_south_east"
+    },
+    "age=8,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingsouth_north_south_east_west"
+    },
+    "age=8,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_east_west"
+    },
+    "age=8,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_south_east_west"
+    },
+    "age=8,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_north_east_west"
+    },
+    "age=8,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=8,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age8_facingwest_north_south_east_west"
+    },
+    "age=9,east=false,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north"
+    },
+    "age=9,east=false,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north_west"
+    },
+    "age=9,east=false,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north_south"
+    },
+    "age=9,east=false,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north_south_west"
+    },
+    "age=9,east=false,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_south"
+    },
+    "age=9,east=false,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_south_west"
+    },
+    "age=9,east=false,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_north_south"
+    },
+    "age=9,east=false,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_north_south_west"
+    },
+    "age=9,east=false,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_west"
+    },
+    "age=9,east=false,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_south_west"
+    },
+    "age=9,east=false,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_north_west"
+    },
+    "age=9,east=false,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=false,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_north_south_west"
+    },
+    "age=9,east=true,facing=east,north=false,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_east"
+    },
+    "age=9,east=true,facing=east,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_east_west"
+    },
+    "age=9,east=true,facing=east,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_south_east"
+    },
+    "age=9,east=true,facing=east,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_south_east_west"
+    },
+    "age=9,east=true,facing=east,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_north_east"
+    },
+    "age=9,east=true,facing=east,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_north_east_west"
+    },
+    "age=9,east=true,facing=east,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_north_south_east"
+    },
+    "age=9,east=true,facing=east,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingeast_north_south_east_west"
+    },
+    "age=9,east=true,facing=north,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=north,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=north,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=north,north=false,south=true,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=north,north=true,south=false,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north_east"
+    },
+    "age=9,east=true,facing=north,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north_east_west"
+    },
+    "age=9,east=true,facing=north,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north_south_east"
+    },
+    "age=9,east=true,facing=north,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingnorth_north_south_east_west"
+    },
+    "age=9,east=true,facing=south,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=south,north=false,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=south,north=false,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_south_east"
+    },
+    "age=9,east=true,facing=south,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_south_east_west"
+    },
+    "age=9,east=true,facing=south,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=south,north=true,south=false,west=true": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=south,north=true,south=true,west=false": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_north_south_east"
+    },
+    "age=9,east=true,facing=south,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingsouth_north_south_east_west"
+    },
+    "age=9,east=true,facing=west,north=false,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=west,north=false,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_east_west"
+    },
+    "age=9,east=true,facing=west,north=false,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=west,north=false,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_south_east_west"
+    },
+    "age=9,east=true,facing=west,north=true,south=false,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=west,north=true,south=false,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_north_east_west"
+    },
+    "age=9,east=true,facing=west,north=true,south=true,west=false": {
+      "model": "cubanol:block/null"
+    },
+    "age=9,east=true,facing=west,north=true,south=true,west=true": {
+      "model": "cubanol:block/grape_crop_age9_facingwest_north_south_east_west"
+    }
+  }
+}

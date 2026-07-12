@@ -3,10 +3,7 @@ package net.Ina0_.cubanol.datagen;
 import com.mojang.datafixers.util.Pair;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.custom.AgaveCropBlock;
-import net.Ina0_.cubanol.block.custom.AgaveFlowerBlock;
-import net.Ina0_.cubanol.block.custom.AgaveStemBlock;
-import net.Ina0_.cubanol.block.custom.CropSupportBlock;
+import net.Ina0_.cubanol.block.custom.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -84,6 +81,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 CropSupportBlock.WEST
         );
         simpleBlockItem(ModBlocks.CROP_SUPPORT.get(), models().getExistingFile(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/crop_support")));
+
+        Function<String, Boolean> isExistingFileForGrapeCrop = filePath -> {
+            String[] splitFilePath = filePath.split("/");
+            String fileName = splitFilePath[splitFilePath.length - 1];
+            String[] splitFileName = fileName.split("_");
+            String facing = splitFileName[3].substring(6);
+            String[] cableFacings = Arrays.copyOfRange(splitFileName, 4, splitFileName.length);
+            return Arrays.asList(cableFacings).contains(facing);
+        };
+        blockBasedOnBlockStates(
+                ModBlocks.GRAPE_CROP.get(),
+                "grape_crop",
+                "grape_crop",
+                pair -> models().getExistingFile(pair.getSecond()),
+                isExistingFileForGrapeCrop,
+                GrapeCropBlock.AGE,
+                GrapeCropBlock.VINE_HANGING_SIDE,
+                GrapeCropBlock.NORTH,
+                GrapeCropBlock.SOUTH,
+                GrapeCropBlock.EAST,
+                GrapeCropBlock.WEST
+        );
     }
 
     public void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){

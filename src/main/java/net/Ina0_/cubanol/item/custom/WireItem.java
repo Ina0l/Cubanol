@@ -34,7 +34,7 @@ public class WireItem extends Item {
         ItemStack stack = context.getItemInHand();
         if(!level.isClientSide()){
             if (player != null) {
-                if (state.is(ModBlocks.CROP_SUPPORT)) {
+                if (state.is(ModBlocks.CROP_SUPPORT) || state.is(ModBlocks.GRAPE_CROP)) {
                     if (player.getPersistentData().contains(Cubanol.MOD_ID + ":wire_selected_block")) {
                         int[] intArray = ((IntArrayTag) Objects.requireNonNull(player.getPersistentData().get(Cubanol.MOD_ID + ":wire_selected_block"))).getAsIntArray();
                         BlockPos previouslySelectedPos = new BlockPos(intArray[0], intArray[1], intArray[2]);
@@ -70,7 +70,7 @@ public class WireItem extends Item {
             }
         } else {
             if (player != null) {
-                if (state.is(ModBlocks.CROP_SUPPORT)) {
+                if (state.is(ModBlocks.CROP_SUPPORT) || state.is(ModBlocks.GRAPE_CROP)) {
                     level.playSound(player, pos, SoundEvents.CHAIN_PLACE, SoundSource.BLOCKS);
                     return InteractionResult.SUCCESS;
                 }
