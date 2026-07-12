@@ -3,13 +3,13 @@
     "cubanol:agave_seeds": {
       "chance": 0.5
     },
-    "cubanol:anise": {
-      "chance": 0.3
-    },
     "cubanol:black_grape": {
       "chance": 0.3
     },
     "cubanol:black_grape_seeds": {
+      "chance": 0.3
+    },
+    "cubanol:star_anise": {
       "chance": 0.3
     },
     "cubanol:white_grape": {

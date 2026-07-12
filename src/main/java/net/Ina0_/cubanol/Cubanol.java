@@ -58,7 +58,7 @@ public class Cubanol {
             event.accept(ModItems.AGAVE_SYRUP);
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.ANISE);
+            event.accept(ModItems.STAR_ANISE);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.OAK_TABLE);

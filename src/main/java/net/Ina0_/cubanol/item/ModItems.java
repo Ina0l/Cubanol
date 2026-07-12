@@ -30,7 +30,7 @@ public class ModItems {
             )
     ));
 
-    public static final DeferredItem<Item> ANISE = ITEMS.register("anise", () -> new Item(
+    public static final DeferredItem<Item> STAR_ANISE = ITEMS.register("star_anise", () -> new Item(
             new Item.Properties()
     ));
 

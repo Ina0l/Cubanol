@@ -10,10 +10,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -80,8 +78,8 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    protected @NotNull ItemLike getBaseSeedId() {
-        return ModItems.BLACK_GRAPE_SEEDS;
+    public @NotNull ItemStack getCloneItemStack(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state) {
+        return new ItemStack(state.getValue(WHITE)? ModItems.WHITE_GRAPE_SEEDS.get(): ModItems.BLACK_GRAPE_SEEDS.get());
     }
 
     @Override
@@ -260,8 +258,8 @@ public class GrapeCropBlock extends CropBlock{
         SHAPES = new VoxelShape[]{
                 Block.box(5.0, 0.0, 0.0, 15.0, 14.0, 16.0),
                 Block.box(1.0, 0.0, 0.0, 11.0, 14.0, 16.0),
-                Block.box(0.0, 0.0, 5.0, 16.0, 14.0, 15.0),
-                Block.box(0.0, 0.0, 1.0, 16.0, 14.0, 11.0)
+                Block.box(0.0, 0.0, 1.0, 16.0, 14.0, 11.0),
+                Block.box(0.0, 0.0, 5.0, 16.0, 14.0, 15.0)
         };
     }
 }

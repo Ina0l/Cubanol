@@ -3,9 +3,11 @@ package net.Ina0_.cubanol.item.custom;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
+import net.Ina0_.cubanol.block.custom.GrapeCropBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.IntArrayTag;
+import net.minecraft.nbt.IntTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -35,6 +37,9 @@ public class WireItem extends Item {
         if(!level.isClientSide()){
             if (player != null) {
                 if (state.is(ModBlocks.CROP_SUPPORT) || state.is(ModBlocks.GRAPE_CROP)) {
+                    if(state.is(ModBlocks.GRAPE_CROP) && state.getValue(GrapeCropBlock.AGE) == ((GrapeCropBlock)state.getBlock()).getMaxAge()){
+                        return InteractionResult.PASS;
+                    }
                     if (player.getPersistentData().contains(Cubanol.MOD_ID + ":wire_selected_block")) {
                         int[] intArray = ((IntArrayTag) Objects.requireNonNull(player.getPersistentData().get(Cubanol.MOD_ID + ":wire_selected_block"))).getAsIntArray();
                         BlockPos previouslySelectedPos = new BlockPos(intArray[0], intArray[1], intArray[2]);
@@ -46,17 +51,25 @@ public class WireItem extends Item {
                                 }
                                 if (previouslySelectedPos.getX() + direction.getStepX() == pos.getX() && previouslySelectedPos.getZ() + direction.getStepZ() == pos.getZ()) {
                                     if (previouslySelectedState.getValue(CropSupportBlock.getPropertyFromDirection(direction))) {
-                                        level.setBlock(pos, state.setValue(CropSupportBlock.getPropertyFromDirection(direction.getOpposite()), false), 2);
-                                        level.setBlock(previouslySelectedPos, previouslySelectedState.setValue(CropSupportBlock.getPropertyFromDirection(direction), false), 2);
-                                        if (!player.hasInfiniteMaterials()) {
-                                            stack.setCount(stack.getCount() + 1);
+                                        if(!player.getPersistentData().contains(Cubanol.MOD_ID + ":wire_selected_by_fast_selection")){
+                                            level.setBlock(pos, state.setValue(CropSupportBlock.getPropertyFromDirection(direction.getOpposite()), false), 2);
+                                            level.setBlock(previouslySelectedPos, previouslySelectedState.setValue(CropSupportBlock.getPropertyFromDirection(direction), false), 2);
+                                            player.getPersistentData().remove(Cubanol.MOD_ID + ":wire_selected_block");
+                                            if (!player.hasInfiniteMaterials()) {
+                                                stack.setCount(stack.getCount() + 1);
+                                            }
+                                        } else {
+                                            player.getPersistentData().put(Cubanol.MOD_ID + ":wire_selected_block", new IntArrayTag(List.of(pos.getX(), pos.getY(), pos.getZ())));
+                                            player.getPersistentData().remove(Cubanol.MOD_ID + ":wire_selected_by_fast_selection");
+                                            return InteractionResult.SUCCESS;
                                         }
                                     } else {
                                         level.setBlock(pos, state.setValue(CropSupportBlock.getPropertyFromDirection(direction.getOpposite()), true), 2);
                                         level.setBlock(previouslySelectedPos, previouslySelectedState.setValue(CropSupportBlock.getPropertyFromDirection(direction), true), 2);
+                                        player.getPersistentData().put(Cubanol.MOD_ID + ":wire_selected_block", new IntArrayTag(List.of(pos.getX(), pos.getY(), pos.getZ())));
+                                        player.getPersistentData().put(Cubanol.MOD_ID + ":wire_selected_by_fast_selection", IntTag.valueOf(0));
                                         stack.consume(1, player);
                                     }
-                                    player.getPersistentData().put(Cubanol.MOD_ID + ":wire_selected_block", new IntArrayTag(List.of(pos.getX(), pos.getY(), pos.getZ())));
                                     level.playSound(player, pos, SoundEvents.CHAIN_PLACE, SoundSource.BLOCKS);
                                     return InteractionResult.CONSUME;
                                 }
@@ -65,12 +78,16 @@ public class WireItem extends Item {
                     }
                     level.playSound(player, pos, SoundEvents.CHAIN_PLACE, SoundSource.BLOCKS);
                     player.getPersistentData().put(Cubanol.MOD_ID + ":wire_selected_block", new IntArrayTag(List.of(pos.getX(), pos.getY(), pos.getZ())));
+                    player.getPersistentData().remove(Cubanol.MOD_ID + ":wire_selected_by_fast_selection");
                     return InteractionResult.SUCCESS;
                 }
             }
         } else {
             if (player != null) {
                 if (state.is(ModBlocks.CROP_SUPPORT) || state.is(ModBlocks.GRAPE_CROP)) {
+                    if(state.is(ModBlocks.GRAPE_CROP) && state.getValue(GrapeCropBlock.AGE) == ((GrapeCropBlock)state.getBlock()).getMaxAge()){
+                        return InteractionResult.PASS;
+                    }
                     level.playSound(player, pos, SoundEvents.CHAIN_PLACE, SoundSource.BLOCKS);
                     return InteractionResult.SUCCESS;
                 }
