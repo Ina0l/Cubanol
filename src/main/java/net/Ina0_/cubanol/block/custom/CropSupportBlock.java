@@ -43,10 +43,7 @@ public class CropSupportBlock extends Block{
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(NORTH)
-                .add(SOUTH)
-                .add(EAST)
-                .add(WEST);
+        builder.add(NORTH, SOUTH, EAST, WEST);
     }
 
     @Override
@@ -72,18 +69,7 @@ public class CropSupportBlock extends Block{
     protected void neighborChanged(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
         if(!level.isClientSide()){
             if(pos.getY() == neighborPos.getY()){
-                Direction neighborDirection = null;
-                for (Direction direction : Direction.values()) {
-                    if (direction == Direction.DOWN || direction == Direction.UP) {
-                        continue;
-                    }
-                    if (pos.getX() + direction.getStepX() == neighborPos.getX() && pos.getZ() + direction.getStepZ() == neighborPos.getZ()) {
-                        neighborDirection = direction;
-                    }
-                }
-                if (neighborDirection == null) {
-                    throw new NullPointerException("neighborDirection is null");
-                }
+                Direction neighborDirection = ModBlocks.getNeighborDirection(pos, neighborPos);
                 if (level.getBlockState(neighborPos).getBlock() instanceof CropSupportBlock || level.getBlockState(neighborPos).getBlock() instanceof  GrapeCropBlock) {
                     if(!state.getValue(getPropertyFromDirection(neighborDirection)) && level.getBlockState(neighborPos).getValue(getPropertyFromDirection(neighborDirection.getOpposite()))) {
                         level.playSound(null, pos, SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS);

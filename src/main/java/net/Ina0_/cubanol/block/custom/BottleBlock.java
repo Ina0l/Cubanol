@@ -12,10 +12,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class FakeBottleBlock extends DirectionalBlock{
+public class BottleBlock extends DirectionalBlock{
     private final Supplier<VoxelShape> fullBottleShape;
 
-    public FakeBottleBlock(Properties properties, Supplier<VoxelShape> fullBottleShape) {
+    public BottleBlock(Properties properties, Supplier<VoxelShape> fullBottleShape) {
         super(properties);
         this.fullBottleShape = fullBottleShape;
     }

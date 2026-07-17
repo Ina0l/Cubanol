@@ -120,13 +120,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
             ConfiguredModel[] configuredModels = new ConfiguredModel[1];
             if(!isModelCrossShaped) {
                 configuredModels[0] = new ConfiguredModel(models().crop(
-                        modelName + block.getAge(state),
-                        ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/" + textureName + block.getAge(state))
+                        modelName + "_age" + block.getAge(state),
+                        ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/" + textureName + "_age" + block.getAge(state))
                 ).renderType("cutout"));
             } else {
                 configuredModels[0] = new ConfiguredModel(models().cross(
-                        modelName + block.getAge(state),
-                        ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/" + textureName + block.getAge(state))
+                        modelName + "_age" + block.getAge(state),
+                        ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/" + textureName + "_age" + block.getAge(state))
                 ).renderType("cutout"));
             }
             return configuredModels;

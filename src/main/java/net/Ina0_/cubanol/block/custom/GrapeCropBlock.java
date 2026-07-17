@@ -58,13 +58,7 @@ public class GrapeCropBlock extends CropBlock{
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(AGE)
-                .add(NORTH)
-                .add(SOUTH)
-                .add(EAST)
-                .add(WEST)
-                .add(VINE_HANGING_SIDE)
-                .add(WHITE);
+        builder.add(AGE, NORTH, SOUTH, EAST, WEST, VINE_HANGING_SIDE, WHITE);
     }
 
     @Override

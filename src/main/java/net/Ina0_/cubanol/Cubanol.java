@@ -56,6 +56,9 @@ public class Cubanol {
             event.accept(ModItems.BLACK_GRAPE);
             event.accept(ModItems.WHITE_GRAPE);
             event.accept(ModItems.AGAVE_SYRUP);
+            event.accept(ModItems.AGAVE_SEEDS);
+            event.accept(ModItems.BLACK_GRAPE_SEEDS);
+            event.accept(ModItems.WHITE_GRAPE_SEEDS);
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.STAR_ANISE);
@@ -75,9 +78,7 @@ public class Cubanol {
             event.accept(ModBlocks.FAKE_WINE_BOTTLE);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModItems.AGAVE_SEEDS);
-            event.accept(ModItems.BLACK_GRAPE_SEEDS);
-            event.accept(ModItems.WHITE_GRAPE_SEEDS);
+
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
             event.accept(ModBlocks.CROP_SUPPORT);

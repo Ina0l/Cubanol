@@ -109,6 +109,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput);
 
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CROP_SUPPORT)
+                .pattern("S")
+                .pattern("S")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .unlockedBy("has_stick", has(Items.STICK))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WIRE)
                 .pattern(" I ")
                 .pattern("ISI")
@@ -123,7 +130,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_glass_bottle", has(Items.GLASS_BOTTLE))
                 .save(recipeOutput);
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, Items.GLASS_BOTTLE)
                 .requires(ModBlocks.FAKE_WINE_BOTTLE)
                 .unlockedBy("has_fake_wine_bottle", has(ModBlocks.FAKE_WINE_BOTTLE))

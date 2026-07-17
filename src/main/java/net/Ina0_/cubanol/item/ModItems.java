@@ -34,12 +34,12 @@ public class ModItems {
             new Item.Properties()
     ));
 
-    public static final DeferredItem<Item> AGAVE_SEEDS = ITEMS.register("agave_seeds", () -> new ItemNameBlockItem(
+    public static final DeferredItem<ItemNameBlockItem> AGAVE_SEEDS = ITEMS.register("agave_seeds", () -> new ItemNameBlockItem(
             ModBlocks.AGAVE_CROP.get(),
             new Item.Properties()
     ));
 
-    public static final DeferredItem<Item> AGAVE_SYRUP = ITEMS.register("agave_syrup", () -> new AgaveSyrupItem(
+    public static final DeferredItem<AgaveSyrupItem> AGAVE_SYRUP = ITEMS.register("agave_syrup", () -> new AgaveSyrupItem(
             new Item.Properties()
                     .food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.1F).build())
     ));
@@ -48,12 +48,12 @@ public class ModItems {
             new Item.Properties()
     ));
 
-    public static final DeferredItem<Item> BLACK_GRAPE_SEEDS = ITEMS.register("black_grape_seeds", () -> new GrapeSeedsItem(
+    public static final DeferredItem<GrapeSeedsItem> BLACK_GRAPE_SEEDS = ITEMS.register("black_grape_seeds", () -> new GrapeSeedsItem(
             new Item.Properties(),
             false
     ));
 
-    public static final DeferredItem<Item> WHITE_GRAPE_SEEDS = ITEMS.register("white_grape_seeds", () -> new GrapeSeedsItem(
+    public static final DeferredItem<GrapeSeedsItem> WHITE_GRAPE_SEEDS = ITEMS.register("white_grape_seeds", () -> new GrapeSeedsItem(
             new Item.Properties(),
             true
     ));

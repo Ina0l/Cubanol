@@ -4,6 +4,7 @@ import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.custom.*;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -26,6 +27,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -36,7 +38,7 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Cubanol.MOD_ID);
 
 
-    public static final DeferredBlock<Block> OAK_TABLE = registerBlock("oak_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> OAK_TABLE = registerBlock("oak_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.OAK_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -47,7 +49,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> SPRUCE_TABLE = registerBlock("spruce_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> SPRUCE_TABLE = registerBlock("spruce_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.SPRUCE_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -58,7 +60,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> BIRCH_TABLE = registerBlock("birch_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> BIRCH_TABLE = registerBlock("birch_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.BIRCH_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -69,7 +71,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> JUNGLE_TABLE = registerBlock("jungle_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> JUNGLE_TABLE = registerBlock("jungle_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.JUNGLE_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -80,7 +82,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> ACACIA_TABLE = registerBlock("acacia_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> ACACIA_TABLE = registerBlock("acacia_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.ACACIA_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -91,7 +93,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> DARK_OAK_TABLE = registerBlock("dark_oak_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> DARK_OAK_TABLE = registerBlock("dark_oak_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.DARK_OAK_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -102,7 +104,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> MANGROVE_TABLE = registerBlock("mangrove_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> MANGROVE_TABLE = registerBlock("mangrove_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.MANGROVE_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -113,7 +115,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> CHERRY_TABLE = registerBlock("cherry_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> CHERRY_TABLE = registerBlock("cherry_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.CHERRY_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
@@ -124,7 +126,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> CRIMSON_TABLE = registerBlock("crimson_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> CRIMSON_TABLE = registerBlock("crimson_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.CRIMSON_PLANKS.defaultMapColor())
                     .sound(SoundType.NETHER_WOOD)
@@ -134,7 +136,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> WARPED_TABLE = registerBlock("warped_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> WARPED_TABLE = registerBlock("warped_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.WARPED_PLANKS.defaultMapColor())
                     .sound(SoundType.NETHER_WOOD)
@@ -144,7 +146,7 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<Block> BAMBOO_TABLE = registerBlock("bamboo_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> BAMBOO_TABLE = registerBlock("bamboo_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor())
                     .sound(SoundType.BAMBOO_WOOD)
@@ -156,7 +158,7 @@ public class ModBlocks {
     ));
 
 
-    public static final DeferredBlock<Block> FAKE_WINE_BOTTLE = registerBlock("fake_wine_bottle", () -> new FakeBottleBlock(
+    public static final DeferredBlock<BottleBlock> FAKE_WINE_BOTTLE = registerBlock("fake_wine_bottle", () -> new BottleBlock(
             BlockBehaviour.Properties.of()
                     .sound(SoundType.GLASS)
                     .forceSolidOn()
@@ -173,7 +175,7 @@ public class ModBlocks {
             }
     ));
 
-    public static final DeferredBlock<Block> AGAVE_CROP = BLOCKS.register("agave_crop", () -> new AgaveCropBlock(
+    public static final DeferredBlock<AgaveCropBlock> AGAVE_CROP = BLOCKS.register("agave_crop", () -> new AgaveCropBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT)
                     .noCollission()
@@ -184,7 +186,7 @@ public class ModBlocks {
                     .isRedstoneConductor(ModBlocks::never)
     ));
 
-    public static final DeferredBlock<Block> AGAVE_STEM = BLOCKS.register("agave_stem", () -> new AgaveStemBlock(
+    public static final DeferredBlock<AgaveStemBlock> AGAVE_STEM = BLOCKS.register("agave_stem", () -> new AgaveStemBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT)
                     .noCollission()
@@ -196,7 +198,7 @@ public class ModBlocks {
                     .isRedstoneConductor(ModBlocks::never)
     ));
 
-    public static final DeferredBlock<Block> AGAVE_FLOWER = BLOCKS.register("agave_flower", () -> new AgaveFlowerBlock(
+    public static final DeferredBlock<AgaveFlowerBlock> AGAVE_FLOWER = BLOCKS.register("agave_flower", () -> new AgaveFlowerBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT)
                     .noCollission()
@@ -208,7 +210,7 @@ public class ModBlocks {
     ));
 
 
-    public static final DeferredBlock<Block> CROP_SUPPORT = registerBlock("crop_support", () -> new CropSupportBlock(
+    public static final DeferredBlock<CropSupportBlock> CROP_SUPPORT = registerBlock("crop_support", () -> new CropSupportBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .noCollission()
@@ -220,7 +222,7 @@ public class ModBlocks {
                     .strength(0.1f)
     ));
 
-    public static final DeferredBlock<Block> GRAPE_CROP = BLOCKS.register("grape_crop", () -> new GrapeCropBlock(
+    public static final DeferredBlock<GrapeCropBlock> GRAPE_CROP = BLOCKS.register("grape_crop", () -> new GrapeCropBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .sound(SoundType.WOOD)
@@ -276,6 +278,10 @@ public class ModBlocks {
                         .withOptionalParameter(LootContextParams.TOOL, player!=null? player.getMainHandItem(): ItemStack.EMPTY)
                         .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
         );
+        return dropItems(level, pos, drops);
+    }
+
+    public static Integer dropItems(ServerLevel level, BlockPos pos, List<ItemStack> drops){
         for(ItemStack stack: drops){
             level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
@@ -303,6 +309,22 @@ public class ModBlocks {
             level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
         return drops.size();
+    }
+
+    public static @NotNull Direction getNeighborDirection(@NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
+        Direction neighborDirection = null;
+        for (Direction direction : Direction.values()) {
+            if (direction == Direction.DOWN || direction == Direction.UP) {
+                continue;
+            }
+            if (pos.getX() + direction.getStepX() == neighborPos.getX() && pos.getZ() + direction.getStepZ() == neighborPos.getZ()) {
+                neighborDirection = direction;
+            }
+        }
+        if (neighborDirection == null) {
+            throw new NullPointerException("neighborDirection is null");
+        }
+        return neighborDirection;
     }
 
     public static Double getLocalizedRandom(BlockPos pos){

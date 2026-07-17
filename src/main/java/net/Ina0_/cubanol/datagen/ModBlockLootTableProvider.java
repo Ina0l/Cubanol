@@ -31,24 +31,26 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.OAK_TABLE.get());
-        dropSelf(ModBlocks.SPRUCE_TABLE.get());
-        dropSelf(ModBlocks.BIRCH_TABLE.get());
-        dropSelf(ModBlocks.JUNGLE_TABLE.get());
-        dropSelf(ModBlocks.ACACIA_TABLE.get());
-        dropSelf(ModBlocks.DARK_OAK_TABLE.get());
-        dropSelf(ModBlocks.MANGROVE_TABLE.get());
-        dropSelf(ModBlocks.CHERRY_TABLE.get());
-        dropSelf(ModBlocks.CRIMSON_TABLE.get());
-        dropSelf(ModBlocks.WARPED_TABLE.get());
-        dropSelf(ModBlocks.BAMBOO_TABLE.get());
-        dropSelf(ModBlocks.FAKE_WINE_BOTTLE.get());
-        dropSelf(ModBlocks.AGAVE_CROP.get());
+        HolderLookup.RegistryLookup<Enchantment> enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        this.dropSelf(ModBlocks.OAK_TABLE.get());
+        this.dropSelf(ModBlocks.SPRUCE_TABLE.get());
+        this.dropSelf(ModBlocks.BIRCH_TABLE.get());
+        this.dropSelf(ModBlocks.JUNGLE_TABLE.get());
+        this.dropSelf(ModBlocks.ACACIA_TABLE.get());
+        this.dropSelf(ModBlocks.DARK_OAK_TABLE.get());
+        this.dropSelf(ModBlocks.MANGROVE_TABLE.get());
+        this.dropSelf(ModBlocks.CHERRY_TABLE.get());
+        this.dropSelf(ModBlocks.CRIMSON_TABLE.get());
+        this.dropSelf(ModBlocks.WARPED_TABLE.get());
+        this.dropSelf(ModBlocks.BAMBOO_TABLE.get());
+        this.dropSelf(ModBlocks.FAKE_WINE_BOTTLE.get());
+        this.dropSelf(ModBlocks.AGAVE_CROP.get());
 
         LootItemCondition.Builder lootItemConditionForAgaveFlower = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.AGAVE_FLOWER.get())
                 .setProperties(
                         StatePropertiesPredicate.Builder.properties()
-                                .hasProperty(AgaveFlowerBlock.AGE, ((AgaveFlowerBlock) ModBlocks.AGAVE_FLOWER.get()).getMaxAge())
+                                .hasProperty(AgaveFlowerBlock.AGE, ModBlocks.AGAVE_FLOWER.get().getMaxAge())
                                 .hasProperty(AgaveFlowerBlock.CUT, false)
                 );
         HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
@@ -103,7 +105,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 .hasBlockStateProperties(ModBlocks.GRAPE_CROP.get())
                 .setProperties(
                         StatePropertiesPredicate.Builder.properties()
-                                .hasProperty(GrapeCropBlock.AGE, ((GrapeCropBlock) ModBlocks.GRAPE_CROP.get()).getMaxAge()));
+                                .hasProperty(GrapeCropBlock.AGE, ModBlocks.GRAPE_CROP.get().getMaxAge()));
         LootItemCondition.Builder lootItemConditionForWhiteGrape = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.GRAPE_CROP.get())
                 .setProperties(
@@ -116,7 +118,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         StatePropertiesPredicate.Builder.properties()
                                 .hasProperty(GrapeCropBlock.WHITE, false)
                 );
-        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         this.add(
                 ModBlocks.GRAPE_CROP.get(),
                 this.applyExplosionDecay(
@@ -126,26 +127,32 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                         .add(LootItem.lootTableItem(ModItems.BLACK_GRAPE)
                                                 .when(lootItemConditionForGrapeCrop)
                                                 .otherwise(LootItem.lootTableItem(ModItems.BLACK_GRAPE_SEEDS)))
-                                        .when(lootItemConditionForBlackGrape))
+                                        .when(lootItemConditionForBlackGrape)
+                                )
                                 .withPool(LootPool.lootPool()
                                         .add(LootItem.lootTableItem(ModItems.BLACK_GRAPE_SEEDS)
                                                 .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
-                                                        registrylookup.getOrThrow(Enchantments.FORTUNE),0.5714286F, 3
-                                                )))
+                                                        enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE),0.5714286F, 3
+                                                ))
+                                        )
                                         .when(lootItemConditionForBlackGrape)
-                                        .when(lootItemConditionForGrapeCrop))
+                                        .when(lootItemConditionForGrapeCrop)
+                                )
                                 .withPool(LootPool.lootPool()
                                         .add(LootItem.lootTableItem(ModItems.WHITE_GRAPE)
                                                 .when(lootItemConditionForGrapeCrop)
-                                                .otherwise(LootItem.lootTableItem(ModItems.WHITE_GRAPE_SEEDS)))
-                                        .when(lootItemConditionForWhiteGrape))
+                                                .otherwise(LootItem.lootTableItem(ModItems.WHITE_GRAPE_SEEDS))
+                                        )
+                                        .when(lootItemConditionForWhiteGrape)
+                                )
                                 .withPool(LootPool.lootPool()
                                         .add(LootItem.lootTableItem(ModItems.WHITE_GRAPE_SEEDS)
                                                 .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
-                                                        registrylookup.getOrThrow(Enchantments.FORTUNE),0.5714286F,3
+                                                        enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE),0.5714286F,3
                                                 )))
                                         .when(lootItemConditionForWhiteGrape)
-                                        .when(lootItemConditionForGrapeCrop))
+                                        .when(lootItemConditionForGrapeCrop)
+                                )
                 )
         );
     }
