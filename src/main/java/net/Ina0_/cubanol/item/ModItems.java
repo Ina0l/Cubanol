@@ -58,6 +58,15 @@ public class ModItems {
             true
     ));
 
+    public static final DeferredItem<ItemNameBlockItem> RICE = ITEMS.register("rice", () -> new ItemNameBlockItem(
+            ModBlocks.RICE_CROP.get(),
+            new Item.Properties()
+    ));
+
+    public static final DeferredItem<Item> RICE_PANICLE = ITEMS.register("rice_panicle", () -> new Item(
+            new Item.Properties()
+    ));
+
     public static void register(IEventBus event_bus){
         ITEMS.register(event_bus);
     }

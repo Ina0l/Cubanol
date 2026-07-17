@@ -30,5 +30,10 @@
     "block.cubanol.agave_flower": "Agave Flowers",
 
     "block.cubanol.crop_support": "Crop Support",
-    "block.cubanol.grape_crop": "Grape Crop"
+    "block.cubanol.grape_crop": "Grape Crop",
+
+    "item.cubanol.rice": "Rice",
+    "block.cubanol.rice_crop": "Rice Crop",
+    "block.cubanol.rice_panicles": "Rice Panicles",
+    "item.cubanol.rice_panicle": "Rice Panicle"
 }

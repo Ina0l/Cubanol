@@ -113,6 +113,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 GrapeCropBlock.WEST,
                 GrapeCropBlock.WHITE
         );
+
+        Function<BlockState, Boolean> isExistingFileForRiceCrop = state -> !state.getValue(RiceCropBlock.SUPPORTING) || state.getValue(RiceCropBlock.AGE)==((RiceCropBlock)state.getBlock()).getMaxAge();
+        blockBasedOnBlockStates(
+                ModBlocks.RICE_CROP.get(),
+                "rice_crop",
+                "rice_crop",
+                pair -> models().crop(pair.getFirst(), pair.getSecond()).renderType("cutout"),
+                isExistingFileForRiceCrop,
+                null,
+                RiceCropBlock.AGE,
+                RiceCropBlock.SUPPORTING
+        );
+        crop(ModBlocks.RICE_PANICLES.get(), "rice_panicles", "rice_panicles", false);
     }
 
     public void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){

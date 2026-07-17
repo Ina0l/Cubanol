@@ -134,5 +134,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.FAKE_WINE_BOTTLE)
                 .unlockedBy("has_fake_wine_bottle", has(ModBlocks.FAKE_WINE_BOTTLE))
                 .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RICE)
+                .requires(ModItems.RICE_PANICLE)
+                .unlockedBy("has_rice_panicle", has(ModItems.RICE_PANICLE))
+                .save(recipeOutput);
     }
 }

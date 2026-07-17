@@ -21,5 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.WIRE.get());
         basicItem(ModItems.BLACK_GRAPE_SEEDS.get());
         basicItem(ModItems.WHITE_GRAPE_SEEDS.get());
+        basicItem(ModItems.RICE.get());
+        basicItem(ModItems.RICE_PANICLE.get());
     }
 }

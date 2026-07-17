@@ -5,6 +5,7 @@ import net.Ina0_.cubanol.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -35,5 +36,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.BAMBOO_TABLE.get())
                 .add(ModBlocks.CROP_SUPPORT.get())
                 .add(ModBlocks.GRAPE_CROP.get());
+        tag(BlockTags.MAINTAINS_FARMLAND)
+                .add(Blocks.DIRT);
     }
 }

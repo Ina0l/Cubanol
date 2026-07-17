@@ -4,6 +4,7 @@ import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.AgaveFlowerBlock;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
 import net.Ina0_.cubanol.block.custom.GrapeCropBlock;
+import net.Ina0_.cubanol.block.custom.RicePaniclesBlock;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
@@ -155,6 +156,29 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                 )
                 )
         );
+
+        this.dropOther(ModBlocks.RICE_CROP.get(), ModItems.RICE.get());
+        LootItemCondition.Builder lootItemConditionForRice = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.RICE_PANICLES.get())
+                .setProperties(
+                        StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(RicePaniclesBlock.AGE, ModBlocks.RICE_PANICLES.get().getMaxAge())
+                );
+        this.add(
+                ModBlocks.RICE_PANICLES.get(),
+                this.applyExplosionDecay(
+                        ModBlocks.RICE_PANICLES.get(),
+                        LootTable.lootTable()
+                                .withPool(LootPool.lootPool()
+                                        .add(LootItem.lootTableItem(ModItems.RICE_PANICLE)
+                                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+                                                enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 0
+                                        )))
+                                        .when(lootItemConditionForRice)
+                                )
+                )
+        );
+
     }
 
     @Override

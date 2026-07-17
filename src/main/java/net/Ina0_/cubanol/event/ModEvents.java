@@ -48,6 +48,9 @@ public class ModEvents {
                 if (level.getBlockState(pos.above()).is(ModBlocks.CROP_SUPPORT)){
                     event.setFinalState(Blocks.FARMLAND.defaultBlockState());
                 }
+                if(level.getBlockState(pos.above()).is(Blocks.WATER)){
+                    event.setFinalState(Blocks.FARMLAND.defaultBlockState());
+                }
             }
         }
     }

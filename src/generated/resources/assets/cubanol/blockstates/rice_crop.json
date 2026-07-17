@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "age=0,supporting=false,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age0"
+    },
+    "age=0,supporting=false,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age0"
+    },
+    "age=0,supporting=true,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age0_supporting"
+    },
+    "age=0,supporting=true,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age0_supporting"
+    },
+    "age=1,supporting=false,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age1"
+    },
+    "age=1,supporting=false,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age1"
+    },
+    "age=1,supporting=true,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age1_supporting"
+    },
+    "age=1,supporting=true,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age1_supporting"
+    },
+    "age=2,supporting=false,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age2"
+    },
+    "age=2,supporting=false,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age2"
+    },
+    "age=2,supporting=true,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age2_supporting"
+    },
+    "age=2,supporting=true,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age2_supporting"
+    },
+    "age=3,supporting=false,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age3"
+    },
+    "age=3,supporting=false,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age3"
+    },
+    "age=3,supporting=true,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age3_supporting"
+    },
+    "age=3,supporting=true,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age3_supporting"
+    },
+    "age=4,supporting=false,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age4"
+    },
+    "age=4,supporting=false,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age4"
+    },
+    "age=4,supporting=true,waterlogged=false": {
+      "model": "cubanol:block/rice_crop_age4_supporting"
+    },
+    "age=4,supporting=true,waterlogged=true": {
+      "model": "cubanol:block/rice_crop_age4_supporting"
+    }
+  }
+}

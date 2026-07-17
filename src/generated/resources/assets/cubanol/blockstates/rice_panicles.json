@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "cubanol:block/rice_panicles_age0"
+    },
+    "age=1": {
+      "model": "cubanol:block/rice_panicles_age1"
+    },
+    "age=2": {
+      "model": "cubanol:block/rice_panicles_age2"
+    },
+    "age=3": {
+      "model": "cubanol:block/rice_panicles_age3"
+    },
+    "age=4": {
+      "model": "cubanol:block/rice_panicles_age4"
+    }
+  }
+}

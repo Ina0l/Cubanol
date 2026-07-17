@@ -234,6 +234,28 @@ public class ModBlocks {
                     .strength(0.5f)
     ));
 
+    public static final DeferredBlock<RiceCropBlock> RICE_CROP = BLOCKS.register("rice_crop", () -> new RiceCropBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(ModBlocks::never)
+    ));
+
+    public static final DeferredBlock<RicePaniclesBlock> RICE_PANICLES = BLOCKS.register("rice_panicles", () -> new RicePaniclesBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(ModBlocks::never)
+    ));
+
 
     /**
      * Used instead of the Block::never used in vanilla BlockProperties, which is private

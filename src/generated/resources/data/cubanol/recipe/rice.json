@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cubanol:rice_panicle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "cubanol:rice"
+  }
+}
