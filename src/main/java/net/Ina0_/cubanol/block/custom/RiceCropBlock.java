@@ -82,8 +82,8 @@ public class RiceCropBlock extends CropBlock implements SimpleWaterloggedBlock {
             if(this.isMaxAge(state) && level.getBlockState(pos.above()).is(Blocks.AIR)) {
                 float f = getGrowthSpeed(state, level, pos);
                 if (CommonHooks.canCropGrow(level, pos, state, random.nextInt((int) (25.0F / f) + 1) == 0)) {
-                    level.setBlock(pos.above(), ModBlocks.RICE_PANICLES.get().defaultBlockState(), 2);
-                    level.setBlock(pos, state.setValue(SUPPORTING, true), 2);
+                    level.setBlock(pos.above(), ModBlocks.RICE_PANICLES.get().defaultBlockState(), 3);
+                    level.setBlock(pos, state.setValue(SUPPORTING, true), 3);
                     return;
                 }
             }
@@ -95,7 +95,7 @@ public class RiceCropBlock extends CropBlock implements SimpleWaterloggedBlock {
     protected void neighborChanged(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
         if(!level.isClientSide()){
             if (!level.getBlockState(pos.above()).is(ModBlocks.RICE_PANICLES)) {
-                level.setBlock(pos, state.setValue(SUPPORTING, false), 2);
+                level.setBlock(pos, state.setValue(SUPPORTING, false), 3);
             }
         }
         super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);

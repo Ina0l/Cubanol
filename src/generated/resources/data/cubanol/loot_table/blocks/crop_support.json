@@ -18,76 +18,94 @@
     },
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "cubanol:crop_support",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "north": "true"
-          }
-        }
-      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "cubanol:wire"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "cubanol:crop_support",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "south": "true"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "cubanol:wire"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "cubanol:crop_support",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "east": "true"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "cubanol:wire"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "cubanol:crop_support",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "west": "true"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "cubanol:wire"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "cubanol:crop_support",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "wire_count": "4"
+                  }
+                }
+              ],
+              "functions": [
+                {
+                  "add": false,
+                  "count": 4.0,
+                  "function": "minecraft:set_count"
+                }
+              ],
+              "name": "cubanol:wire"
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "conditions": [
+                    {
+                      "block": "cubanol:crop_support",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "wire_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "add": false,
+                      "count": 3.0,
+                      "function": "minecraft:set_count"
+                    }
+                  ],
+                  "name": "cubanol:wire"
+                },
+                {
+                  "type": "minecraft:alternatives",
+                  "children": [
+                    {
+                      "type": "minecraft:item",
+                      "conditions": [
+                        {
+                          "block": "cubanol:crop_support",
+                          "condition": "minecraft:block_state_property",
+                          "properties": {
+                            "wire_count": "2"
+                          }
+                        }
+                      ],
+                      "functions": [
+                        {
+                          "add": false,
+                          "count": 2.0,
+                          "function": "minecraft:set_count"
+                        }
+                      ],
+                      "name": "cubanol:wire"
+                    },
+                    {
+                      "type": "minecraft:item",
+                      "conditions": [
+                        {
+                          "block": "cubanol:crop_support",
+                          "condition": "minecraft:block_state_property",
+                          "properties": {
+                            "wire_count": "1"
+                          }
+                        }
+                      ],
+                      "name": "cubanol:wire"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "rolls": 1.0

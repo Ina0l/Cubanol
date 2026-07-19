@@ -9,12 +9,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
@@ -50,6 +52,23 @@ public class ModEvents {
                 }
                 if(level.getBlockState(pos.above()).is(Blocks.WATER)){
                     event.setFinalState(Blocks.FARMLAND.defaultBlockState());
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onItemUsedOnBlock(UseItemOnBlockEvent event){
+        LevelAccessor level = event.getLevel();
+        BlockPos pos = event.getPos();
+        BlockState state = level.getBlockState(pos);
+        @Nullable Player player = event.getPlayer();
+        @Nullable ItemStack stack = player == null? null: player.getMainHandItem();
+
+        if(state.is(ModBlocks.GRAPE_CROP)){
+            if(stack != null && stack.getItem() instanceof BlockItem){
+                if(ModBlocks.GRAPE_CROP.get().isMaxAge(state)){
+                    event.setCanceled(true);
                 }
             }
         }

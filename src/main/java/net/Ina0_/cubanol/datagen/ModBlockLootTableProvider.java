@@ -1,10 +1,7 @@
 package net.Ina0_.cubanol.datagen;
 
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.custom.AgaveFlowerBlock;
-import net.Ina0_.cubanol.block.custom.CropSupportBlock;
-import net.Ina0_.cubanol.block.custom.GrapeCropBlock;
-import net.Ina0_.cubanol.block.custom.RicePaniclesBlock;
+import net.Ina0_.cubanol.block.custom.*;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
@@ -19,8 +16,11 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -70,14 +70,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )
         );
 
-        LootItemCondition.Builder lootItemConditionForCropSupportNORTH = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.NORTH, true));
-        LootItemCondition.Builder lootItemConditionForCropSupportSOUTH = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.SOUTH, true));
-        LootItemCondition.Builder lootItemConditionForCropSupportEAST = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.EAST, true));
-        LootItemCondition.Builder lootItemConditionForCropSupportWEST = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.WEST, true));
+        LootItemCondition.Builder lootItemConditionForCropSupport1 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.WIRE_COUNT, 1));
+        LootItemCondition.Builder lootItemConditionForCropSupport2 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.WIRE_COUNT, 2));
+        LootItemCondition.Builder lootItemConditionForCropSupport3 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.WIRE_COUNT, 3));
+        LootItemCondition.Builder lootItemConditionForCropSupport4 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CROP_SUPPORT.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropSupportBlock.WIRE_COUNT, 4));
+
         this.add(
                 ModBlocks.CROP_SUPPORT.get(),
                 this.applyExplosionDecay(
@@ -87,17 +88,23 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                         LootItem.lootTableItem(ModBlocks.CROP_SUPPORT)
                                 ))
                                 .withPool(LootPool.lootPool().add(
-                                        LootItem.lootTableItem(ModItems.WIRE)
-                                ).when(lootItemConditionForCropSupportNORTH))
-                                .withPool(LootPool.lootPool().add(
-                                        LootItem.lootTableItem(ModItems.WIRE)
-                                ).when(lootItemConditionForCropSupportSOUTH))
-                                .withPool(LootPool.lootPool().add(
-                                        LootItem.lootTableItem(ModItems.WIRE)
-                                ).when(lootItemConditionForCropSupportEAST))
-                                .withPool(LootPool.lootPool().add(
-                                        LootItem.lootTableItem(ModItems.WIRE)
-                                ).when(lootItemConditionForCropSupportWEST))
+                                        (
+                                                LootItem.lootTableItem(ModItems.WIRE)
+                                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4)))
+                                        ).when(lootItemConditionForCropSupport4).otherwise(
+                                                (
+                                                        LootItem.lootTableItem(ModItems.WIRE)
+                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3)))
+                                                ).when(lootItemConditionForCropSupport3).otherwise(
+                                                        (
+                                                                LootItem.lootTableItem(ModItems.WIRE)
+                                                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2)))
+                                                        ).when(lootItemConditionForCropSupport2).otherwise(
+                                                                LootItem.lootTableItem(ModItems.WIRE).when(lootItemConditionForCropSupport1)
+                                                        )
+                                                )
+                                        )
+                                ))
                 )
         );
 
@@ -171,9 +178,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         LootTable.lootTable()
                                 .withPool(LootPool.lootPool()
                                         .add(LootItem.lootTableItem(ModItems.RICE_PANICLE)
-                                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
-                                                enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 0
-                                        )))
+                                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+                                                        enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 0
+                                                ))
+                                        )
                                         .when(lootItemConditionForRice)
                                 )
                 )

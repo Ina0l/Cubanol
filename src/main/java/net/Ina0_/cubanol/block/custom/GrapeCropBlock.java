@@ -98,8 +98,8 @@ public class GrapeCropBlock extends CropBlock{
     @Override
     protected void neighborChanged(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
         if(!level.isClientSide()){
-            if(pos.getY() == neighborPos.getY()){
-                Direction neighborDirection = ModBlocks.getNeighborDirection(pos, neighborPos);
+            Direction neighborDirection = ModBlocks.getNeighborDirection(pos, neighborPos);
+            if(neighborDirection.getAxis().isHorizontal()){
                 if (level.getBlockState(neighborPos).getBlock() instanceof CropSupportBlock || level.getBlockState(neighborPos).getBlock() instanceof GrapeCropBlock) {
                     if (!state.getValue(CropSupportBlock.getPropertyFromDirection(neighborDirection)) && level.getBlockState(neighborPos).getValue(CropSupportBlock.getPropertyFromDirection(neighborDirection.getOpposite()))) {
                         level.playSound(null, pos, SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS);
@@ -131,19 +131,24 @@ public class GrapeCropBlock extends CropBlock{
                     }
                 }
             }
+            if(!state.canSurvive(level, pos)){
+                ModBlocks.dropItemsFromState((ServerLevel) level, state, pos, null);
+                level.setBlock(pos, CropSupportBlock.getBlockStateFromGrapeCropState(state), 3);
+                level.getBlockState(pos).updateShape(neighborDirection, level.getBlockState(neighborPos), level, pos, neighborPos);
+            }
         }
         super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
     }
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
-        if(!level.isClientSide()){
-            if(state.getValue(AGE) == this.getMaxAge()){
-                if(ModBlocks.collectOrDropItemsFromState((ServerLevel) level, player, state, pos) > 0 || player.hasInfiniteMaterials()){
-                    level.setBlock(pos, state.setValue(AGE, 8), 3);
-                    return InteractionResult.SUCCESS;
-                }
+        if(state.getValue(AGE) == this.getMaxAge()){
+            if(!level.isClientSide()) {
+                level.setBlock(pos, state.setValue(AGE, 8), 3);
+                ModBlocks.collectOrDropItemsFromState((ServerLevel) level, player, state, pos);
             }
+            level.playSound(player, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS);
+            return InteractionResult.sidedSuccess(level.isClientSide());
         }
         return super.useWithoutItem(state, level, pos, player, hitResult);
     }
@@ -164,7 +169,7 @@ public class GrapeCropBlock extends CropBlock{
             if (i < this.getMaxAge()) {
                 float f = getGrowthSpeed(state, level, pos);
                 if (CommonHooks.canCropGrow(level, pos, state, random.nextInt((int)(25.0F / f) + 1) == 0)) {
-                    level.setBlock(pos, state.setValue(AGE, i + 1), 2);
+                    level.setBlock(pos, state.setValue(AGE, i + 1), 3);
                     CommonHooks.fireCropGrowPost(level, pos, state);
                 }
             }
@@ -187,7 +192,7 @@ public class GrapeCropBlock extends CropBlock{
                 i = j;
             }
         }
-        level.setBlock(pos, state.setValue(AGE, i), 2);
+        level.setBlock(pos, state.setValue(AGE, i), 3);
 
     }
 
@@ -218,7 +223,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     public static float getGrowthSpeed(BlockState state, BlockGetter blockGetter, BlockPos pos){
-        return CropBlock.getGrowthSpeed(state, blockGetter, pos) * ((getFacingPropertiesCount(state) - 2) * 0.25f + 1) / (state.getValue(AGE) < 9? 1: 2);
+        return CropBlock.getGrowthSpeed(state, blockGetter, pos) * ((getFacingPropertiesCount(state) - 2) * 0.25f + 1) / (state.getValue(AGE) < 9? 1: 1.25F);
     }
 
     public static BlockState getBlockStateFromCropSupportState(@NotNull BlockState state){
@@ -230,6 +235,26 @@ public class GrapeCropBlock extends CropBlock{
                 .setValue(SOUTH, state.getValue(SOUTH))
                 .setValue(EAST, state.getValue(EAST))
                 .setValue(WEST, state.getValue(WEST));
+    }
+
+    @Override
+    public void onBlockStateChange(@NotNull LevelReader level, @NotNull BlockPos pos, @NotNull BlockState oldState, BlockState newState) {
+        if(newState.is(ModBlocks.GRAPE_CROP)){
+            if(!newState.getValue(CropSupportBlock.getPropertyFromDirection(newState.getValue(VINE_HANGING_SIDE)))){
+                newState.getBlock().destroy((LevelAccessor) level, pos, newState);
+                ((LevelAccessor) level).playSound(null, pos, newState.getSoundType(level, pos, null).getBreakSound(), SoundSource.BLOCKS);
+            }
+        }
+    }
+
+    @Override
+    protected boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
+        return super.canSurvive(state, level, pos) && state.getValue(CropSupportBlock.getPropertyFromDirection(state.getValue(VINE_HANGING_SIDE)));
+    }
+
+    @Override
+    protected @NotNull BlockState updateShape(@NotNull BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
+        return state;
     }
 
     static {

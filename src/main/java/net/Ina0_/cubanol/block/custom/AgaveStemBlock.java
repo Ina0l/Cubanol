@@ -102,12 +102,12 @@ public class AgaveStemBlock extends CropBlock {
                     default -> 1.0;
                 };
                 if (level.random.nextDouble() < probabilityOfFlower) {
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 3);
                 } else {
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 3);
                 }
             } else if(!level.getBlockState(pos.above()).is(ModBlocks.AGAVE_STEM) && !level.getBlockState(pos.above()).is(ModBlocks.AGAVE_FLOWER)){
-                level.setBlock(pos, state.setValue(AGE, this.getMaxAge() - 1), 2);
+                level.setBlock(pos, state.setValue(AGE, this.getMaxAge() - 1), 3);
             }
         }
     }
@@ -120,7 +120,7 @@ public class AgaveStemBlock extends CropBlock {
                 if(state.getValue(DRIED)){
                     level.destroyBlock(pos, false);
                 } else if(this.isMaxAge(level.getBlockState(pos))){
-                    level.setBlock(pos, state.setValue(AGE, this.getMaxAge() - 1), 2);
+                    level.setBlock(pos, state.setValue(AGE, this.getMaxAge() - 1), 3);
                 }
             }
         }
@@ -140,12 +140,12 @@ public class AgaveStemBlock extends CropBlock {
                 double probabilityOfFlower = Math.min(0.25 * (stemCount + 1), 1.0);
 
                 if(level.random.nextDouble() < probabilityOfFlower){
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 3);
                 } else {
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 3);
                 }
             } else {
-                level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 2);
+                level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 3);
             }
         }
     }

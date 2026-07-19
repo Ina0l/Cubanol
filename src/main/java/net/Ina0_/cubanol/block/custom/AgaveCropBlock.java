@@ -86,12 +86,12 @@ public class AgaveCropBlock extends CropBlock {
         if(this.isMaxAge(level.getBlockState(pos))){
             if(level.getBlockState(pos.above()).is(Blocks.AIR)){
                 if(level.random.nextDouble() < 0.25){
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 3);
                 } else {
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 3);
                 }
             } else if(!level.getBlockState(pos.above()).is(ModBlocks.AGAVE_STEM) && !level.getBlockState(pos.above()).is(ModBlocks.AGAVE_FLOWER)){
-                level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 2);
+                level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 3);
             }
         }
     }
@@ -102,12 +102,12 @@ public class AgaveCropBlock extends CropBlock {
         if (this.isMaxAge(level.getBlockState(pos))) {
             if (level.getBlockState(pos.above()).is(Blocks.AIR)) {
                 if(level.random.nextDouble() < 0.25){
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_FLOWER.get().defaultBlockState(), 3);
                 } else {
-                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 2);
+                    level.setBlock(pos.above(), ModBlocks.AGAVE_STEM.get().defaultBlockState(), 3);
                 }
             } else if(!level.getBlockState(pos.above()).is(ModBlocks.AGAVE_STEM)){
-                level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 2);
+                level.setBlock(pos, this.defaultBlockState().setValue(AGE, this.getMaxAge() - 1), 3);
             }
         }
     }
@@ -151,7 +151,7 @@ public class AgaveCropBlock extends CropBlock {
      * @param pos The position of the agave
      */
     public static void setCut(Level level, BlockState state, BlockPos pos){
-        level.setBlock(pos, state.setValue(CUT, true), 2);
+        level.setBlock(pos, state.setValue(CUT, true), 3);
         BlockState stateAbove = level.getBlockState(pos.above());
         if(
                 stateAbove.is(ModBlocks.AGAVE_STEM)
@@ -181,7 +181,7 @@ public class AgaveCropBlock extends CropBlock {
      * @param pos The position of the agave
      */
     public static void setDried(Level level, BlockState state, BlockPos pos){
-        level.setBlock(pos, state.setValue(DRIED, true), 2);
+        level.setBlock(pos, state.setValue(DRIED, true), 3);
         BlockState stateAbove = level.getBlockState(pos.above());
         if(
                 stateAbove.is(ModBlocks.AGAVE_STEM)

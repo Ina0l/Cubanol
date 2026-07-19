@@ -52,8 +52,10 @@ public class WireItem extends Item {
                                 if (previouslySelectedPos.getX() + direction.getStepX() == pos.getX() && previouslySelectedPos.getZ() + direction.getStepZ() == pos.getZ()) {
                                     if (previouslySelectedState.getValue(CropSupportBlock.getPropertyFromDirection(direction))) {
                                         if(!player.getPersistentData().contains(Cubanol.MOD_ID + ":wire_selected_by_fast_selection")){
-                                            level.setBlock(pos, state.setValue(CropSupportBlock.getPropertyFromDirection(direction.getOpposite()), false), 2);
-                                            level.setBlock(previouslySelectedPos, previouslySelectedState.setValue(CropSupportBlock.getPropertyFromDirection(direction), false), 2);
+                                            level.setBlock(pos, state.setValue(CropSupportBlock.getPropertyFromDirection(direction.getOpposite()), false), 3);
+                                            level.setBlock(previouslySelectedPos, previouslySelectedState.setValue(CropSupportBlock.getPropertyFromDirection(direction), false), 3);
+                                            CropSupportBlock.setWireCountProperty(level, pos, level.getBlockState(pos));
+                                            CropSupportBlock.setWireCountProperty(level, previouslySelectedPos, level.getBlockState(previouslySelectedPos));
                                             player.getPersistentData().remove(Cubanol.MOD_ID + ":wire_selected_block");
                                             if (!player.hasInfiniteMaterials()) {
                                                 stack.setCount(stack.getCount() + 1);
@@ -64,8 +66,11 @@ public class WireItem extends Item {
                                             return InteractionResult.SUCCESS;
                                         }
                                     } else {
-                                        level.setBlock(pos, state.setValue(CropSupportBlock.getPropertyFromDirection(direction.getOpposite()), true), 2);
-                                        level.setBlock(previouslySelectedPos, previouslySelectedState.setValue(CropSupportBlock.getPropertyFromDirection(direction), true), 2);
+                                        level.setBlock(pos, state.setValue(CropSupportBlock.getPropertyFromDirection(direction.getOpposite()), true), 3);
+                                        level.setBlock(previouslySelectedPos, previouslySelectedState.setValue(CropSupportBlock.getPropertyFromDirection(direction), true), 3);
+                                        CropSupportBlock.setWireCountProperty(level, pos, level.getBlockState(pos));
+                                        CropSupportBlock.setWireCountProperty(level, previouslySelectedPos, level.getBlockState(previouslySelectedPos));
+
                                         player.getPersistentData().put(Cubanol.MOD_ID + ":wire_selected_block", new IntArrayTag(List.of(pos.getX(), pos.getY(), pos.getZ())));
                                         player.getPersistentData().put(Cubanol.MOD_ID + ":wire_selected_by_fast_selection", IntTag.valueOf(0));
                                         stack.consume(1, player);

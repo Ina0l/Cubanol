@@ -1,51 +1,243 @@
 {
   "variants": {
-    "east=false,north=false,south=false,west=false": {
+    "east=false,north=false,south=false,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support"
     },
-    "east=false,north=false,south=false,west=true": {
+    "east=false,north=false,south=false,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support"
+    },
+    "east=false,north=false,south=false,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support"
+    },
+    "east=false,north=false,south=false,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support"
+    },
+    "east=false,north=false,south=false,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support"
+    },
+    "east=false,north=false,south=false,west=true,wire_count=0": {
       "model": "cubanol:block/crop_support_west"
     },
-    "east=false,north=false,south=true,west=false": {
+    "east=false,north=false,south=false,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_west"
+    },
+    "east=false,north=false,south=false,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_west"
+    },
+    "east=false,north=false,south=false,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_west"
+    },
+    "east=false,north=false,south=false,west=true,wire_count=4": {
+      "model": "cubanol:block/crop_support_west"
+    },
+    "east=false,north=false,south=true,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support_south"
     },
-    "east=false,north=false,south=true,west=true": {
+    "east=false,north=false,south=true,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support_south"
+    },
+    "east=false,north=false,south=true,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support_south"
+    },
+    "east=false,north=false,south=true,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support_south"
+    },
+    "east=false,north=false,south=true,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support_south"
+    },
+    "east=false,north=false,south=true,west=true,wire_count=0": {
       "model": "cubanol:block/crop_support_south_west"
     },
-    "east=false,north=true,south=false,west=false": {
+    "east=false,north=false,south=true,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_south_west"
+    },
+    "east=false,north=false,south=true,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_south_west"
+    },
+    "east=false,north=false,south=true,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_south_west"
+    },
+    "east=false,north=false,south=true,west=true,wire_count=4": {
+      "model": "cubanol:block/crop_support_south_west"
+    },
+    "east=false,north=true,south=false,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support_north"
     },
-    "east=false,north=true,south=false,west=true": {
+    "east=false,north=true,south=false,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support_north"
+    },
+    "east=false,north=true,south=false,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support_north"
+    },
+    "east=false,north=true,south=false,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support_north"
+    },
+    "east=false,north=true,south=false,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support_north"
+    },
+    "east=false,north=true,south=false,west=true,wire_count=0": {
       "model": "cubanol:block/crop_support_north_west"
     },
-    "east=false,north=true,south=true,west=false": {
+    "east=false,north=true,south=false,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_north_west"
+    },
+    "east=false,north=true,south=false,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_north_west"
+    },
+    "east=false,north=true,south=false,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_north_west"
+    },
+    "east=false,north=true,south=false,west=true,wire_count=4": {
+      "model": "cubanol:block/crop_support_north_west"
+    },
+    "east=false,north=true,south=true,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support_north_south"
     },
-    "east=false,north=true,south=true,west=true": {
+    "east=false,north=true,south=true,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support_north_south"
+    },
+    "east=false,north=true,south=true,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support_north_south"
+    },
+    "east=false,north=true,south=true,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support_north_south"
+    },
+    "east=false,north=true,south=true,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support_north_south"
+    },
+    "east=false,north=true,south=true,west=true,wire_count=0": {
       "model": "cubanol:block/crop_support_north_south_west"
     },
-    "east=true,north=false,south=false,west=false": {
+    "east=false,north=true,south=true,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_north_south_west"
+    },
+    "east=false,north=true,south=true,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_north_south_west"
+    },
+    "east=false,north=true,south=true,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_north_south_west"
+    },
+    "east=false,north=true,south=true,west=true,wire_count=4": {
+      "model": "cubanol:block/crop_support_north_south_west"
+    },
+    "east=true,north=false,south=false,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support_east"
     },
-    "east=true,north=false,south=false,west=true": {
+    "east=true,north=false,south=false,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support_east"
+    },
+    "east=true,north=false,south=false,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support_east"
+    },
+    "east=true,north=false,south=false,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support_east"
+    },
+    "east=true,north=false,south=false,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support_east"
+    },
+    "east=true,north=false,south=false,west=true,wire_count=0": {
       "model": "cubanol:block/crop_support_east_west"
     },
-    "east=true,north=false,south=true,west=false": {
+    "east=true,north=false,south=false,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_east_west"
+    },
+    "east=true,north=false,south=false,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_east_west"
+    },
+    "east=true,north=false,south=false,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_east_west"
+    },
+    "east=true,north=false,south=false,west=true,wire_count=4": {
+      "model": "cubanol:block/crop_support_east_west"
+    },
+    "east=true,north=false,south=true,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support_south_east"
     },
-    "east=true,north=false,south=true,west=true": {
+    "east=true,north=false,south=true,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support_south_east"
+    },
+    "east=true,north=false,south=true,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support_south_east"
+    },
+    "east=true,north=false,south=true,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support_south_east"
+    },
+    "east=true,north=false,south=true,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support_south_east"
+    },
+    "east=true,north=false,south=true,west=true,wire_count=0": {
       "model": "cubanol:block/crop_support_south_east_west"
     },
-    "east=true,north=true,south=false,west=false": {
+    "east=true,north=false,south=true,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_south_east_west"
+    },
+    "east=true,north=false,south=true,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_south_east_west"
+    },
+    "east=true,north=false,south=true,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_south_east_west"
+    },
+    "east=true,north=false,south=true,west=true,wire_count=4": {
+      "model": "cubanol:block/crop_support_south_east_west"
+    },
+    "east=true,north=true,south=false,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support_north_east"
     },
-    "east=true,north=true,south=false,west=true": {
+    "east=true,north=true,south=false,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support_north_east"
+    },
+    "east=true,north=true,south=false,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support_north_east"
+    },
+    "east=true,north=true,south=false,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support_north_east"
+    },
+    "east=true,north=true,south=false,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support_north_east"
+    },
+    "east=true,north=true,south=false,west=true,wire_count=0": {
       "model": "cubanol:block/crop_support_north_east_west"
     },
-    "east=true,north=true,south=true,west=false": {
+    "east=true,north=true,south=false,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_north_east_west"
+    },
+    "east=true,north=true,south=false,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_north_east_west"
+    },
+    "east=true,north=true,south=false,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_north_east_west"
+    },
+    "east=true,north=true,south=false,west=true,wire_count=4": {
+      "model": "cubanol:block/crop_support_north_east_west"
+    },
+    "east=true,north=true,south=true,west=false,wire_count=0": {
       "model": "cubanol:block/crop_support_north_south_east"
     },
-    "east=true,north=true,south=true,west=true": {
+    "east=true,north=true,south=true,west=false,wire_count=1": {
+      "model": "cubanol:block/crop_support_north_south_east"
+    },
+    "east=true,north=true,south=true,west=false,wire_count=2": {
+      "model": "cubanol:block/crop_support_north_south_east"
+    },
+    "east=true,north=true,south=true,west=false,wire_count=3": {
+      "model": "cubanol:block/crop_support_north_south_east"
+    },
+    "east=true,north=true,south=true,west=false,wire_count=4": {
+      "model": "cubanol:block/crop_support_north_south_east"
+    },
+    "east=true,north=true,south=true,west=true,wire_count=0": {
+      "model": "cubanol:block/crop_support_north_south_east_west"
+    },
+    "east=true,north=true,south=true,west=true,wire_count=1": {
+      "model": "cubanol:block/crop_support_north_south_east_west"
+    },
+    "east=true,north=true,south=true,west=true,wire_count=2": {
+      "model": "cubanol:block/crop_support_north_south_east_west"
+    },
+    "east=true,north=true,south=true,west=true,wire_count=3": {
+      "model": "cubanol:block/crop_support_north_south_east_west"
+    },
+    "east=true,north=true,south=true,west=true,wire_count=4": {
       "model": "cubanol:block/crop_support_north_south_east_west"
     }
   }

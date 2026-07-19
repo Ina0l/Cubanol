@@ -255,6 +255,10 @@ public class ModBlocks {
                     .pushReaction(PushReaction.DESTROY)
                     .isRedstoneConductor(ModBlocks::never)
     ));
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(ModBlocks::never)
+    ));
 
 
     /**
@@ -286,42 +290,32 @@ public class ModBlocks {
         BLOCKS.register(event_bus);
     }
 
-
-    /**
-     *
-     * @return the number of drops
-     */
-    public static Integer dropItemsFromState(ServerLevel level, BlockState state, BlockPos pos, @Nullable Player player){
+    public static void dropItemsFromState(ServerLevel level, BlockState state, BlockPos pos, @Nullable Player player){
         if(player!=null && player.hasInfiniteMaterials()){
-            return 0;
+            return;
         }
         List<ItemStack> drops = state.getDrops(
                 new LootParams.Builder(level)
                         .withOptionalParameter(LootContextParams.TOOL, player!=null? player.getMainHandItem(): ItemStack.EMPTY)
                         .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
         );
-        return dropItems(level, pos, drops);
+        dropItems(level, pos, drops);
     }
 
-    public static Integer dropItems(ServerLevel level, BlockPos pos, List<ItemStack> drops){
+    public static void dropItems(ServerLevel level, BlockPos pos, List<ItemStack> drops){
         for(ItemStack stack: drops){
             level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
-        return drops.size();
     }
 
-    /**
-     *
-     * @return the number of drops
-     */
-    public static Integer collectOrDropItemsFromState(ServerLevel level, Player player, BlockState state, BlockPos pos){
+    public static void collectOrDropItemsFromState(ServerLevel level, Player player, BlockState state, BlockPos pos){
         List<ItemStack> drops = state.getDrops(new LootParams.Builder(level).withParameter(LootContextParams.TOOL, player.getMainHandItem()).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)));
-        return collectOrDropItems(level, player, pos, drops);
+        collectOrDropItems(level, player, pos, drops);
     }
 
-    public static Integer collectOrDropItems(ServerLevel level, Player player, BlockPos pos, List<ItemStack> drops){
+    public static void collectOrDropItems(ServerLevel level, Player player, BlockPos pos, List<ItemStack> drops){
         if(player.hasInfiniteMaterials()){
-            return 0;
+            return;
         }
         for(ItemStack stack: drops){
             player.getInventory().add(stack);
@@ -330,17 +324,17 @@ public class ModBlocks {
             }
             level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
-        return drops.size();
     }
 
     public static @NotNull Direction getNeighborDirection(@NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
         Direction neighborDirection = null;
         for (Direction direction : Direction.values()) {
-            if (direction == Direction.DOWN || direction == Direction.UP) {
-                continue;
-            }
-            if (pos.getX() + direction.getStepX() == neighborPos.getX() && pos.getZ() + direction.getStepZ() == neighborPos.getZ()) {
-                neighborDirection = direction;
+            if (pos.getX() + direction.getStepX() == neighborPos.getX()){
+                if(pos.getY() + direction.getStepY() == neighborPos.getY()) {
+                    if(pos.getZ() + direction.getStepZ() == neighborPos.getZ()){
+                        neighborDirection = direction;
+                    }
+                }
             }
         }
         if (neighborDirection == null) {
