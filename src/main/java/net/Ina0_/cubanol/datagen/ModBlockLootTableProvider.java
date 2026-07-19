@@ -187,6 +187,26 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )
         );
 
+        LootItemCondition.Builder lootItemConditionForStarAnise = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.STAR_ANISE_CROP.get())
+                .setProperties(
+                        StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(StarAniseCropBlock.AGE, ModBlocks.STAR_ANISE_CROP.get().getMaxAge())
+                );
+        this.add(
+                ModBlocks.STAR_ANISE_CROP.get(),
+                this.applyExplosionDecay(
+                        ModBlocks.STAR_ANISE_CROP.get(),
+                        LootTable.lootTable()
+                                .withPool(LootPool.lootPool().add(
+                                        (
+                                            LootItem.lootTableItem(ModItems.STAR_ANISE).apply(
+                                                    SetItemCountFunction.setCount(UniformGenerator.between(1, 3))
+                                            )
+                                        ).when(lootItemConditionForStarAnise).otherwise(LootItem.lootTableItem(ModItems.STAR_ANISE)))
+                                )
+                )
+        );
     }
 
     @Override

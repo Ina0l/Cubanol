@@ -255,6 +255,13 @@ public class ModBlocks {
                     .pushReaction(PushReaction.DESTROY)
                     .isRedstoneConductor(ModBlocks::never)
     ));
+
+    public static final DeferredBlock<StarAniseCropBlock> STAR_ANISE_CROP = BLOCKS.register("star_anise_crop", () -> new StarAniseCropBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
                     .isRedstoneConductor(ModBlocks::never)

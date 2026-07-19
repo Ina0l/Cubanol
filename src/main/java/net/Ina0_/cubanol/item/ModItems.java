@@ -30,7 +30,8 @@ public class ModItems {
             )
     ));
 
-    public static final DeferredItem<Item> STAR_ANISE = ITEMS.register("star_anise", () -> new Item(
+    public static final DeferredItem<ItemNameBlockItem> STAR_ANISE = ITEMS.register("star_anise", () -> new ItemNameBlockItem(
+            ModBlocks.STAR_ANISE_CROP.get(),
             new Item.Properties()
     ));
 

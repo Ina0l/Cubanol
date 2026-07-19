@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "cubanol:block/star_anise_crop_age0"
+    },
+    "age=1": {
+      "model": "cubanol:block/star_anise_crop_age1"
+    },
+    "age=2": {
+      "model": "cubanol:block/star_anise_crop_age2"
+    },
+    "age=3": {
+      "model": "cubanol:block/star_anise_crop_age3"
+    },
+    "age=4": {
+      "model": "cubanol:block/star_anise_crop_age4"
+    },
+    "age=5": {
+      "model": "cubanol:block/star_anise_crop_age5"
+    },
+    "age=6": {
+      "model": "cubanol:block/star_anise_crop_age6"
+    }
+  }
+}

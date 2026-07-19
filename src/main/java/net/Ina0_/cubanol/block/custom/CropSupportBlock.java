@@ -115,7 +115,7 @@ public class CropSupportBlock extends Block{
     }
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState neighborState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
         if(!state.canSurvive(level, pos)){
             return Blocks.AIR.defaultBlockState();
         }

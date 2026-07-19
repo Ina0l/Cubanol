@@ -126,6 +126,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 RiceCropBlock.SUPPORTING
         );
         crop(ModBlocks.RICE_PANICLES.get(), "rice_panicles", "rice_panicles", false);
+
+        crop(ModBlocks.STAR_ANISE_CROP.get(), "star_anise_crop", "star_anise_crop", true);
     }
 
     public void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){
