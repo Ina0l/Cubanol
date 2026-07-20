@@ -1,0 +1,6 @@
+{
+  "parent": "cubanol:block/table",
+  "textures": {
+    "texture": "minecraft:block/cherry_planks"
+  }
+}

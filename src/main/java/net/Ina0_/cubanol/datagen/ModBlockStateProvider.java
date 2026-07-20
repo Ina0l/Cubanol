@@ -8,6 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -26,17 +27,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.OAK_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.SPRUCE_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.BIRCH_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.JUNGLE_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.ACACIA_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.DARK_OAK_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.MANGROVE_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.CHERRY_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.CRIMSON_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.WARPED_TABLE);
-        simpleBlockWithItemFromExistingModelFile(ModBlocks.BAMBOO_TABLE);
+        ResourceLocation tableParent = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/table");
+        modelFromParent(ModBlocks.OAK_TABLE, tableParent, blockTexture(Blocks.OAK_PLANKS));
+        modelFromParent(ModBlocks.SPRUCE_TABLE, tableParent, blockTexture(Blocks.SPRUCE_PLANKS));
+        modelFromParent(ModBlocks.BIRCH_TABLE, tableParent, blockTexture(Blocks.BIRCH_PLANKS));
+        modelFromParent(ModBlocks.JUNGLE_TABLE, tableParent, blockTexture(Blocks.JUNGLE_PLANKS));
+        modelFromParent(ModBlocks.ACACIA_TABLE, tableParent, blockTexture(Blocks.ACACIA_PLANKS));
+        modelFromParent(ModBlocks.DARK_OAK_TABLE, tableParent, blockTexture(Blocks.DARK_OAK_PLANKS));
+        modelFromParent(ModBlocks.MANGROVE_TABLE, tableParent, blockTexture(Blocks.MANGROVE_PLANKS));
+        modelFromParent(ModBlocks.CHERRY_TABLE, tableParent, blockTexture(Blocks.CHERRY_PLANKS));
+        modelFromParent(ModBlocks.CRIMSON_TABLE, tableParent, blockTexture(Blocks.CRIMSON_PLANKS));
+        modelFromParent(ModBlocks.WARPED_TABLE, tableParent, blockTexture(Blocks.WARPED_PLANKS));
+        modelFromParent(ModBlocks.BAMBOO_TABLE, tableParent, blockTexture(Blocks.BAMBOO_PLANKS));
 
         horizontalDirectionalBlockWithItemFromExistingModelFile(ModBlocks.FAKE_WINE_BOTTLE);
 
@@ -203,5 +205,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void horizontalDirectionalBlockWithItemFromExistingModelFile(DeferredBlock<?> deferredBlock){
         horizontalBlock(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()), 0);
         simpleBlockItem(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()));
+    }
+
+    private <T extends Block> void modelFromParent(DeferredBlock<T> block, ResourceLocation parent, ResourceLocation texture){
+        simpleBlockWithItem(block.get(), models().singleTexture(block.getRegisteredName(), parent, texture));
     }
 }

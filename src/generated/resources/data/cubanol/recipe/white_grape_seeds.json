@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cubanol:white_grape"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "cubanol:white_grape_seeds"
+  }
+}

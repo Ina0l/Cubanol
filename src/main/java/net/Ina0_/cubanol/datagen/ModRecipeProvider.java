@@ -135,6 +135,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_fake_wine_bottle", has(ModBlocks.FAKE_WINE_BOTTLE))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BLACK_GRAPE_SEEDS)
+                .requires(ModItems.BLACK_GRAPE)
+                .unlockedBy("has_black_grape", has(ModItems.BLACK_GRAPE))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHITE_GRAPE_SEEDS)
+                .requires(ModItems.WHITE_GRAPE)
+                .unlockedBy("has_white_grape", has(ModItems.WHITE_GRAPE))
+                .save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RICE)
                 .requires(ModItems.RICE_PANICLE)
                 .unlockedBy("has_rice_panicle", has(ModItems.RICE_PANICLE))

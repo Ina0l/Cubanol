@@ -28,13 +28,8 @@ public class Cubanol {
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public Cubanol(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
+        // Register the commonSetup method for mod loading
         modEventBus.addListener(this::commonSetup);
-
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (cubanol) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
-        NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -50,15 +45,15 @@ public class Cubanol {
 
     }
 
-    // Add the example block item to the building blocks tab
+    // Add the mod items to the creative blocks tabs
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(ModItems.BLACK_GRAPE);
             event.accept(ModItems.WHITE_GRAPE);
-            event.accept(ModItems.AGAVE_SYRUP);
-            event.accept(ModItems.AGAVE_SEEDS);
             event.accept(ModItems.BLACK_GRAPE_SEEDS);
             event.accept(ModItems.WHITE_GRAPE_SEEDS);
+            event.accept(ModItems.AGAVE_SYRUP);
+            event.accept(ModItems.AGAVE_SEEDS);
             event.accept(ModItems.RICE);
             event.accept(ModItems.RICE_PANICLE);
         }
@@ -83,11 +78,5 @@ public class Cubanol {
             event.accept(ModBlocks.CROP_SUPPORT);
             event.accept(ModItems.WIRE);
         }
-    }
-
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
     }
 }
