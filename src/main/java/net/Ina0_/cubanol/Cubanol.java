@@ -2,6 +2,7 @@ package net.Ina0_.cubanol;
 
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.item.ModItems;
+import net.Ina0_.cubanol.lootmodifiers.ModLootModifiers;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -30,6 +31,8 @@ public class Cubanol {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
