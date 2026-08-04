@@ -22,6 +22,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.FAKE_WINE_BOTTLE.get());
+
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.OAK_TABLE.get())
                 .add(ModBlocks.SPRUCE_TABLE.get())
@@ -35,8 +36,24 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.WARPED_TABLE.get())
                 .add(ModBlocks.BAMBOO_TABLE.get())
                 .add(ModBlocks.CROP_SUPPORT.get())
-                .add(ModBlocks.GRAPE_CROP.get());
+                .add(ModBlocks.GRAPE_CROP.get())
+
+                .add(ModBlocks.APPLE_TREE_LOG.get())
+                .add(ModBlocks.APPLE_TREE_WOOD.get())
+                .add(ModBlocks.STRIPPED_APPLE_TREE_LOG.get())
+                .add(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get())
+                .add(ModBlocks.APPLE_TREE_PLANKS.get());
+
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.APPLE_TREE_LEAVES.get());
+
         tag(BlockTags.MAINTAINS_FARMLAND)
                 .add(Blocks.DIRT);
+
+        tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.APPLE_TREE_LOG.get())
+                .add(ModBlocks.STRIPPED_APPLE_TREE_LOG.get())
+                .add(ModBlocks.APPLE_TREE_WOOD.get())
+                .add(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get());
     }
 }

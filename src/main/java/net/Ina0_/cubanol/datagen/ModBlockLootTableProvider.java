@@ -207,6 +207,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                 )
                 )
         );
+
+        this.dropSelf(ModBlocks.APPLE_TREE_LOG.get());
+        this.dropSelf(ModBlocks.APPLE_TREE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_APPLE_TREE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get());
+
+        this.add(
+                ModBlocks.APPLE_TREE_LEAVES.get(),
+                block -> this.createLeavesDrops(block, ModBlocks.APPLE_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
+        );
+        this.dropSelf(ModBlocks.APPLE_TREE_SAPLING.get());
+
+        this.dropSelf(ModBlocks.APPLE_TREE_PLANKS.get());
     }
 
     @Override

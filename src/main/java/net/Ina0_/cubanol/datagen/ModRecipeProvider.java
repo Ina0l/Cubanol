@@ -1,10 +1,12 @@
 package net.Ina0_.cubanol.datagen;
 
+import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
@@ -148,5 +150,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.RICE_PANICLE)
                 .unlockedBy("has_rice_panicle", has(ModItems.RICE_PANICLE))
                 .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
+                .requires(ModBlocks.APPLE_TREE_LOG)
+                .unlockedBy("has_apple_tree_log", has(ModBlocks.APPLE_TREE_LOG))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_log"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
+                .requires(ModBlocks.APPLE_TREE_WOOD)
+                .unlockedBy("has_apple_tree_wood", has(ModBlocks.APPLE_TREE_WOOD))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_wood"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
+                .requires(ModBlocks.STRIPPED_APPLE_TREE_LOG)
+                .unlockedBy("has_stripped_apple_tree_log", has(ModBlocks.STRIPPED_APPLE_TREE_LOG))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_stripped_log"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
+                .requires(ModBlocks.STRIPPED_APPLE_TREE_WOOD)
+                .unlockedBy("has_stripped_apple_tree_wood", has(ModBlocks.STRIPPED_APPLE_TREE_WOOD))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_stripped_wood"));
     }
 }

@@ -12,6 +12,11 @@
     "cubanol:warped_table",
     "cubanol:bamboo_table",
     "cubanol:crop_support",
-    "cubanol:grape_crop"
+    "cubanol:grape_crop",
+    "cubanol:apple_tree_log",
+    "cubanol:apple_tree_wood",
+    "cubanol:stripped_apple_tree_log",
+    "cubanol:stripped_apple_tree_wood",
+    "cubanol:apple_tree_planks"
   ]
 }

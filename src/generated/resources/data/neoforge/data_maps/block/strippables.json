@@ -1,0 +1,20 @@
+{
+  "values": {
+    "cubanol:apple_tree_log": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:true"
+        }
+      ],
+      "stripped_block": "cubanol:stripped_apple_tree_log"
+    },
+    "cubanol:apple_tree_wood": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:true"
+        }
+      ],
+      "stripped_block": "cubanol:stripped_apple_tree_wood"
+    }
+  }
+}

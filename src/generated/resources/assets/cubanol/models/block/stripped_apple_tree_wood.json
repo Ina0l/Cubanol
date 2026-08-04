@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cubanol:block/stripped_apple_tree_log"
+  }
+}

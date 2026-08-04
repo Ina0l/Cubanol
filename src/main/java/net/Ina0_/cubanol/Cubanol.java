@@ -72,7 +72,16 @@ public class Cubanol {
             event.accept(ModBlocks.BAMBOO_TABLE);
             event.accept(ModBlocks.CRIMSON_TABLE);
             event.accept(ModBlocks.WARPED_TABLE);
+
             event.accept(ModBlocks.FAKE_WINE_BOTTLE);
+
+            event.accept(ModBlocks.APPLE_TREE_LOG);
+            event.accept(ModBlocks.APPLE_TREE_WOOD);
+            event.accept(ModBlocks.STRIPPED_APPLE_TREE_LOG);
+            event.accept(ModBlocks.STRIPPED_APPLE_TREE_WOOD);
+            event.accept(ModBlocks.APPLE_TREE_PLANKS);
+            event.accept(ModBlocks.APPLE_TREE_LEAVES);
+            event.accept(ModBlocks.APPLE_TREE_SAPLING);
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
             event.accept(ModBlocks.CROP_SUPPORT);

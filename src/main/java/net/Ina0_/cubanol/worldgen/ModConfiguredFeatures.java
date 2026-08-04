@@ -1,17 +1,34 @@
 package net.Ina0_.cubanol.worldgen;
 
 import net.Ina0_.cubanol.Cubanol;
+import net.Ina0_.cubanol.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_TREE_KEY = registerKey("apple_tree");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
+
+        register(context, APPLE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.APPLE_TREE_LOG.get()),
+                new StraightTrunkPlacer(2, 1, 0),
+                BlockStateProvider.simple(ModBlocks.APPLE_TREE_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(1), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0, 1)
+        ).build());
 
     }
 

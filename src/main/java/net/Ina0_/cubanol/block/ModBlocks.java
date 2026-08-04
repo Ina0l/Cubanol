@@ -3,6 +3,7 @@ package net.Ina0_.cubanol.block;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.custom.*;
 import net.Ina0_.cubanol.item.ModItems;
+import net.Ina0_.cubanol.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -12,9 +13,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
@@ -267,6 +266,30 @@ public class ModBlocks {
                     .isRedstoneConductor(ModBlocks::never)
     ));
 
+    public static final DeferredBlock<FlammableRotatedPillarBlock> APPLE_TREE_LOG = registerBlock("apple_tree_log", () -> new FlammableRotatedPillarBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+    ));
+    public static final DeferredBlock<Block> APPLE_TREE_WOOD = registerBlock("apple_tree_wood", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
+    ));
+    public static final DeferredBlock<FlammableRotatedPillarBlock> STRIPPED_APPLE_TREE_LOG = registerBlock("stripped_apple_tree_log", () -> new FlammableRotatedPillarBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)
+    ));
+    public static final DeferredBlock<Block> STRIPPED_APPLE_TREE_WOOD = registerBlock("stripped_apple_tree_wood", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
+    ));
+    public static final DeferredBlock<LeavesBlock> APPLE_TREE_LEAVES = registerBlock("apple_tree_leaves", () -> new LeavesBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+    ));
+    public static final DeferredBlock<SaplingBlock> APPLE_TREE_SAPLING = registerBlock("apple_tree_sapling", () -> new SaplingBlock(
+            ModTreeGrowers.APPLE_TREE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+    ));
+
+    public static final DeferredBlock<Block> APPLE_TREE_PLANKS = registerBlock("apple_tree_planks", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
+    ));
+
 
     /**
      * Used instead of the Block::never used in vanilla BlockProperties, which is private
@@ -296,6 +319,7 @@ public class ModBlocks {
     public static void register(IEventBus event_bus){
         BLOCKS.register(event_bus);
     }
+
 
     public static void dropItemsFromState(ServerLevel level, BlockState state, BlockPos pos, @Nullable Player player){
         if(player!=null && player.hasInfiniteMaterials()){

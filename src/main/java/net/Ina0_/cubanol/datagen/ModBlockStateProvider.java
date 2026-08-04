@@ -5,11 +5,13 @@ import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.*;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -130,9 +132,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crop(ModBlocks.RICE_PANICLES.get(), "rice_panicles", "rice_panicles", false);
 
         crop(ModBlocks.STAR_ANISE_CROP.get(), "star_anise_crop", "star_anise_crop", true);
+
+        logBlock(ModBlocks.APPLE_TREE_LOG.get());
+        logBlock(ModBlocks.STRIPPED_APPLE_TREE_LOG.get());
+        simpleBlockWithItem(ModBlocks.APPLE_TREE_WOOD.get(), models().cubeAll(name(ModBlocks.APPLE_TREE_WOOD.get()), blockTexture(ModBlocks.APPLE_TREE_LOG.get())));
+        simpleBlockWithItem(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get(), models().cubeAll(name(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_APPLE_TREE_LOG.get())));
+
+        blockItem(ModBlocks.APPLE_TREE_LOG);
+        blockItem(ModBlocks.STRIPPED_APPLE_TREE_LOG);
+
+        leavesBlock(ModBlocks.APPLE_TREE_LEAVES);
+        crossBlock(ModBlocks.APPLE_TREE_SAPLING);
+
+        simpleBlockWithItem(ModBlocks.APPLE_TREE_PLANKS);
     }
 
-    public void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){
+    private void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){
         Function<BlockState, ConfiguredModel[]> function = state -> {
             ConfiguredModel[] configuredModels = new ConfiguredModel[1];
             if(!isModelCrossShaped) {
@@ -152,7 +167,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block).forAllStates(function);
     }
 
-    public void blockBasedOnBlockStates(Block block, String modelName, String textureName, Function<Pair<String, ResourceLocation>, ModelFile> modelType, @Nullable Function<BlockState, Boolean> isExistingFile, @Nullable Function<BlockState, BlockState> getReplacingState, Property<?>... properties){
+    private void crossBlock(DeferredBlock<? extends Block> block){
+        simpleBlock(block.get(), models().cross(name(block.get()), blockTexture(block.get())).renderType("cutout"));
+    }
+
+    private void leavesBlock(DeferredBlock<? extends LeavesBlock> block){
+        modelFromParent(block, ResourceLocation.fromNamespaceAndPath("minecraft", "block/leaves"), blockTexture(block.get()), "all");
+        blockItem(block);
+    }
+
+    private void blockBasedOnBlockStates(Block block, String modelName, String textureName, Function<Pair<String, ResourceLocation>, ModelFile> modelType, @Nullable Function<BlockState, Boolean> isExistingFile, @Nullable Function<BlockState, BlockState> getReplacingState, Property<?>... properties){
         if(isExistingFile==null){
             isExistingFile = state -> true;
         }
@@ -194,20 +218,36 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private void simpleBlockWithItem(DeferredBlock<?> deferredBlock){
+    private void simpleBlockWithItem(DeferredBlock<? extends Block> deferredBlock){
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
-    private void simpleBlockWithItemFromExistingModelFile(DeferredBlock<?> deferredBlock){
+    private void simpleBlockWithItemFromExistingModelFile(DeferredBlock<? extends Block> deferredBlock){
         simpleBlockWithItem(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()));
     }
 
-    private void horizontalDirectionalBlockWithItemFromExistingModelFile(DeferredBlock<?> deferredBlock){
+    private void horizontalDirectionalBlockWithItemFromExistingModelFile(DeferredBlock<? extends Block> deferredBlock){
         horizontalBlock(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()), 0);
         simpleBlockItem(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()));
     }
 
     private <T extends Block> void modelFromParent(DeferredBlock<T> block, ResourceLocation parent, ResourceLocation texture){
         simpleBlockWithItem(block.get(), models().singleTexture(block.getRegisteredName(), parent, texture));
+    }
+
+    private <T extends Block> void modelFromParent(DeferredBlock<T> block, ResourceLocation parent, ResourceLocation texture, String textureKey){
+        simpleBlockWithItem(block.get(), models().singleTexture(block.getRegisteredName(), parent, textureKey, texture));
+    }
+
+    private void blockItem(DeferredBlock<? extends Block> deferredBlock) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("cubanol:block/" + deferredBlock.getId().getPath()));
+    }
+
+    private void blockItem(DeferredBlock<? extends Block> deferredBlock, String appendix) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("cubanol:block/" + deferredBlock.getId().getPath() + appendix));
+    }
+
+    private String name(Block block) {
+        return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
 }
