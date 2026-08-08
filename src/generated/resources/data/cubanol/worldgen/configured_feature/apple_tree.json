@@ -12,18 +12,39 @@
       "type": "minecraft:blob_foliage_placer",
       "height": 2,
       "offset": 0,
-      "radius": 1
+      "radius": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 2,
+        "min_inclusive": 1
+      }
     },
     "foliage_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "cubanol:apple_tree_leaves",
-        "Properties": {
-          "distance": "7",
-          "persistent": "false",
-          "waterlogged": "false"
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "cubanol:apple_tree_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "Name": "cubanol:growing_apple_tree_leaves",
+            "Properties": {
+              "age": "0",
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 1
         }
-      }
+      ]
     },
     "force_dirt": false,
     "ignore_vines": false,
@@ -31,13 +52,13 @@
       "type": "minecraft:two_layers_feature_size",
       "limit": 1,
       "lower_size": 0,
-      "upper_size": 1
+      "upper_size": 2
     },
     "trunk_placer": {
       "type": "minecraft:straight_trunk_placer",
       "base_height": 2,
       "height_rand_a": 1,
-      "height_rand_b": 0
+      "height_rand_b": 1
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
