@@ -40,6 +40,8 @@ public class ModCreativeModTabs {
 
                         output.accept(ModBlocks.GROWING_APPLE_TREE_LEAVES);
                         output.accept(ModBlocks.APPLE_TREE_SAPLING);
+
+                        output.accept(ModItems.APPLE_SEEDS);
                     })
                     .build()
     );
@@ -55,8 +57,8 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.APPLE_TREE_WOOD);
                         output.accept(ModBlocks.STRIPPED_APPLE_TREE_LOG);
                         output.accept(ModBlocks.STRIPPED_APPLE_TREE_WOOD);
-                        output.accept(ModBlocks.APPLE_TREE_PLANKS);
                         output.accept(ModBlocks.APPLE_TREE_LEAVES);
+                        output.accept(ModBlocks.APPLE_TREE_PLANKS);
 
                         output.accept(ModBlocks.APPLE_TREE_STAIR);
                         output.accept(ModBlocks.APPLE_TREE_SLAB);

@@ -287,6 +287,18 @@ public class ModBlocks {
     public static final DeferredBlock<GrowingAppleTreeLeavesBlock> GROWING_APPLE_TREE_LEAVES = registerBlock("growing_apple_tree_leaves", () -> new GrowingAppleTreeLeavesBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
     ));
+
+    public static final DeferredBlock<AppleTreeSaplingCropBlock> APPLE_TREE_SAPLING_CROP = BLOCKS.register("apple_tree_sapling_crop", () -> new AppleTreeSaplingCropBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(ModBlocks::never)
+    ));
+
     public static final DeferredBlock<SaplingBlock> APPLE_TREE_SAPLING = registerBlock("apple_tree_sapling", () -> new SaplingBlock(
             ModTreeGrowers.APPLE_TREE,
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)

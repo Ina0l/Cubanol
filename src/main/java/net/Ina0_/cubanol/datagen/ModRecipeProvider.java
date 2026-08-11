@@ -128,6 +128,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_iron_nugget", has(Items.IRON_NUGGET))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_WOOD, 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.APPLE_TREE_LOG)
+                .unlockedBy("has_apple_tree_log", has(ModBlocks.APPLE_TREE_LOG))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_APPLE_TREE_WOOD, 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.STRIPPED_APPLE_TREE_LOG)
+                .unlockedBy("has_stripped_apple_tree_log", has(ModBlocks.STRIPPED_APPLE_TREE_LOG))
+                .save(recipeOutput);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModBlocks.FAKE_WINE_BOTTLE)
                 .requires(Items.GLASS_BOTTLE)
@@ -168,6 +181,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.STRIPPED_APPLE_TREE_WOOD)
                 .unlockedBy("has_stripped_apple_tree_wood", has(ModBlocks.STRIPPED_APPLE_TREE_WOOD))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_stripped_wood"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.APPLE_SEEDS, 2)
+                .requires(Items.APPLE)
+                .unlockedBy("has_apple", has(Items.APPLE))
+                .save(recipeOutput);
 
         stairBuilder(ModBlocks.APPLE_TREE_STAIR, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
                 .group("apple_tree")

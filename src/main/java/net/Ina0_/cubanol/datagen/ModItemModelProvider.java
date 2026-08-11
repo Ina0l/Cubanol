@@ -38,6 +38,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModBlocks.APPLE_TREE_FENCE.asItem(), mcLoc("block/fence_inventory"), modLoc("block/" + getPath(ModBlocks.APPLE_TREE_PLANKS.get())));
 
         basicItem(ModBlocks.APPLE_TREE_DOOR.asItem());
+
+        basicItem(ModItems.APPLE_SEEDS.get());
     }
 
     private ItemModelBuilder withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture, String key){

@@ -220,7 +220,29 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         this.add(
                 ModBlocks.APPLE_TREE_LEAVES.get(),
-                block -> this.createLeavesDrops(block, ModBlocks.APPLE_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
+                this.applyExplosionDecay(
+                        ModBlocks.APPLE_TREE_LEAVES.get(),
+                        LootTable.lootTable()
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()))
+                                                .add(LootItem.lootTableItem(ModBlocks.APPLE_TREE_LEAVES))
+                                )
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
+                                                .add(
+                                                        LootItem.lootTableItem(Items.STICK)
+                                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                                                .when(
+                                                                        BonusLevelTableCondition.bonusLevelFlatChance(
+                                                                                enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE),
+                                                                                0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F
+                                                                        )
+                                                                )
+                                                )
+                                )
+                )
         );
 
         LootItemCondition.Builder lootItemConditionForAppleTreeLeaves = LootItemBlockStatePropertyCondition
@@ -238,18 +260,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                         LootPool.lootPool()
                                                 .when(HAS_SHEARS.or(hasSilkTouch()))
                                                 .add(LootItem.lootTableItem(ModBlocks.APPLE_TREE_LEAVES))
-                                )
-                                .withPool(
-                                        LootPool.lootPool()
-                                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
-                                                .add(
-                                                        LootItem.lootTableItem(ModBlocks.APPLE_TREE_SAPLING)
-                                                                .when(
-                                                                        BonusLevelTableCondition.bonusLevelFlatChance(
-                                                                                enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE), NORMAL_LEAVES_SAPLING_CHANCES
-                                                                        )
-                                                                )
-                                                )
                                 )
                                 .withPool(
                                         LootPool.lootPool()
@@ -287,7 +297,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.APPLE_TREE_FENCE.get());
         this.dropSelf(ModBlocks.APPLE_TREE_FENCE_GATE.get());
 
-
+        this.dropOther(ModBlocks.APPLE_TREE_SAPLING_CROP.get(), ModItems.APPLE_SEEDS);
     }
 
     @Override

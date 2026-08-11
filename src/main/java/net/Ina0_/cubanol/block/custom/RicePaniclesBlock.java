@@ -29,7 +29,6 @@ public class RicePaniclesBlock extends CropBlock {
 
     public RicePaniclesBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(AGE, 0));
     }
 
     @Override
