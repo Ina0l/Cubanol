@@ -47,7 +47,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CRIMSON_TABLE.get());
         this.dropSelf(ModBlocks.WARPED_TABLE.get());
         this.dropSelf(ModBlocks.BAMBOO_TABLE.get());
+        this.dropSelf(ModBlocks.APPLE_TREE_TABLE.get());
+
         this.dropSelf(ModBlocks.FAKE_WINE_BOTTLE.get());
+
         this.dropSelf(ModBlocks.AGAVE_CROP.get());
 
         LootItemCondition.Builder lootItemConditionForAgaveFlower = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.AGAVE_FLOWER.get())
@@ -274,6 +277,17 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.APPLE_TREE_SAPLING.get());
 
         this.dropSelf(ModBlocks.APPLE_TREE_PLANKS.get());
+
+        this.dropSelf(ModBlocks.APPLE_TREE_STAIR.get());
+        this.add(ModBlocks.APPLE_TREE_SLAB.get(), this.createSlabItemTable(ModBlocks.APPLE_TREE_SLAB.get()));
+        this.dropSelf(ModBlocks.APPLE_TREE_BUTTON.get());
+        this.dropSelf(ModBlocks.APPLE_TREE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.APPLE_TREE_TRAPDOOR.get());
+        this.add(ModBlocks.APPLE_TREE_DOOR.get(), this.createDoorTable(ModBlocks.APPLE_TREE_DOOR.get()));
+        this.dropSelf(ModBlocks.APPLE_TREE_FENCE.get());
+        this.dropSelf(ModBlocks.APPLE_TREE_FENCE_GATE.get());
+
+
     }
 
     @Override

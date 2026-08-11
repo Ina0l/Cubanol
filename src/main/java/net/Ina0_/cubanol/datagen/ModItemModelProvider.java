@@ -7,9 +7,9 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.Objects;
@@ -33,15 +33,30 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RICE_PANICLE.get());
 
         basicItemFromAbsolutePath(ModBlocks.APPLE_TREE_SAPLING.asItem(), ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/apple_tree_sapling"));
+
+        withExistingParent(ModBlocks.APPLE_TREE_BUTTON.asItem(), mcLoc("block/button_inventory"), modLoc("block/" + getPath(ModBlocks.APPLE_TREE_PLANKS.get())));
+        withExistingParent(ModBlocks.APPLE_TREE_FENCE.asItem(), mcLoc("block/fence_inventory"), modLoc("block/" + getPath(ModBlocks.APPLE_TREE_PLANKS.get())));
+
+        basicItem(ModBlocks.APPLE_TREE_DOOR.asItem());
+    }
+
+    private ItemModelBuilder withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture, String key){
+        return withExistingParent(getPath(item), parent)
+                .texture(key, texture);
+    }
+
+    private ItemModelBuilder withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture){
+        return withExistingParent(item, parent, texture, "texture");
     }
 
     private ItemModelBuilder basicItemFromAbsolutePath(Item item, ResourceLocation textureLocation){
-        return getBuilder(getPath(item).toString())
-                .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                .texture("layer0", textureLocation);
+        return withExistingParent(item, mcLoc("item/generated"), textureLocation, "layer0");
     }
 
-    private ResourceLocation getPath(Item item){
-        return Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
+    private String getPath(Item item){
+        return Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)).getPath();
+    }
+    private String getPath(Block block){
+        return Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block)).getPath();
     }
 }

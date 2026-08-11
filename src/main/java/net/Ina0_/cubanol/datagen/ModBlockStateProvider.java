@@ -8,10 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -31,7 +28,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        ResourceLocation tableParent = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/table");
+        ResourceLocation tableParent = modLoc("block/table");
         modelFromParent(ModBlocks.OAK_TABLE, tableParent, blockTexture(Blocks.OAK_PLANKS));
         modelFromParent(ModBlocks.SPRUCE_TABLE, tableParent, blockTexture(Blocks.SPRUCE_PLANKS));
         modelFromParent(ModBlocks.BIRCH_TABLE, tableParent, blockTexture(Blocks.BIRCH_PLANKS));
@@ -43,6 +40,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         modelFromParent(ModBlocks.CRIMSON_TABLE, tableParent, blockTexture(Blocks.CRIMSON_PLANKS));
         modelFromParent(ModBlocks.WARPED_TABLE, tableParent, blockTexture(Blocks.WARPED_PLANKS));
         modelFromParent(ModBlocks.BAMBOO_TABLE, tableParent, blockTexture(Blocks.BAMBOO_PLANKS));
+        modelFromParent(ModBlocks.APPLE_TREE_TABLE, tableParent, blockTexture(ModBlocks.APPLE_TREE_PLANKS.get()));
 
         horizontalDirectionalBlockWithItemFromExistingModelFile(ModBlocks.FAKE_WINE_BOTTLE);
 
@@ -90,7 +88,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 CropSupportBlock.EAST,
                 CropSupportBlock.WEST
         );
-        simpleBlockItem(ModBlocks.CROP_SUPPORT.get(), models().getExistingFile(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/crop_support")));
+        simpleBlockItem(ModBlocks.CROP_SUPPORT.get(), models().getExistingFile(modLoc("block/crop_support")));
 
         Function<BlockState, Boolean> isExistingFileForGrapeCrop = state -> (
                     (state.getValue(GrapeCropBlock.NORTH) && state.getValue(GrapeCropBlock.VINE_HANGING_SIDE) == Direction.NORTH) ||
@@ -152,11 +150,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
                 "growing_apple_tree_leaves",
                 "growing_apple_tree_leaves_overlay",
-                pair -> models().withExistingParent(pair.getFirst(), ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/overlayered_block"))
+                pair -> models().withExistingParent(pair.getFirst(), modLoc("block/overlayered_block"))
                         .texture(
                                 "underlay",
-                                ResourceLocation.fromNamespaceAndPath(
-                                        pair.getSecond().getNamespace(),
+                                modLoc(
                                         Arrays.stream(pair.getSecond().getPath().split("_"))
                                                 .filter(string -> !string.equals("overlay"))
                                                 .collect(Collectors.joining("_"))
@@ -168,6 +165,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 GrowingAppleTreeLeavesBlock.AGE
         );
         blockItem(ModBlocks.GROWING_APPLE_TREE_LEAVES, "_age8");
+
+        ResourceLocation appleTreePlanks = blockTexture(ModBlocks.APPLE_TREE_PLANKS.get());
+        stairsBlock(ModBlocks.APPLE_TREE_STAIR.get(), appleTreePlanks);
+        slabBlock(ModBlocks.APPLE_TREE_SLAB.get(), appleTreePlanks, appleTreePlanks);
+        buttonBlock(ModBlocks.APPLE_TREE_BUTTON.get(), appleTreePlanks);
+        pressurePlateBlock(ModBlocks.APPLE_TREE_PRESSURE_PLATE.get(), appleTreePlanks);
+        trapdoorBlockWithRenderType(ModBlocks.APPLE_TREE_TRAPDOOR.get(), modLoc("block/apple_tree_trapdoor"), true, "cutout");
+        doorBlockWithRenderType(ModBlocks.APPLE_TREE_DOOR.get(), modLoc("block/apple_tree_door_bottom"), modLoc("block/apple_tree_door_top"), "cutout");
+        fenceBlock(ModBlocks.APPLE_TREE_FENCE.get(), appleTreePlanks);
+        fenceGateBlock(ModBlocks.APPLE_TREE_FENCE_GATE.get(), appleTreePlanks);
+
+        blockItem(ModBlocks.APPLE_TREE_STAIR);
+        blockItem(ModBlocks.APPLE_TREE_SLAB);
+        blockItem(ModBlocks.APPLE_TREE_BUTTON);
+        blockItem(ModBlocks.APPLE_TREE_PRESSURE_PLATE);
+        blockItem(ModBlocks.APPLE_TREE_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.APPLE_TREE_DOOR);
+        blockItem(ModBlocks.APPLE_TREE_FENCE);
+        blockItem(ModBlocks.APPLE_TREE_FENCE_GATE);
     }
 
     private void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){
@@ -176,12 +192,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
             if(!isModelCrossShaped) {
                 configuredModels[0] = new ConfiguredModel(models().crop(
                         modelName + "_age" + block.getAge(state),
-                        ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/" + textureName + "_age" + block.getAge(state))
+                        modLoc("block/" + textureName + "_age" + block.getAge(state))
                 ).renderType("cutout"));
             } else {
                 configuredModels[0] = new ConfiguredModel(models().cross(
                         modelName + "_age" + block.getAge(state),
-                        ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/" + textureName + "_age" + block.getAge(state))
+                        modLoc("block/" + textureName + "_age" + block.getAge(state))
                 ).renderType("cutout"));
             }
             return configuredModels;
@@ -225,10 +241,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 }
             }
             String filePath = "block/" + textureName + blockStatesPropertiesValues;
-            ResourceLocation resourceLocation = ResourceLocation.fromNamespaceAndPath(
-                    Cubanol.MOD_ID,
-                    finalIsExistingFile.apply(state)? filePath: "block/null"
-            );
+            ResourceLocation resourceLocation = modLoc(finalIsExistingFile.apply(state)? filePath: "block/null");
             configuredModels[0] = new ConfiguredModel(modelType.apply(
                     Pair.of(
                             modelName + blockStatesPropertiesValues,

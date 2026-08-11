@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
@@ -167,5 +168,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.STRIPPED_APPLE_TREE_WOOD)
                 .unlockedBy("has_stripped_apple_tree_wood", has(ModBlocks.STRIPPED_APPLE_TREE_WOOD))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_stripped_wood"));
+
+        stairBuilder(ModBlocks.APPLE_TREE_STAIR, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
+                .group("apple_tree")
+                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+                .save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_SLAB, ModBlocks.APPLE_TREE_PLANKS);
+        buttonBuilder(ModBlocks.APPLE_TREE_BUTTON, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
+                .group("apple_tree")
+                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+                .save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.APPLE_TREE_PRESSURE_PLATE, ModBlocks.APPLE_TREE_PLANKS);
+        trapdoorBuilder(ModBlocks.APPLE_TREE_TRAPDOOR, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
+                .group("apple_tree")
+                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+                .save(recipeOutput);
+        doorBuilder(ModBlocks.APPLE_TREE_DOOR, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
+                .group("apple_tree")
+                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+                .save(recipeOutput);
+        fenceBuilder(ModBlocks.APPLE_TREE_FENCE, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
+                .group("apple_tree")
+                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+                .save(recipeOutput);
+        fenceGateBuilder(ModBlocks.APPLE_TREE_FENCE_GATE, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
+                .group("apple_tree")
+                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+                .save(recipeOutput);
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "cubanol:block/apple_tree_planks",
+    "side": "cubanol:block/apple_tree_planks",
+    "top": "cubanol:block/apple_tree_planks"
+  }
+}

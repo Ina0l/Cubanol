@@ -35,6 +35,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRIMSON_TABLE.get())
                 .add(ModBlocks.WARPED_TABLE.get())
                 .add(ModBlocks.BAMBOO_TABLE.get())
+                .add(ModBlocks.APPLE_TREE_TABLE.get())
+
                 .add(ModBlocks.CROP_SUPPORT.get())
                 .add(ModBlocks.GRAPE_CROP.get())
 
@@ -42,7 +44,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.APPLE_TREE_WOOD.get())
                 .add(ModBlocks.STRIPPED_APPLE_TREE_LOG.get())
                 .add(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get())
-                .add(ModBlocks.APPLE_TREE_PLANKS.get());
+                .add(ModBlocks.APPLE_TREE_PLANKS.get())
+
+                .add(ModBlocks.APPLE_TREE_STAIR.get())
+                .add(ModBlocks.APPLE_TREE_SLAB.get())
+                .add(ModBlocks.APPLE_TREE_BUTTON.get())
+                .add(ModBlocks.APPLE_TREE_PRESSURE_PLATE.get())
+                .add(ModBlocks.APPLE_TREE_TRAPDOOR.get())
+                .add(ModBlocks.APPLE_TREE_DOOR.get())
+                .add(ModBlocks.APPLE_TREE_FENCE.get())
+                .add(ModBlocks.APPLE_TREE_FENCE_GATE.get());
 
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.APPLE_TREE_LEAVES.get())
@@ -56,5 +67,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_APPLE_TREE_LOG.get())
                 .add(ModBlocks.APPLE_TREE_WOOD.get())
                 .add(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get());
+
+        tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.APPLE_TREE_FENCE.get());
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.APPLE_TREE_FENCE_GATE.get());
     }
 }

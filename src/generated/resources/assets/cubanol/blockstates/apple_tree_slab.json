@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubanol:block/apple_tree_slab"
+    },
+    "type=double": {
+      "model": "cubanol:block/apple_tree_planks"
+    },
+    "type=top": {
+      "model": "cubanol:block/apple_tree_slab_top"
+    }
+  }
+}

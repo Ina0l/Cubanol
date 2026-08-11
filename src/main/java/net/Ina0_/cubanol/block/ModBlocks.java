@@ -2,6 +2,8 @@ package net.Ina0_.cubanol.block;
 
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.custom.*;
+import net.Ina0_.cubanol.block.properties.ModBlockSetType;
+import net.Ina0_.cubanol.block.properties.ModWoodType;
 import net.Ina0_.cubanol.item.ModItems;
 import net.Ina0_.cubanol.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
@@ -124,6 +126,7 @@ public class ModBlocks {
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
     ));
+
 
     public static final DeferredBlock<TableBlock> CRIMSON_TABLE = registerBlock("crimson_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
@@ -291,6 +294,44 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> APPLE_TREE_PLANKS = registerBlock("apple_tree_planks", () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
+    ));
+
+    public static final DeferredBlock<SlabBlock> APPLE_TREE_SLAB = registerBlock("apple_tree_slab", () -> new SlabBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)
+    ));
+    public static final DeferredBlock<StairBlock> APPLE_TREE_STAIR = registerBlock("apple_tree_stair", () -> new StairBlock(
+            APPLE_TREE_PLANKS.get().defaultBlockState(),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
+    ));
+    public static final DeferredBlock<ButtonBlock> APPLE_TREE_BUTTON = registerBlock("apple_tree_button", () -> new ButtonBlock(
+            ModBlockSetType.APPLE_TREE, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)
+    ));
+    public static final DeferredBlock<PressurePlateBlock> APPLE_TREE_PRESSURE_PLATE = registerBlock("apple_tree_pressure_plate", () -> new PressurePlateBlock(
+            ModBlockSetType.APPLE_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)
+    ));
+    public static final DeferredBlock<TrapDoorBlock> APPLE_TREE_TRAPDOOR = registerBlock("apple_tree_trapdoor", () -> new TrapDoorBlock(
+            ModBlockSetType.APPLE_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
+    ));
+    public static final DeferredBlock<DoorBlock> APPLE_TREE_DOOR = registerBlock("apple_tree_door", () -> new DoorBlock(
+            ModBlockSetType.APPLE_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
+    ));
+    public static final DeferredBlock<FenceBlock> APPLE_TREE_FENCE = registerBlock("apple_tree_fence", () -> new FenceBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)
+    ));
+    public static final DeferredBlock<FenceGateBlock> APPLE_TREE_FENCE_GATE = registerBlock("apple_tree_fence_gate", () -> new FenceGateBlock(
+            ModWoodType.APPLE_TREE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)
+    ));
+
+    public static final DeferredBlock<TableBlock> APPLE_TREE_TABLE = registerBlock("apple_tree_table", () -> new TableBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(ModBlocks.APPLE_TREE_PLANKS.get().defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
     ));
 
 

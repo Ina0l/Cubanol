@@ -1,4 +1,7 @@
 {
+    "creative_mode_tab.cubanol.crops_tab": "Cubanol Crops",
+    "creative_mode_tab.cubanol.decorations_tab": "Cubanol Decorations",
+
     "item.cubanol.star_anise": "Star Anise",
 
     "item.cubanol.agave_seeds": "Agave Seeds",
@@ -24,6 +27,7 @@
     "block.cubanol.crimson_table": "Crimson Table",
     "block.cubanol.warped_table": "Warped Table",
     "block.cubanol.bamboo_table": "Bamboo Table",
+    "block.cubanol.apple_tree_table": "Apple Tree Table",
 
     "block.cubanol.agave_crop": "Agave",
     "block.cubanol.agave_stem": "Agave Stem",
@@ -47,5 +51,15 @@
 
     "block.cubanol.apple_tree_sapling": "Apple Tree Sapling",
 
-    "block.cubanol.apple_tree_planks": "Apple Tree Planks"
+    "block.cubanol.apple_tree_planks": "Apple Tree Planks",
+
+    "block.cubanol.apple_tree_stair": "Apple Tree Stair",
+    "block.cubanol.apple_tree_slab": "Apple Tree Slab",
+    "block.cubanol.apple_tree_button": "Apple Tree Button",
+    "block.cubanol.apple_tree_pressure_plate": "Apple Tree Pressure Plate",
+    "block.cubanol.apple_tree_trapdoor": "Apple Tree Trapdoor",
+    "block.cubanol.apple_tree_door": "Apple Tree Door",
+    "block.cubanol.apple_tree_fence": "Apple Tree Fence",
+    "block.cubanol.apple_tree_fence_gate": "Apple Tree Fence Gate"
+
 }
