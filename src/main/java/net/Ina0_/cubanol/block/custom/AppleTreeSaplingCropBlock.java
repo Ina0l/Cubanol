@@ -5,6 +5,7 @@ import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -13,11 +14,22 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 public class AppleTreeSaplingCropBlock extends CropBlock {
 
     public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
+
+    public static final VoxelShape[] SHAPES = new VoxelShape[]{
+            Block.box(0, 0, 0, 16, 3, 16),
+            Block.box(0, 0, 0, 16, 5, 16),
+            Block.box(0, 0, 0, 16, 6, 16),
+            Block.box(0, 0, 0, 16, 8, 16),
+            Block.box(0, 0, 0, 16, 11, 16),
+            Block.box(0, 0, 0, 16, 16, 16),
+    };
 
     public AppleTreeSaplingCropBlock(Properties properties) {
         super(properties);
@@ -30,6 +42,11 @@ public class AppleTreeSaplingCropBlock extends CropBlock {
             level.setBlock(pos, ModBlocks.APPLE_TREE_SAPLING.get().defaultBlockState(), 3);
             level.setBlock(pos.below(), Blocks.DIRT.defaultBlockState(), 3);
         }
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPES[this.getAge(state)];
     }
 
     @Override

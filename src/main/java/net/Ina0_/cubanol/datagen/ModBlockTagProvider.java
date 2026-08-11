@@ -73,5 +73,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.APPLE_TREE_FENCE_GATE.get());
+
+        tag(BlockTags.STANDING_SIGNS)
+                .add(ModBlocks.APPLE_TREE_SIGN.get());
+
+        tag(BlockTags.WALL_SIGNS)
+                .add(ModBlocks.APPLE_TREE_WALL_SIGN.get());
     }
 }

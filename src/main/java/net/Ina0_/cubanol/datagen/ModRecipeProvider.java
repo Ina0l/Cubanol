@@ -213,5 +213,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group("apple_tree")
                 .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
                 .save(recipeOutput);
+
+        signBuilder(ModItems.APPLE_TREE_SIGN, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
+                .group("apple_tree")
+                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+                .save(recipeOutput);
     }
 }

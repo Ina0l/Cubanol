@@ -18,6 +18,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -344,6 +345,28 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<StandingSignBlock> APPLE_TREE_SIGN = BLOCKS.register("apple_tree_sign", () -> new StandingSignBlock(
+            ModWoodType.APPLE_TREE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(APPLE_TREE_LOG.get().defaultMapColor())
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .ignitedByLava()
+    ));
+    public static final DeferredBlock<WallSignBlock> APPLE_TREE_WALL_SIGN = BLOCKS.register("apple_tree_wall_sign", () -> new WallSignBlock(
+            ModWoodType.APPLE_TREE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .lootFrom(APPLE_TREE_SIGN)
+                    .ignitedByLava()
     ));
 
 

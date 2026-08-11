@@ -298,6 +298,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.APPLE_TREE_FENCE_GATE.get());
 
         this.dropOther(ModBlocks.APPLE_TREE_SAPLING_CROP.get(), ModItems.APPLE_SEEDS);
+
+        this.dropSelf(ModBlocks.APPLE_TREE_SIGN.get());
+        this.dropSelf(ModBlocks.APPLE_TREE_WALL_SIGN.get());
     }
 
     @Override

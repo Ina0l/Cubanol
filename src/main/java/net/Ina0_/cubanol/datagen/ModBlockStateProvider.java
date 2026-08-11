@@ -186,6 +186,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.APPLE_TREE_FENCE_GATE);
 
         crop(ModBlocks.APPLE_TREE_SAPLING_CROP.get(), "apple_tree_sapling_crop", "apple_tree_sapling_crop", true);
+
+        getVariantBuilder(ModBlocks.APPLE_TREE_SIGN.get()).partialState().setModels(new ConfiguredModel(models().getBuilder("apple_tree_sign").texture("particle", modLoc("block/apple_tree_planks"))));
+        getVariantBuilder(ModBlocks.APPLE_TREE_WALL_SIGN.get()).partialState().setModels(new ConfiguredModel(models().getBuilder("apple_tree_sign").texture("particle", modLoc("block/apple_tree_planks"))));
     }
 
     private <T extends CropBlock> void crop(T block, String modelName, String textureName, Boolean isModelCrossShaped){

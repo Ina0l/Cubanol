@@ -9,12 +9,13 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.SignItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 //this is there to access the vanilla examples
-
+import net.minecraft.world.item.Items;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Cubanol.MOD_ID);
@@ -72,6 +73,12 @@ public class ModItems {
     public static final DeferredItem<BlockItem> APPLE_SEEDS = ITEMS.register("apple_seeds", () -> new BlockItem(
             ModBlocks.APPLE_TREE_SAPLING_CROP.get(),
             new Item.Properties()
+    ));
+
+    public static final DeferredItem<SignItem> APPLE_TREE_SIGN = ITEMS.register("apple_tree_sign", () -> new SignItem(
+            new Item.Properties().stacksTo(16),
+            ModBlocks.APPLE_TREE_SIGN.get(),
+            ModBlocks.APPLE_TREE_WALL_SIGN.get()
     ));
 
     public static void register(IEventBus eventBus){

@@ -15,10 +15,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
@@ -114,6 +116,15 @@ public class ModEvents {
                 },
                 ModBlocks.APPLE_TREE_LEAVES.asItem(),
                 ModBlocks.GROWING_APPLE_TREE_LEAVES.asItem()
+        );
+    }
+
+    @SubscribeEvent
+    public static void onBlockEntityTypeAddBlock(BlockEntityTypeAddBlocksEvent event){
+        event.modify(
+                BlockEntityType.SIGN,
+                ModBlocks.APPLE_TREE_SIGN.get(),
+                ModBlocks.APPLE_TREE_WALL_SIGN.get()
         );
     }
 }
