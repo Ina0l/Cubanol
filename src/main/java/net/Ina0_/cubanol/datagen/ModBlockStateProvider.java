@@ -20,7 +20,9 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
 import javax.annotation.Nullable;
+import java.util.Arrays;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -145,6 +147,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crossBlock(ModBlocks.APPLE_TREE_SAPLING);
 
         simpleBlockWithItem(ModBlocks.APPLE_TREE_PLANKS);
+
+        blockBasedOnBlockStates(
+                ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
+                "growing_apple_tree_leaves",
+                "growing_apple_tree_leaves_overlay",
+                pair -> models().withExistingParent(pair.getFirst(), ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/overlayered_block"))
+                        .texture(
+                                "underlay",
+                                ResourceLocation.fromNamespaceAndPath(
+                                        pair.getSecond().getNamespace(),
+                                        Arrays.stream(pair.getSecond().getPath().split("_"))
+                                                .filter(string -> !string.equals("overlay"))
+                                                .collect(Collectors.joining("_"))
+                                )
+                        )
+                        .texture("overlay", pair.getSecond()),
+                null,
+                null,
+                GrowingAppleTreeLeavesBlock.AGE
+        );
+        blockItem(ModBlocks.GROWING_APPLE_TREE_LEAVES, "_age8");
     }
 
     private void crop(CropBlock block, String modelName, String textureName, Boolean isModelCrossShaped){
@@ -172,7 +195,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void leavesBlock(DeferredBlock<? extends LeavesBlock> block){
-        modelFromParent(block, ResourceLocation.fromNamespaceAndPath("minecraft", "block/leaves"), blockTexture(block.get()), "all");
+        modelFromParent(block, ResourceLocation.withDefaultNamespace("block/leaves"), blockTexture(block.get()), "all");
         blockItem(block);
     }
 

@@ -45,7 +45,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.APPLE_TREE_PLANKS.get());
 
         tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(ModBlocks.APPLE_TREE_LEAVES.get());
+                .add(ModBlocks.APPLE_TREE_LEAVES.get())
+                .add(ModBlocks.GROWING_APPLE_TREE_LEAVES.get());
 
         tag(BlockTags.MAINTAINS_FARMLAND)
                 .add(Blocks.DIRT);

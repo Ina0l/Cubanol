@@ -68,7 +68,7 @@ public class ModItems {
             new Item.Properties()
     ));
 
-    public static void register(IEventBus event_bus){
-        ITEMS.register(event_bus);
+    public static void register(IEventBus eventBus){
+        ITEMS.register(eventBus);
     }
 }

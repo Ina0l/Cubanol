@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
@@ -225,43 +224,48 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 .hasBlockStateProperties(ModBlocks.GROWING_APPLE_TREE_LEAVES.get())
                 .setProperties(
                         StatePropertiesPredicate.Builder.properties()
-                                .hasProperty(GrowingAppleTreeLeavesBlock.AGE, ModBlocks.GROWING_APPLE_TREE_LEAVES.get().getMaxAge())
+                                .hasProperty(ModBlocks.GROWING_APPLE_TREE_LEAVES.get().getAgeProperty(), ModBlocks.GROWING_APPLE_TREE_LEAVES.get().getMaxAge())
                 );
         this.add(
                 ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
-                this.createSilkTouchOrShearsDispatchTable(
-                        ModBlocks.APPLE_TREE_LEAVES.get(),
-                        ((LootPoolSingletonContainer.Builder<?>)this.applyExplosionCondition(
-                                ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
-                                LootItem.lootTableItem(ModBlocks.APPLE_TREE_SAPLING)
-                        )).when(
-                                BonusLevelTableCondition.bonusLevelFlatChance(
-                                        enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE), NORMAL_LEAVES_SAPLING_CHANCES
+                this.applyExplosionDecay(
+                        ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
+                        LootTable.lootTable()
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()))
+                                                .add(LootItem.lootTableItem(ModBlocks.APPLE_TREE_LEAVES))
                                 )
-                        )
-                ).withPool(
-                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
-                                .add((
-                                        (LootPoolSingletonContainer.Builder<?>) this.applyExplosionDecay(
-                                                ModBlocks.GROWING_APPLE_TREE_LEAVES, LootItem.lootTableItem(Items.STICK)
-                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-                                        )
-                                        ).when(BonusLevelTableCondition.bonusLevelFlatChance(
-                                                enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE),
-                                                0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F))
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
+                                                .add(
+                                                        LootItem.lootTableItem(ModBlocks.APPLE_TREE_SAPLING)
+                                                                .when(
+                                                                        BonusLevelTableCondition.bonusLevelFlatChance(
+                                                                                enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE), NORMAL_LEAVES_SAPLING_CHANCES
+                                                                        )
+                                                                )
+                                                )
                                 )
-                ).withPool(
-                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
-                                .add((
-                                        (LootPoolSingletonContainer.Builder<?>) this.applyExplosionDecay(
-                                                ModBlocks.GROWING_APPLE_TREE_LEAVES,
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
+                                                .add(
+                                                        LootItem.lootTableItem(Items.STICK)
+                                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                                                .when(
+                                                                        BonusLevelTableCondition.bonusLevelFlatChance(
+                                                                            enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE),
+                                                                            0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F
+                                                                        )
+                                                                )
+                                                )
+                                )
+                                .withPool(
+                                        LootPool.lootPool().add(
                                                 LootItem.lootTableItem(Items.APPLE)
-                                                        .apply(
-                                                                SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))
-                                                        )
-                                        )
+                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
                                         ).when(lootItemConditionForAppleTreeLeaves)
                                 )
                 )

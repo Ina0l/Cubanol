@@ -1,7 +1,6 @@
 {
   "entries": [
-    "minecraft:oak_leaves",
-    "minecraft:dark_oak_leaves"
+    "cubanol:no_apple_loot_modifier"
   ],
   "replace": false
 }

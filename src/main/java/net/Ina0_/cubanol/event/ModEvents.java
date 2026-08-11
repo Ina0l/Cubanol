@@ -4,6 +4,7 @@ import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
 import net.Ina0_.cubanol.item.ModItems;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
@@ -11,11 +12,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
@@ -88,5 +91,29 @@ public class ModEvents {
                 level.setBlock(pos, CropSupportBlock.getBlockStateFromGrapeCropState(state), 3);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void onRegisterBlockColorHandlers(RegisterColorHandlersEvent.Block event){
+        event.register(
+                (state, level, pos, tintIndex) ->
+                        level != null && pos != null?
+                                BiomeColors.getAverageFoliageColor(level, pos):
+                                FoliageColor.getDefaultColor(),
+                ModBlocks.APPLE_TREE_LEAVES.get(),
+                ModBlocks.GROWING_APPLE_TREE_LEAVES.get()
+        );
+    }
+
+    @SubscribeEvent
+    public static void onRegisterItemColorHandlers(RegisterColorHandlersEvent.Item event){
+        event.register(
+                (stack, tintIndex) -> {
+                    BlockState blockstate = ((BlockItem)stack.getItem()).getBlock().defaultBlockState();
+                    return event.getBlockColors().getColor(blockstate, null, null, tintIndex);
+                },
+                ModBlocks.APPLE_TREE_LEAVES.asItem(),
+                ModBlocks.GROWING_APPLE_TREE_LEAVES.asItem()
+        );
     }
 }
