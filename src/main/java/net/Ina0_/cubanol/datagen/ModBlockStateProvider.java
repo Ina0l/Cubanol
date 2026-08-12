@@ -40,7 +40,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         modelFromParent(ModBlocks.CRIMSON_TABLE, tableParent, blockTexture(Blocks.CRIMSON_PLANKS));
         modelFromParent(ModBlocks.WARPED_TABLE, tableParent, blockTexture(Blocks.WARPED_PLANKS));
         modelFromParent(ModBlocks.BAMBOO_TABLE, tableParent, blockTexture(Blocks.BAMBOO_PLANKS));
-        modelFromParent(ModBlocks.APPLE_TREE_TABLE, tableParent, blockTexture(ModBlocks.APPLE_TREE_PLANKS.get()));
+        modelFromParent(ModBlocks.APPLE_TABLE, tableParent, blockTexture(ModBlocks.APPLE_PLANKS.get()));
 
         horizontalDirectionalBlockWithItemFromExistingModelFile(ModBlocks.FAKE_WINE_BOTTLE);
 
@@ -133,23 +133,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         crop(ModBlocks.STAR_ANISE_CROP.get(), "star_anise_crop", "star_anise_crop", true);
 
-        logBlock(ModBlocks.APPLE_TREE_LOG.get());
-        logBlock(ModBlocks.STRIPPED_APPLE_TREE_LOG.get());
-        simpleBlockWithItem(ModBlocks.APPLE_TREE_WOOD.get(), models().cubeAll(name(ModBlocks.APPLE_TREE_WOOD.get()), blockTexture(ModBlocks.APPLE_TREE_LOG.get())));
-        simpleBlockWithItem(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get(), models().cubeAll(name(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_APPLE_TREE_LOG.get())));
+        logBlock(ModBlocks.APPLE_LOG.get());
+        logBlock(ModBlocks.STRIPPED_APPLE_LOG.get());
+        simpleBlockWithItem(ModBlocks.APPLE_WOOD.get(), models().cubeAll(name(ModBlocks.APPLE_WOOD.get()), blockTexture(ModBlocks.APPLE_LOG.get())));
+        simpleBlockWithItem(ModBlocks.STRIPPED_APPLE_WOOD.get(), models().cubeAll(name(ModBlocks.STRIPPED_APPLE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_APPLE_LOG.get())));
 
-        blockItem(ModBlocks.APPLE_TREE_LOG);
-        blockItem(ModBlocks.STRIPPED_APPLE_TREE_LOG);
+        blockItem(ModBlocks.APPLE_LOG);
+        blockItem(ModBlocks.STRIPPED_APPLE_LOG);
 
-        leavesBlock(ModBlocks.APPLE_TREE_LEAVES);
-        crossBlock(ModBlocks.APPLE_TREE_SAPLING);
+        leavesBlock(ModBlocks.APPLE_LEAVES);
+        crossBlock(ModBlocks.APPLE_SAPLING);
 
-        simpleBlockWithItem(ModBlocks.APPLE_TREE_PLANKS);
+        simpleBlockWithItem(ModBlocks.APPLE_PLANKS);
 
         blockBasedOnBlockStates(
-                ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
-                "growing_apple_tree_leaves",
-                "growing_apple_tree_leaves_overlay",
+                ModBlocks.GROWING_APPLE_LEAVES.get(),
+                "growing_apple_leaves",
+                "growing_apple_leaves_overlay",
                 pair -> models().withExistingParent(pair.getFirst(), modLoc("block/overlayered_block"))
                         .texture(
                                 "underlay",
@@ -164,31 +164,31 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 null,
                 GrowingAppleTreeLeavesBlock.AGE
         );
-        blockItem(ModBlocks.GROWING_APPLE_TREE_LEAVES, "_age8");
+        blockItem(ModBlocks.GROWING_APPLE_LEAVES, "_age8");
 
-        ResourceLocation appleTreePlanks = blockTexture(ModBlocks.APPLE_TREE_PLANKS.get());
-        stairsBlock(ModBlocks.APPLE_TREE_STAIR.get(), appleTreePlanks);
-        slabBlock(ModBlocks.APPLE_TREE_SLAB.get(), appleTreePlanks, appleTreePlanks);
-        buttonBlock(ModBlocks.APPLE_TREE_BUTTON.get(), appleTreePlanks);
-        pressurePlateBlock(ModBlocks.APPLE_TREE_PRESSURE_PLATE.get(), appleTreePlanks);
-        trapdoorBlockWithRenderType(ModBlocks.APPLE_TREE_TRAPDOOR.get(), modLoc("block/apple_tree_trapdoor"), true, "cutout");
-        doorBlockWithRenderType(ModBlocks.APPLE_TREE_DOOR.get(), modLoc("block/apple_tree_door_bottom"), modLoc("block/apple_tree_door_top"), "cutout");
-        fenceBlock(ModBlocks.APPLE_TREE_FENCE.get(), appleTreePlanks);
-        fenceGateBlock(ModBlocks.APPLE_TREE_FENCE_GATE.get(), appleTreePlanks);
+        ResourceLocation appleTreePlanks = blockTexture(ModBlocks.APPLE_PLANKS.get());
+        stairsBlock(ModBlocks.APPLE_STAIR.get(), appleTreePlanks);
+        slabBlock(ModBlocks.APPLE_SLAB.get(), appleTreePlanks, appleTreePlanks);
+        buttonBlock(ModBlocks.APPLE_BUTTON.get(), appleTreePlanks);
+        pressurePlateBlock(ModBlocks.APPLE_PRESSURE_PLATE.get(), appleTreePlanks);
+        trapdoorBlockWithRenderType(ModBlocks.APPLE_TRAPDOOR.get(), modLoc("block/apple_trapdoor"), true, "cutout");
+        doorBlockWithRenderType(ModBlocks.APPLE_DOOR.get(), modLoc("block/apple_door_bottom"), modLoc("block/apple_door_top"), "cutout");
+        fenceBlock(ModBlocks.APPLE_FENCE.get(), appleTreePlanks);
+        fenceGateBlock(ModBlocks.APPLE_FENCE_GATE.get(), appleTreePlanks);
 
-        blockItem(ModBlocks.APPLE_TREE_STAIR);
-        blockItem(ModBlocks.APPLE_TREE_SLAB);
-        blockItem(ModBlocks.APPLE_TREE_BUTTON);
-        blockItem(ModBlocks.APPLE_TREE_PRESSURE_PLATE);
-        blockItem(ModBlocks.APPLE_TREE_TRAPDOOR, "_bottom");
-        blockItem(ModBlocks.APPLE_TREE_DOOR);
-        blockItem(ModBlocks.APPLE_TREE_FENCE);
-        blockItem(ModBlocks.APPLE_TREE_FENCE_GATE);
+        blockItem(ModBlocks.APPLE_STAIR);
+        blockItem(ModBlocks.APPLE_SLAB);
+        blockItem(ModBlocks.APPLE_BUTTON);
+        blockItem(ModBlocks.APPLE_PRESSURE_PLATE);
+        blockItem(ModBlocks.APPLE_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.APPLE_DOOR);
+        blockItem(ModBlocks.APPLE_FENCE);
+        blockItem(ModBlocks.APPLE_FENCE_GATE);
 
-        crop(ModBlocks.APPLE_TREE_SAPLING_CROP.get(), "apple_tree_sapling_crop", "apple_tree_sapling_crop", true);
+        crop(ModBlocks.APPLE_SAPLING_CROP.get(), "apple_sapling_crop", "apple_sapling_crop", true);
 
-        this.signBlock(ModBlocks.APPLE_TREE_SIGN.get(), ModBlocks.APPLE_TREE_WALL_SIGN.get(), modLoc("block/apple_tree_planks"));
-        this.hangingSignBlock(ModBlocks.APPLE_TREE_HANGING_SIGN.get(), ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get(), modLoc("block/stripped_apple_tree_log"));
+        this.signBlock(ModBlocks.APPLE_SIGN.get(), ModBlocks.APPLE_WALL_SIGN.get(), modLoc("block/apple_planks"));
+        this.hangingSignBlock(ModBlocks.APPLE_HANGING_SIGN.get(), ModBlocks.APPLE_WALL_HANGING_SIGN.get(), modLoc("block/stripped_apple_log"));
     }
 
     private <T extends CropBlock> void crop(T block, String modelName, String textureName, Boolean isModelCrossShaped){

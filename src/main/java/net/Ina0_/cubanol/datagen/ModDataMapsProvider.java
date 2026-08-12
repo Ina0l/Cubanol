@@ -29,7 +29,7 @@ public class ModDataMapsProvider extends DataMapProvider {
                 .add(ModItems.WHITE_GRAPE_SEEDS.getId(), new Compostable(0.3f), false);
 
         this.builder(NeoForgeDataMaps.STRIPPABLES)
-                .add(ModBlocks.APPLE_TREE_LOG, new Strippable(ModBlocks.STRIPPED_APPLE_TREE_LOG.get()), false, TrueCondition.INSTANCE)
-                .add(ModBlocks.APPLE_TREE_WOOD, new Strippable(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get()), false, TrueCondition.INSTANCE);
+                .add(ModBlocks.APPLE_LOG, new Strippable(ModBlocks.STRIPPED_APPLE_LOG.get()), false, TrueCondition.INSTANCE)
+                .add(ModBlocks.APPLE_WOOD, new Strippable(ModBlocks.STRIPPED_APPLE_WOOD.get()), false, TrueCondition.INSTANCE);
     }
 }

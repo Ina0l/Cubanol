@@ -27,12 +27,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         tag(ItemTags.LOGS_THAT_BURN)
-                .add(ModBlocks.APPLE_TREE_LOG.asItem())
-                .add(ModBlocks.STRIPPED_APPLE_TREE_LOG.asItem())
-                .add(ModBlocks.APPLE_TREE_WOOD.asItem())
-                .add(ModBlocks.STRIPPED_APPLE_TREE_WOOD.asItem());
+                .add(ModBlocks.APPLE_LOG.asItem())
+                .add(ModBlocks.STRIPPED_APPLE_LOG.asItem())
+                .add(ModBlocks.APPLE_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_APPLE_WOOD.asItem());
 
         tag(ItemTags.PLANKS)
-                .add(ModBlocks.APPLE_TREE_PLANKS.asItem());
+                .add(ModBlocks.APPLE_PLANKS.asItem());
     }
 }

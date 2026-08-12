@@ -1,8 +1,8 @@
 {
   "values": [
-    "cubanol:apple_tree_log",
-    "cubanol:stripped_apple_tree_log",
-    "cubanol:apple_tree_wood",
-    "cubanol:stripped_apple_tree_wood"
+    "cubanol:apple_log",
+    "cubanol:stripped_apple_log",
+    "cubanol:apple_wood",
+    "cubanol:stripped_apple_wood"
   ]
 }

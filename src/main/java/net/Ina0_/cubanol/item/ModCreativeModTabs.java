@@ -38,8 +38,8 @@ public class ModCreativeModTabs {
 
                         output.accept(ModItems.STAR_ANISE);
 
-                        output.accept(ModBlocks.GROWING_APPLE_TREE_LEAVES);
-                        output.accept(ModBlocks.APPLE_TREE_SAPLING);
+                        output.accept(ModBlocks.GROWING_APPLE_LEAVES);
+                        output.accept(ModBlocks.APPLE_SAPLING);
 
                         output.accept(ModItems.APPLE_SEEDS);
                     })
@@ -53,23 +53,23 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creative_mode_tab.cubanol.decorations_tab"))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "crops_tab"))
                     .displayItems(((parameters, output) -> {
-                        output.accept(ModBlocks.APPLE_TREE_LOG);
-                        output.accept(ModBlocks.APPLE_TREE_WOOD);
-                        output.accept(ModBlocks.STRIPPED_APPLE_TREE_LOG);
-                        output.accept(ModBlocks.STRIPPED_APPLE_TREE_WOOD);
-                        output.accept(ModBlocks.APPLE_TREE_LEAVES);
-                        output.accept(ModBlocks.APPLE_TREE_PLANKS);
+                        output.accept(ModBlocks.APPLE_LOG);
+                        output.accept(ModBlocks.APPLE_WOOD);
+                        output.accept(ModBlocks.STRIPPED_APPLE_LOG);
+                        output.accept(ModBlocks.STRIPPED_APPLE_WOOD);
+                        output.accept(ModBlocks.APPLE_LEAVES);
+                        output.accept(ModBlocks.APPLE_PLANKS);
 
-                        output.accept(ModBlocks.APPLE_TREE_STAIR);
-                        output.accept(ModBlocks.APPLE_TREE_SLAB);
-                        output.accept(ModBlocks.APPLE_TREE_BUTTON);
-                        output.accept(ModBlocks.APPLE_TREE_PRESSURE_PLATE);
-                        output.accept(ModBlocks.APPLE_TREE_TRAPDOOR);
-                        output.accept(ModBlocks.APPLE_TREE_DOOR);
-                        output.accept(ModBlocks.APPLE_TREE_FENCE);
-                        output.accept(ModBlocks.APPLE_TREE_FENCE_GATE);
-                        output.accept(ModItems.APPLE_TREE_SIGN);
-                        output.accept(ModItems.APPLE_TREE_HANGING_SIGN);
+                        output.accept(ModBlocks.APPLE_STAIR);
+                        output.accept(ModBlocks.APPLE_SLAB);
+                        output.accept(ModBlocks.APPLE_BUTTON);
+                        output.accept(ModBlocks.APPLE_PRESSURE_PLATE);
+                        output.accept(ModBlocks.APPLE_TRAPDOOR);
+                        output.accept(ModBlocks.APPLE_DOOR);
+                        output.accept(ModBlocks.APPLE_FENCE);
+                        output.accept(ModBlocks.APPLE_FENCE_GATE);
+                        output.accept(ModItems.APPLE_SIGN);
+                        output.accept(ModItems.APPLE_HANGING_SIGN);
 
                         output.accept(ModBlocks.OAK_TABLE);
                         output.accept(ModBlocks.SPRUCE_TABLE);
@@ -82,7 +82,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.BAMBOO_TABLE);
                         output.accept(ModBlocks.CRIMSON_TABLE);
                         output.accept(ModBlocks.WARPED_TABLE);
-                        output.accept(ModBlocks.APPLE_TREE_TABLE);
+                        output.accept(ModBlocks.APPLE_TABLE);
 
                         output.accept(ModBlocks.FAKE_WINE_BOTTLE);
                     }))

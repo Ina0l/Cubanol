@@ -68,19 +68,19 @@ public class ModItems {
     ));
 
     public static final DeferredItem<BlockItem> APPLE_SEEDS = ITEMS.register("apple_seeds", () -> new BlockItem(
-            ModBlocks.APPLE_TREE_SAPLING_CROP.get(),
+            ModBlocks.APPLE_SAPLING_CROP.get(),
             new Item.Properties()
     ));
 
-    public static final DeferredItem<SignItem> APPLE_TREE_SIGN = ITEMS.register("apple_tree_sign", () -> new SignItem(
+    public static final DeferredItem<SignItem> APPLE_SIGN = ITEMS.register("apple_sign", () -> new SignItem(
             new Item.Properties().stacksTo(16),
-            ModBlocks.APPLE_TREE_SIGN.get(),
-            ModBlocks.APPLE_TREE_WALL_SIGN.get()
+            ModBlocks.APPLE_SIGN.get(),
+            ModBlocks.APPLE_WALL_SIGN.get()
     ));
 
-    public static final DeferredItem<HangingSignItem> APPLE_TREE_HANGING_SIGN = ITEMS.register("apple_tree_hanging_sign", () -> new HangingSignItem(
-            ModBlocks.APPLE_TREE_HANGING_SIGN.get(),
-            ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get(),
+    public static final DeferredItem<HangingSignItem> APPLE_HANGING_SIGN = ITEMS.register("apple_hanging_sign", () -> new HangingSignItem(
+            ModBlocks.APPLE_HANGING_SIGN.get(),
+            ModBlocks.APPLE_WALL_HANGING_SIGN.get(),
             new Item.Properties().stacksTo(16)
     ));
 

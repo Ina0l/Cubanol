@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "cross": "cubanol:block/apple_tree_sapling_crop_age0"
-  }
-}

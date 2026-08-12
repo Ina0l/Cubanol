@@ -39,7 +39,7 @@ public class AppleTreeSaplingCropBlock extends CropBlock {
     protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         super.randomTick(state, level, pos, random);
         if(this.isMaxAge(level.getBlockState(pos))){
-            level.setBlock(pos, ModBlocks.APPLE_TREE_SAPLING.get().defaultBlockState(), 3);
+            level.setBlock(pos, ModBlocks.APPLE_SAPLING.get().defaultBlockState(), 3);
             level.setBlock(pos.below(), Blocks.DIRT.defaultBlockState(), 3);
         }
     }

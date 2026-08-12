@@ -270,26 +270,26 @@ public class ModBlocks {
                     .isRedstoneConductor(ModBlocks::never)
     ));
 
-    public static final DeferredBlock<FlammableRotatedPillarBlock> APPLE_TREE_LOG = registerBlock("apple_tree_log", () -> new FlammableRotatedPillarBlock(
+    public static final DeferredBlock<FlammableRotatedPillarBlock> APPLE_LOG = registerBlock("apple_log", () -> new FlammableRotatedPillarBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
     ));
-    public static final DeferredBlock<Block> APPLE_TREE_WOOD = registerBlock("apple_tree_wood", () -> new Block(
+    public static final DeferredBlock<Block> APPLE_WOOD = registerBlock("apple_wood", () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
     ));
-    public static final DeferredBlock<FlammableRotatedPillarBlock> STRIPPED_APPLE_TREE_LOG = registerBlock("stripped_apple_tree_log", () -> new FlammableRotatedPillarBlock(
+    public static final DeferredBlock<FlammableRotatedPillarBlock> STRIPPED_APPLE_LOG = registerBlock("stripped_apple_log", () -> new FlammableRotatedPillarBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)
     ));
-    public static final DeferredBlock<Block> STRIPPED_APPLE_TREE_WOOD = registerBlock("stripped_apple_tree_wood", () -> new Block(
+    public static final DeferredBlock<Block> STRIPPED_APPLE_WOOD = registerBlock("stripped_apple_wood", () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
     ));
-    public static final DeferredBlock<LeavesBlock> APPLE_TREE_LEAVES = registerBlock("apple_tree_leaves", () -> new LeavesBlock(
+    public static final DeferredBlock<LeavesBlock> APPLE_LEAVES = registerBlock("apple_leaves", () -> new LeavesBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
     ));
-    public static final DeferredBlock<GrowingAppleTreeLeavesBlock> GROWING_APPLE_TREE_LEAVES = registerBlock("growing_apple_tree_leaves", () -> new GrowingAppleTreeLeavesBlock(
+    public static final DeferredBlock<GrowingAppleTreeLeavesBlock> GROWING_APPLE_LEAVES = registerBlock("growing_apple_leaves", () -> new GrowingAppleTreeLeavesBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
     ));
 
-    public static final DeferredBlock<AppleTreeSaplingCropBlock> APPLE_TREE_SAPLING_CROP = BLOCKS.register("apple_tree_sapling_crop", () -> new AppleTreeSaplingCropBlock(
+    public static final DeferredBlock<AppleTreeSaplingCropBlock> APPLE_SAPLING_CROP = BLOCKS.register("apple_sapling_crop", () -> new AppleTreeSaplingCropBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT)
                     .noCollission()
@@ -300,45 +300,45 @@ public class ModBlocks {
                     .isRedstoneConductor(ModBlocks::never)
     ));
 
-    public static final DeferredBlock<SaplingBlock> APPLE_TREE_SAPLING = registerBlock("apple_tree_sapling", () -> new SaplingBlock(
+    public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = registerBlock("apple_sapling", () -> new SaplingBlock(
             ModTreeGrowers.APPLE_TREE,
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
     ));
 
-    public static final DeferredBlock<Block> APPLE_TREE_PLANKS = registerBlock("apple_tree_planks", () -> new Block(
+    public static final DeferredBlock<Block> APPLE_PLANKS = registerBlock("apple_planks", () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
     ));
 
-    public static final DeferredBlock<SlabBlock> APPLE_TREE_SLAB = registerBlock("apple_tree_slab", () -> new SlabBlock(
+    public static final DeferredBlock<SlabBlock> APPLE_SLAB = registerBlock("apple_slab", () -> new SlabBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)
     ));
-    public static final DeferredBlock<StairBlock> APPLE_TREE_STAIR = registerBlock("apple_tree_stair", () -> new StairBlock(
-            APPLE_TREE_PLANKS.get().defaultBlockState(),
+    public static final DeferredBlock<StairBlock> APPLE_STAIR = registerBlock("apple_stair", () -> new StairBlock(
+            APPLE_PLANKS.get().defaultBlockState(),
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
     ));
-    public static final DeferredBlock<ButtonBlock> APPLE_TREE_BUTTON = registerBlock("apple_tree_button", () -> new ButtonBlock(
-            ModBlockSetType.APPLE_TREE, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)
+    public static final DeferredBlock<ButtonBlock> APPLE_BUTTON = registerBlock("apple_button", () -> new ButtonBlock(
+            ModBlockSetType.APPLE, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)
     ));
-    public static final DeferredBlock<PressurePlateBlock> APPLE_TREE_PRESSURE_PLATE = registerBlock("apple_tree_pressure_plate", () -> new PressurePlateBlock(
-            ModBlockSetType.APPLE_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)
+    public static final DeferredBlock<PressurePlateBlock> APPLE_PRESSURE_PLATE = registerBlock("apple_pressure_plate", () -> new PressurePlateBlock(
+            ModBlockSetType.APPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)
     ));
-    public static final DeferredBlock<TrapDoorBlock> APPLE_TREE_TRAPDOOR = registerBlock("apple_tree_trapdoor", () -> new TrapDoorBlock(
-            ModBlockSetType.APPLE_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
+    public static final DeferredBlock<TrapDoorBlock> APPLE_TRAPDOOR = registerBlock("apple_trapdoor", () -> new TrapDoorBlock(
+            ModBlockSetType.APPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
     ));
-    public static final DeferredBlock<DoorBlock> APPLE_TREE_DOOR = registerBlock("apple_tree_door", () -> new DoorBlock(
-            ModBlockSetType.APPLE_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
+    public static final DeferredBlock<DoorBlock> APPLE_DOOR = registerBlock("apple_door", () -> new DoorBlock(
+            ModBlockSetType.APPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
     ));
-    public static final DeferredBlock<FenceBlock> APPLE_TREE_FENCE = registerBlock("apple_tree_fence", () -> new FenceBlock(
+    public static final DeferredBlock<FenceBlock> APPLE_FENCE = registerBlock("apple_fence", () -> new FenceBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)
     ));
-    public static final DeferredBlock<FenceGateBlock> APPLE_TREE_FENCE_GATE = registerBlock("apple_tree_fence_gate", () -> new FenceGateBlock(
-            ModWoodTypes.APPLE_TREE,
+    public static final DeferredBlock<FenceGateBlock> APPLE_FENCE_GATE = registerBlock("apple_fence_gate", () -> new FenceGateBlock(
+            ModWoodTypes.APPLE,
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)
     ));
 
-    public static final DeferredBlock<TableBlock> APPLE_TREE_TABLE = registerBlock("apple_tree_table", () -> new TableBlock(
+    public static final DeferredBlock<TableBlock> APPLE_TABLE = registerBlock("apple_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
-                    .mapColor(ModBlocks.APPLE_TREE_PLANKS.get().defaultMapColor())
+                    .mapColor(ModBlocks.APPLE_PLANKS.get().defaultMapColor())
                     .sound(SoundType.WOOD)
                     .isRedstoneConductor(ModBlocks::never)
                     .forceSolidOn()
@@ -347,47 +347,47 @@ public class ModBlocks {
                     .strength(1.0F)
     ));
 
-    public static final DeferredBlock<StandingSignBlock> APPLE_TREE_SIGN = BLOCKS.register("apple_tree_sign", () -> new StandingSignBlock(
-            ModWoodTypes.APPLE_TREE,
+    public static final DeferredBlock<StandingSignBlock> APPLE_SIGN = BLOCKS.register("apple_sign", () -> new StandingSignBlock(
+            ModWoodTypes.APPLE,
             BlockBehaviour.Properties.of()
-                    .mapColor(APPLE_TREE_LOG.get().defaultMapColor())
+                    .mapColor(APPLE_LOG.get().defaultMapColor())
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASS)
                     .noCollission()
                     .strength(1.0F)
                     .ignitedByLava()
     ));
-    public static final DeferredBlock<WallSignBlock> APPLE_TREE_WALL_SIGN = BLOCKS.register("apple_tree_wall_sign", () -> new WallSignBlock(
-            ModWoodTypes.APPLE_TREE,
+    public static final DeferredBlock<WallSignBlock> APPLE_WALL_SIGN = BLOCKS.register("apple_wall_sign", () -> new WallSignBlock(
+            ModWoodTypes.APPLE,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASS)
                     .noCollission()
                     .strength(1.0F)
-                    .lootFrom(APPLE_TREE_SIGN)
+                    .lootFrom(APPLE_SIGN)
                     .ignitedByLava()
     ));
-    public static final DeferredBlock<CeilingHangingSignBlock> APPLE_TREE_HANGING_SIGN = BLOCKS.register("apple_tree_hanging_sign", () -> new CeilingHangingSignBlock(
-            ModWoodTypes.APPLE_TREE,
+    public static final DeferredBlock<CeilingHangingSignBlock> APPLE_HANGING_SIGN = BLOCKS.register("apple_hanging_sign", () -> new CeilingHangingSignBlock(
+            ModWoodTypes.APPLE,
             BlockBehaviour.Properties.of()
-                    .mapColor(APPLE_TREE_LOG.get().defaultMapColor())
+                    .mapColor(APPLE_LOG.get().defaultMapColor())
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASS)
                     .noCollission()
                     .strength(1.0F)
                     .ignitedByLava()
     ));
-    public static final DeferredBlock<WallHangingSignBlock> APPLE_TREE_WALL_HANGING_SIGN = BLOCKS.register("apple_tree_wall_hanging_sign", () -> new WallHangingSignBlock(
-            ModWoodTypes.APPLE_TREE,
+    public static final DeferredBlock<WallHangingSignBlock> APPLE_WALL_HANGING_SIGN = BLOCKS.register("apple_wall_hanging_sign", () -> new WallHangingSignBlock(
+            ModWoodTypes.APPLE,
             BlockBehaviour.Properties.of()
-                    .mapColor(APPLE_TREE_LOG.get().defaultMapColor())
+                    .mapColor(APPLE_LOG.get().defaultMapColor())
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASS)
                     .noCollission()
                     .strength(1.0F)
                     .ignitedByLava()
-                    .lootFrom(APPLE_TREE_HANGING_SIGN)
+                    .lootFrom(APPLE_HANGING_SIGN)
     ));
 
 

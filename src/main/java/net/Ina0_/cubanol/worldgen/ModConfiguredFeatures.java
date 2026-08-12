@@ -26,12 +26,12 @@ public class ModConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
 
         register(context, APPLE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.APPLE_TREE_LOG.get()),
+                BlockStateProvider.simple(ModBlocks.APPLE_LOG.get()),
                 new StraightTrunkPlacer(3, 1, 0),
                 new WeightedStateProvider(
                         SimpleWeightedRandomList.<BlockState>builder()
-                            .add(ModBlocks.APPLE_TREE_LEAVES.get().defaultBlockState(), 3)
-                            .add(ModBlocks.GROWING_APPLE_TREE_LEAVES.get().defaultBlockState(), 1)
+                            .add(ModBlocks.APPLE_LEAVES.get().defaultBlockState(), 3)
+                            .add(ModBlocks.GROWING_APPLE_LEAVES.get().defaultBlockState(), 1)
                 ),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 2)

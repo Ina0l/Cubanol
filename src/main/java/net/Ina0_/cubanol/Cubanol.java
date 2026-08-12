@@ -1,7 +1,6 @@
 package net.Ina0_.cubanol;
 
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.properties.ModWoodTypes;
 import net.Ina0_.cubanol.item.ModCreativeModTabs;
 import net.Ina0_.cubanol.item.ModItems;
 import net.Ina0_.cubanol.lootmodifiers.ModLootModifiers;
@@ -34,8 +33,6 @@ public class Cubanol {
         ModBlocks.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
-
-        ModWoodTypes.register();
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

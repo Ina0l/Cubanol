@@ -1,6 +1,0 @@
-{
-  "parent": "cubanol:block/table",
-  "textures": {
-    "texture": "cubanol:block/apple_tree_planks"
-  }
-}

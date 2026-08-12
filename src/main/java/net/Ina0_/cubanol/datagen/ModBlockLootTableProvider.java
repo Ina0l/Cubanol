@@ -47,7 +47,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CRIMSON_TABLE.get());
         this.dropSelf(ModBlocks.WARPED_TABLE.get());
         this.dropSelf(ModBlocks.BAMBOO_TABLE.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_TABLE.get());
+        this.dropSelf(ModBlocks.APPLE_TABLE.get());
 
         this.dropSelf(ModBlocks.FAKE_WINE_BOTTLE.get());
 
@@ -213,20 +213,20 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )
         );
 
-        this.dropSelf(ModBlocks.APPLE_TREE_LOG.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_WOOD.get());
-        this.dropSelf(ModBlocks.STRIPPED_APPLE_TREE_LOG.get());
-        this.dropSelf(ModBlocks.STRIPPED_APPLE_TREE_WOOD.get());
+        this.dropSelf(ModBlocks.APPLE_LOG.get());
+        this.dropSelf(ModBlocks.APPLE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_APPLE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_APPLE_WOOD.get());
 
         this.add(
-                ModBlocks.APPLE_TREE_LEAVES.get(),
+                ModBlocks.APPLE_LEAVES.get(),
                 this.applyExplosionDecay(
-                        ModBlocks.APPLE_TREE_LEAVES.get(),
+                        ModBlocks.APPLE_LEAVES.get(),
                         LootTable.lootTable()
                                 .withPool(
                                         LootPool.lootPool()
                                                 .when(HAS_SHEARS.or(hasSilkTouch()))
-                                                .add(LootItem.lootTableItem(ModBlocks.APPLE_TREE_LEAVES))
+                                                .add(LootItem.lootTableItem(ModBlocks.APPLE_LEAVES))
                                 )
                                 .withPool(
                                         LootPool.lootPool()
@@ -246,20 +246,20 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         );
 
         LootItemCondition.Builder lootItemConditionForAppleTreeLeaves = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(ModBlocks.GROWING_APPLE_TREE_LEAVES.get())
+                .hasBlockStateProperties(ModBlocks.GROWING_APPLE_LEAVES.get())
                 .setProperties(
                         StatePropertiesPredicate.Builder.properties()
-                                .hasProperty(ModBlocks.GROWING_APPLE_TREE_LEAVES.get().getAgeProperty(), ModBlocks.GROWING_APPLE_TREE_LEAVES.get().getMaxAge())
+                                .hasProperty(ModBlocks.GROWING_APPLE_LEAVES.get().getAgeProperty(), ModBlocks.GROWING_APPLE_LEAVES.get().getMaxAge())
                 );
         this.add(
-                ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
+                ModBlocks.GROWING_APPLE_LEAVES.get(),
                 this.applyExplosionDecay(
-                        ModBlocks.GROWING_APPLE_TREE_LEAVES.get(),
+                        ModBlocks.GROWING_APPLE_LEAVES.get(),
                         LootTable.lootTable()
                                 .withPool(
                                         LootPool.lootPool()
                                                 .when(HAS_SHEARS.or(hasSilkTouch()))
-                                                .add(LootItem.lootTableItem(ModBlocks.APPLE_TREE_LEAVES))
+                                                .add(LootItem.lootTableItem(ModBlocks.APPLE_LEAVES))
                                 )
                                 .withPool(
                                         LootPool.lootPool()
@@ -284,25 +284,25 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )
         );
 
-        this.dropSelf(ModBlocks.APPLE_TREE_SAPLING.get());
+        this.dropSelf(ModBlocks.APPLE_SAPLING.get());
 
-        this.dropSelf(ModBlocks.APPLE_TREE_PLANKS.get());
+        this.dropSelf(ModBlocks.APPLE_PLANKS.get());
 
-        this.dropSelf(ModBlocks.APPLE_TREE_STAIR.get());
-        this.add(ModBlocks.APPLE_TREE_SLAB.get(), this.createSlabItemTable(ModBlocks.APPLE_TREE_SLAB.get()));
-        this.dropSelf(ModBlocks.APPLE_TREE_BUTTON.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_PRESSURE_PLATE.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_TRAPDOOR.get());
-        this.add(ModBlocks.APPLE_TREE_DOOR.get(), this.createDoorTable(ModBlocks.APPLE_TREE_DOOR.get()));
-        this.dropSelf(ModBlocks.APPLE_TREE_FENCE.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.APPLE_STAIR.get());
+        this.add(ModBlocks.APPLE_SLAB.get(), this.createSlabItemTable(ModBlocks.APPLE_SLAB.get()));
+        this.dropSelf(ModBlocks.APPLE_BUTTON.get());
+        this.dropSelf(ModBlocks.APPLE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.APPLE_TRAPDOOR.get());
+        this.add(ModBlocks.APPLE_DOOR.get(), this.createDoorTable(ModBlocks.APPLE_DOOR.get()));
+        this.dropSelf(ModBlocks.APPLE_FENCE.get());
+        this.dropSelf(ModBlocks.APPLE_FENCE_GATE.get());
 
-        this.dropOther(ModBlocks.APPLE_TREE_SAPLING_CROP.get(), ModItems.APPLE_SEEDS);
+        this.dropOther(ModBlocks.APPLE_SAPLING_CROP.get(), ModItems.APPLE_SEEDS);
 
-        this.dropSelf(ModBlocks.APPLE_TREE_SIGN.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_WALL_SIGN.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_HANGING_SIGN.get());
-        this.dropSelf(ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get());
+        this.dropSelf(ModBlocks.APPLE_SIGN.get());
+        this.dropSelf(ModBlocks.APPLE_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.APPLE_HANGING_SIGN.get());
+        this.dropSelf(ModBlocks.APPLE_WALL_HANGING_SIGN.get());
     }
 
     @Override

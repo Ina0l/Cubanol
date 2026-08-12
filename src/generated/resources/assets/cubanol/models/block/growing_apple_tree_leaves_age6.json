@@ -1,7 +1,0 @@
-{
-  "parent": "cubanol:block/overlayered_block",
-  "textures": {
-    "overlay": "cubanol:block/growing_apple_tree_leaves_overlay_age6",
-    "underlay": "cubanol:block/growing_apple_tree_leaves_age6"
-  }
-}

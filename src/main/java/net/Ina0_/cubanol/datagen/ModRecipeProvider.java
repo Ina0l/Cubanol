@@ -128,17 +128,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_iron_nugget", has(Items.IRON_NUGGET))
                 .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_WOOD, 3)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_WOOD, 3)
                 .pattern("##")
                 .pattern("##")
-                .define('#', ModBlocks.APPLE_TREE_LOG)
-                .unlockedBy("has_apple_tree_log", has(ModBlocks.APPLE_TREE_LOG))
+                .define('#', ModBlocks.APPLE_LOG)
+                .unlockedBy("has_apple_log", has(ModBlocks.APPLE_LOG))
                 .save(recipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_APPLE_TREE_WOOD, 3)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_APPLE_WOOD, 3)
                 .pattern("##")
                 .pattern("##")
-                .define('#', ModBlocks.STRIPPED_APPLE_TREE_LOG)
-                .unlockedBy("has_stripped_apple_tree_log", has(ModBlocks.STRIPPED_APPLE_TREE_LOG))
+                .define('#', ModBlocks.STRIPPED_APPLE_LOG)
+                .unlockedBy("has_stripped_apple_log", has(ModBlocks.STRIPPED_APPLE_LOG))
                 .save(recipeOutput);
 
 
@@ -165,59 +165,59 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_rice_panicle", has(ModItems.RICE_PANICLE))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
-                .requires(ModBlocks.APPLE_TREE_LOG)
-                .unlockedBy("has_apple_tree_log", has(ModBlocks.APPLE_TREE_LOG))
-                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_log"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
-                .requires(ModBlocks.APPLE_TREE_WOOD)
-                .unlockedBy("has_apple_tree_wood", has(ModBlocks.APPLE_TREE_WOOD))
-                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_wood"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
-                .requires(ModBlocks.STRIPPED_APPLE_TREE_LOG)
-                .unlockedBy("has_stripped_apple_tree_log", has(ModBlocks.STRIPPED_APPLE_TREE_LOG))
-                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_stripped_log"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_PLANKS)
-                .requires(ModBlocks.STRIPPED_APPLE_TREE_WOOD)
-                .unlockedBy("has_stripped_apple_tree_wood", has(ModBlocks.STRIPPED_APPLE_TREE_WOOD))
-                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_tree_planks_from_stripped_wood"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_PLANKS)
+                .requires(ModBlocks.APPLE_LOG)
+                .unlockedBy("has_apple_log", has(ModBlocks.APPLE_LOG))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_planks_from_log"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_PLANKS)
+                .requires(ModBlocks.APPLE_WOOD)
+                .unlockedBy("has_apple_wood", has(ModBlocks.APPLE_WOOD))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_planks_from_wood"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_PLANKS)
+                .requires(ModBlocks.STRIPPED_APPLE_LOG)
+                .unlockedBy("has_stripped_apple_log", has(ModBlocks.STRIPPED_APPLE_LOG))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_planks_from_stripped_log"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_PLANKS)
+                .requires(ModBlocks.STRIPPED_APPLE_WOOD)
+                .unlockedBy("has_stripped_apple_wood", has(ModBlocks.STRIPPED_APPLE_WOOD))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "apple_planks_from_stripped_wood"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.APPLE_SEEDS, 2)
                 .requires(Items.APPLE)
                 .unlockedBy("has_apple", has(Items.APPLE))
                 .save(recipeOutput);
 
-        stairBuilder(ModBlocks.APPLE_TREE_STAIR, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
-                .group("apple_tree")
-                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+        stairBuilder(ModBlocks.APPLE_STAIR, Ingredient.of(ModBlocks.APPLE_PLANKS))
+                .group("apple")
+                .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
-        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_TREE_SLAB, ModBlocks.APPLE_TREE_PLANKS);
-        buttonBuilder(ModBlocks.APPLE_TREE_BUTTON, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
-                .group("apple_tree")
-                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLE_SLAB, ModBlocks.APPLE_PLANKS);
+        buttonBuilder(ModBlocks.APPLE_BUTTON, Ingredient.of(ModBlocks.APPLE_PLANKS))
+                .group("apple")
+                .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
-        pressurePlate(recipeOutput, ModBlocks.APPLE_TREE_PRESSURE_PLATE, ModBlocks.APPLE_TREE_PLANKS);
-        trapdoorBuilder(ModBlocks.APPLE_TREE_TRAPDOOR, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
-                .group("apple_tree")
-                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+        pressurePlate(recipeOutput, ModBlocks.APPLE_PRESSURE_PLATE, ModBlocks.APPLE_PLANKS);
+        trapdoorBuilder(ModBlocks.APPLE_TRAPDOOR, Ingredient.of(ModBlocks.APPLE_PLANKS))
+                .group("apple")
+                .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
-        doorBuilder(ModBlocks.APPLE_TREE_DOOR, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
-                .group("apple_tree")
-                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+        doorBuilder(ModBlocks.APPLE_DOOR, Ingredient.of(ModBlocks.APPLE_PLANKS))
+                .group("apple")
+                .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
-        fenceBuilder(ModBlocks.APPLE_TREE_FENCE, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
-                .group("apple_tree")
-                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+        fenceBuilder(ModBlocks.APPLE_FENCE, Ingredient.of(ModBlocks.APPLE_PLANKS))
+                .group("apple")
+                .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
-        fenceGateBuilder(ModBlocks.APPLE_TREE_FENCE_GATE, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
-                .group("apple_tree")
-                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+        fenceGateBuilder(ModBlocks.APPLE_FENCE_GATE, Ingredient.of(ModBlocks.APPLE_PLANKS))
+                .group("apple")
+                .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
 
-        signBuilder(ModItems.APPLE_TREE_SIGN, Ingredient.of(ModBlocks.APPLE_TREE_PLANKS))
-                .group("apple_tree")
-                .unlockedBy("has_apple_tree_planks", has(ModBlocks.APPLE_TREE_PLANKS))
+        signBuilder(ModItems.APPLE_SIGN, Ingredient.of(ModBlocks.APPLE_PLANKS))
+                .group("apple")
+                .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
-        hangingSign(recipeOutput, ModItems.APPLE_TREE_HANGING_SIGN, ModBlocks.STRIPPED_APPLE_TREE_LOG);
+        hangingSign(recipeOutput, ModItems.APPLE_HANGING_SIGN, ModBlocks.STRIPPED_APPLE_LOG);
     }
 }

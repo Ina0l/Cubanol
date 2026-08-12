@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "apple",
+  "key": {
+    "#": {
+      "item": "cubanol:apple_planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "cubanol:apple_trapdoor"
+  }
+}

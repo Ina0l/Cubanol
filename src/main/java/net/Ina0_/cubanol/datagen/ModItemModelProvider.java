@@ -32,17 +32,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RICE.get());
         basicItem(ModItems.RICE_PANICLE.get());
 
-        basicItemFromAbsolutePath(ModBlocks.APPLE_TREE_SAPLING.asItem(), ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/apple_tree_sapling"));
+        basicItemFromAbsolutePath(ModBlocks.APPLE_SAPLING.asItem(), ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/apple_sapling"));
 
-        withExistingParent(ModBlocks.APPLE_TREE_BUTTON.asItem(), mcLoc("block/button_inventory"), modLoc("block/" + getPath(ModBlocks.APPLE_TREE_PLANKS.get())));
-        withExistingParent(ModBlocks.APPLE_TREE_FENCE.asItem(), mcLoc("block/fence_inventory"), modLoc("block/" + getPath(ModBlocks.APPLE_TREE_PLANKS.get())));
+        withExistingParent(ModBlocks.APPLE_BUTTON.asItem(), mcLoc("block/button_inventory"), modLoc("block/" + getPath(ModBlocks.APPLE_PLANKS.get())));
+        withExistingParent(ModBlocks.APPLE_FENCE.asItem(), mcLoc("block/fence_inventory"), modLoc("block/" + getPath(ModBlocks.APPLE_PLANKS.get())));
 
-        basicItem(ModBlocks.APPLE_TREE_DOOR.asItem());
+        basicItem(ModBlocks.APPLE_DOOR.asItem());
 
         basicItem(ModItems.APPLE_SEEDS.get());
 
-        basicItem(ModItems.APPLE_TREE_SIGN.get());
-        basicItem(ModItems.APPLE_TREE_HANGING_SIGN.get());
+        basicItem(ModItems.APPLE_SIGN.get());
+        basicItem(ModItems.APPLE_HANGING_SIGN.get());
     }
 
     private ItemModelBuilder withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture, String key){

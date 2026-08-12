@@ -27,7 +27,7 @@
     "block.cubanol.crimson_table": "Crimson Table",
     "block.cubanol.warped_table": "Warped Table",
     "block.cubanol.bamboo_table": "Bamboo Table",
-    "block.cubanol.apple_tree_table": "Apple Tree Table",
+    "block.cubanol.apple_table": "Apple Table",
 
     "block.cubanol.agave_crop": "Agave",
     "block.cubanol.agave_stem": "Agave Stem",
@@ -41,32 +41,32 @@
     "block.cubanol.rice_panicles": "Rice Panicles",
     "item.cubanol.rice_panicle": "Rice Panicle",
 
-    "block.cubanol.apple_tree_log": "Apple Tree Log",
-    "block.cubanol.stripped_apple_tree_log": "Stripped Apple Tree Log",
-    "block.cubanol.apple_tree_wood": "Apple Tree Wood",
-    "block.cubanol.stripped_apple_tree_wood": "Stripped Apple Tree Wood",
+    "block.cubanol.apple_log": "Apple Log",
+    "block.cubanol.stripped_apple_log": "Stripped Apple Log",
+    "block.cubanol.apple_wood": "Apple Wood",
+    "block.cubanol.stripped_apple_wood": "Stripped Apple Wood",
 
-    "block.cubanol.apple_tree_leaves": "Apple Tree Leaves",
-    "block.cubanol.growing_apple_tree_leaves": "Growing Apple Tree Leaves",
+    "block.cubanol.apple_leaves": "Apple Leaves",
+    "block.cubanol.growing_apple_leaves": "Growing Apple Leaves",
 
-    "block.cubanol.apple_tree_sapling": "Apple Tree Sapling",
+    "block.cubanol.apple_sapling": "Apple Sapling",
 
-    "block.cubanol.apple_tree_planks": "Apple Tree Planks",
+    "block.cubanol.apple_planks": "Apple Planks",
 
-    "block.cubanol.apple_tree_stair": "Apple Tree Stair",
-    "block.cubanol.apple_tree_slab": "Apple Tree Slab",
-    "block.cubanol.apple_tree_button": "Apple Tree Button",
-    "block.cubanol.apple_tree_pressure_plate": "Apple Tree Pressure Plate",
-    "block.cubanol.apple_tree_trapdoor": "Apple Tree Trapdoor",
-    "block.cubanol.apple_tree_door": "Apple Tree Door",
-    "block.cubanol.apple_tree_fence": "Apple Tree Fence",
-    "block.cubanol.apple_tree_fence_gate": "Apple Tree Fence Gate",
-    "block.cubanol.apple_tree_sign": "Apple Tree Sign",
-    "block.cubanol.apple_tree_wall_sign": "Apple Tree Sign",
-    "block.cubanol.apple_tree_hanging_sign": "Apple Tree Hanging Sign",
-    "block.cubanol.apple_tree_wall_hanging_sign": "Apple Tree Hanging Sign",
+    "block.cubanol.apple_stair": "Apple Stair",
+    "block.cubanol.apple_slab": "Apple Slab",
+    "block.cubanol.apple_button": "Apple Button",
+    "block.cubanol.apple_pressure_plate": "Apple Pressure Plate",
+    "block.cubanol.apple_trapdoor": "Apple Trapdoor",
+    "block.cubanol.apple_door": "Apple Door",
+    "block.cubanol.apple_fence": "Apple Fence",
+    "block.cubanol.apple_fence_gate": "Apple Fence Gate",
+    "block.cubanol.apple_sign": "Apple Sign",
+    "block.cubanol.apple_wall_sign": "Apple Sign",
+    "block.cubanol.apple_hanging_sign": "Apple Hanging Sign",
+    "block.cubanol.apple_wall_hanging_sign": "Apple Hanging Sign",
 
     "item.cubanol.apple_seeds": "Apple Seeds",
-    "block.cubanol.apple_tree_sapling_crop": "Apple Tree Sapling Crop"
+    "block.cubanol.apple_sapling_crop": "Apple Sapling Crop"
 
 }
