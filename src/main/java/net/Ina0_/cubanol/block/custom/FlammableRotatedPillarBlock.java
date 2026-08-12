@@ -26,16 +26,4 @@ public class FlammableRotatedPillarBlock extends RotatedPillarBlock {
     public int getFireSpreadSpeed(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull Direction direction) {
         return 5;
     }
-
-//    @Override
-//    public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-//        if(context.getItemInHand().getItem() instanceof AxeItem){
-//            if(!context.getLevel().isClientSide()){
-//                if(state.is(ModBlocks.APPLE_TREE_LOG)){
-//                    return ModBlocks.STRIPPED_APPLE_TREE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
-//                }
-//            }
-//        }
-//        return super.getToolModifiedState(state, context, itemAbility, simulate);
-//    }
 }
