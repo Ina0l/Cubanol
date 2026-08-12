@@ -3,7 +3,7 @@ package net.Ina0_.cubanol.block;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.custom.*;
 import net.Ina0_.cubanol.block.properties.ModBlockSetType;
-import net.Ina0_.cubanol.block.properties.ModWoodType;
+import net.Ina0_.cubanol.block.properties.ModWoodTypes;
 import net.Ina0_.cubanol.item.ModItems;
 import net.Ina0_.cubanol.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
@@ -332,7 +332,7 @@ public class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)
     ));
     public static final DeferredBlock<FenceGateBlock> APPLE_TREE_FENCE_GATE = registerBlock("apple_tree_fence_gate", () -> new FenceGateBlock(
-            ModWoodType.APPLE_TREE,
+            ModWoodTypes.APPLE_TREE,
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)
     ));
 
@@ -348,7 +348,7 @@ public class ModBlocks {
     ));
 
     public static final DeferredBlock<StandingSignBlock> APPLE_TREE_SIGN = BLOCKS.register("apple_tree_sign", () -> new StandingSignBlock(
-            ModWoodType.APPLE_TREE,
+            ModWoodTypes.APPLE_TREE,
             BlockBehaviour.Properties.of()
                     .mapColor(APPLE_TREE_LOG.get().defaultMapColor())
                     .forceSolidOn()
@@ -358,7 +358,7 @@ public class ModBlocks {
                     .ignitedByLava()
     ));
     public static final DeferredBlock<WallSignBlock> APPLE_TREE_WALL_SIGN = BLOCKS.register("apple_tree_wall_sign", () -> new WallSignBlock(
-            ModWoodType.APPLE_TREE,
+            ModWoodTypes.APPLE_TREE,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .forceSolidOn()
@@ -368,6 +368,28 @@ public class ModBlocks {
                     .lootFrom(APPLE_TREE_SIGN)
                     .ignitedByLava()
     ));
+    public static final DeferredBlock<CeilingHangingSignBlock> APPLE_TREE_HANGING_SIGN = BLOCKS.register("apple_tree_hanging_sign", () -> new CeilingHangingSignBlock(
+            ModWoodTypes.APPLE_TREE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(APPLE_TREE_LOG.get().defaultMapColor())
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .ignitedByLava()
+    ));
+    public static final DeferredBlock<WallHangingSignBlock> APPLE_TREE_WALL_HANGING_SIGN = BLOCKS.register("apple_tree_wall_hanging_sign", () -> new WallHangingSignBlock(
+            ModWoodTypes.APPLE_TREE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(APPLE_TREE_LOG.get().defaultMapColor())
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .ignitedByLava()
+                    .lootFrom(APPLE_TREE_HANGING_SIGN)
+    ));
+
 
 
     /**

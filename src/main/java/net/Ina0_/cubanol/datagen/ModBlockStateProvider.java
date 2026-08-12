@@ -187,8 +187,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         crop(ModBlocks.APPLE_TREE_SAPLING_CROP.get(), "apple_tree_sapling_crop", "apple_tree_sapling_crop", true);
 
-        getVariantBuilder(ModBlocks.APPLE_TREE_SIGN.get()).partialState().setModels(new ConfiguredModel(models().getBuilder("apple_tree_sign").texture("particle", modLoc("block/apple_tree_planks"))));
-        getVariantBuilder(ModBlocks.APPLE_TREE_WALL_SIGN.get()).partialState().setModels(new ConfiguredModel(models().getBuilder("apple_tree_sign").texture("particle", modLoc("block/apple_tree_planks"))));
+        this.signBlock(ModBlocks.APPLE_TREE_SIGN.get(), ModBlocks.APPLE_TREE_WALL_SIGN.get(), modLoc("block/apple_tree_planks"));
+        this.hangingSignBlock(ModBlocks.APPLE_TREE_HANGING_SIGN.get(), ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get(), modLoc("block/stripped_apple_tree_log"));
     }
 
     private <T extends CropBlock> void crop(T block, String modelName, String textureName, Boolean isModelCrossShaped){

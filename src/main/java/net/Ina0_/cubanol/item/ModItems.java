@@ -6,16 +6,13 @@ import net.Ina0_.cubanol.item.custom.AgaveSyrupItem;
 import net.Ina0_.cubanol.item.custom.GrapeSeedsItem;
 import net.Ina0_.cubanol.item.custom.WireItem;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 //this is there to access the vanilla examples
-import net.minecraft.world.item.Items;
+
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Cubanol.MOD_ID);
@@ -79,6 +76,12 @@ public class ModItems {
             new Item.Properties().stacksTo(16),
             ModBlocks.APPLE_TREE_SIGN.get(),
             ModBlocks.APPLE_TREE_WALL_SIGN.get()
+    ));
+
+    public static final DeferredItem<HangingSignItem> APPLE_TREE_HANGING_SIGN = ITEMS.register("apple_tree_hanging_sign", () -> new HangingSignItem(
+            ModBlocks.APPLE_TREE_HANGING_SIGN.get(),
+            ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get(),
+            new Item.Properties().stacksTo(16)
     ));
 
     public static void register(IEventBus eventBus){

@@ -62,6 +62,9 @@
     "block.cubanol.apple_tree_fence": "Apple Tree Fence",
     "block.cubanol.apple_tree_fence_gate": "Apple Tree Fence Gate",
     "block.cubanol.apple_tree_sign": "Apple Tree Sign",
+    "block.cubanol.apple_tree_wall_sign": "Apple Tree Sign",
+    "block.cubanol.apple_tree_hanging_sign": "Apple Tree Hanging Sign",
+    "block.cubanol.apple_tree_wall_hanging_sign": "Apple Tree Hanging Sign",
 
     "item.cubanol.apple_seeds": "Apple Seeds",
     "block.cubanol.apple_tree_sapling_crop": "Apple Tree Sapling Crop"

@@ -68,7 +68,8 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.APPLE_TREE_DOOR);
                         output.accept(ModBlocks.APPLE_TREE_FENCE);
                         output.accept(ModBlocks.APPLE_TREE_FENCE_GATE);
-                        output.accept(ModBlocks.APPLE_TREE_SIGN);
+                        output.accept(ModItems.APPLE_TREE_SIGN);
+                        output.accept(ModItems.APPLE_TREE_HANGING_SIGN);
 
                         output.accept(ModBlocks.OAK_TABLE);
                         output.accept(ModBlocks.SPRUCE_TABLE);

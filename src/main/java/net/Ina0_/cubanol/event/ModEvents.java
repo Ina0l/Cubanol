@@ -126,5 +126,10 @@ public class ModEvents {
                 ModBlocks.APPLE_TREE_SIGN.get(),
                 ModBlocks.APPLE_TREE_WALL_SIGN.get()
         );
+        event.modify(
+                BlockEntityType.HANGING_SIGN,
+                ModBlocks.APPLE_TREE_HANGING_SIGN.get(),
+                ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get()
+        );
     }
 }

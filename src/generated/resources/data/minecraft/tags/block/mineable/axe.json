@@ -26,6 +26,10 @@
     "cubanol:apple_tree_trapdoor",
     "cubanol:apple_tree_door",
     "cubanol:apple_tree_fence",
-    "cubanol:apple_tree_fence_gate"
+    "cubanol:apple_tree_fence_gate",
+    "cubanol:apple_tree_sign",
+    "cubanol:apple_tree_wall_sign",
+    "cubanol:apple_tree_hanging_sign",
+    "cubanol:apple_tree_wall_hanging_sign"
   ]
 }

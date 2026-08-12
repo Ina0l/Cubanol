@@ -53,7 +53,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.APPLE_TREE_TRAPDOOR.get())
                 .add(ModBlocks.APPLE_TREE_DOOR.get())
                 .add(ModBlocks.APPLE_TREE_FENCE.get())
-                .add(ModBlocks.APPLE_TREE_FENCE_GATE.get());
+                .add(ModBlocks.APPLE_TREE_FENCE_GATE.get())
+
+                .add(ModBlocks.APPLE_TREE_SIGN.get())
+                .add(ModBlocks.APPLE_TREE_WALL_SIGN.get())
+                .add(ModBlocks.APPLE_TREE_HANGING_SIGN.get())
+                .add(ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get());
 
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.APPLE_TREE_LEAVES.get())
@@ -76,8 +81,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.STANDING_SIGNS)
                 .add(ModBlocks.APPLE_TREE_SIGN.get());
-
         tag(BlockTags.WALL_SIGNS)
                 .add(ModBlocks.APPLE_TREE_WALL_SIGN.get());
+        tag(BlockTags.CEILING_HANGING_SIGNS)
+                .add(ModBlocks.APPLE_TREE_HANGING_SIGN.get());
+        tag(BlockTags.WALL_HANGING_SIGNS)
+                .add(ModBlocks.APPLE_TREE_WALL_HANGING_SIGN.get());
     }
 }

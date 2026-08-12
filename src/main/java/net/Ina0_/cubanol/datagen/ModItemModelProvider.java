@@ -42,6 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.APPLE_SEEDS.get());
 
         basicItem(ModItems.APPLE_TREE_SIGN.get());
+        basicItem(ModItems.APPLE_TREE_HANGING_SIGN.get());
     }
 
     private ItemModelBuilder withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture, String key){
