@@ -2,7 +2,6 @@ package net.Ina0_.cubanol.block.custom;
 
 import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
 import net.Ina0_.cubanol.item.ModItems;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class GrowingOrangeLeavesBlock extends FruitGrowingLeavesBlock {
