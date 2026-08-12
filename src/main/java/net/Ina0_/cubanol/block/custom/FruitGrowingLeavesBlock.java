@@ -28,13 +28,14 @@ import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class FruitGrowingLeavesBlock extends LeavesBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
 
-    public final Item fruitItem;
+    public final Supplier<? extends Item> fruitItem;
 
-    public FruitGrowingLeavesBlock(Properties properties, Item fruitItem) {
+    public FruitGrowingLeavesBlock(Properties properties, Supplier<? extends Item> fruitItem) {
         super(properties);
         this.fruitItem = fruitItem;
         this.registerDefaultState(this.defaultBlockState().setValue(this.getAgeProperty(), 0));
@@ -130,7 +131,7 @@ public class FruitGrowingLeavesBlock extends LeavesBlock implements Bonemealable
                                 .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
                 );
                 for(ItemStack drop: drops){
-                    if(drop.is(this.fruitItem)){
+                    if(drop.is(this.fruitItem.get())){
                         ModBlocks.collectOrDropItems((ServerLevel) level, player, pos, List.of(drop));
                     }
                 }

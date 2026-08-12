@@ -58,11 +58,34 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.APPLE_SIGN.get())
                 .add(ModBlocks.APPLE_WALL_SIGN.get())
                 .add(ModBlocks.APPLE_HANGING_SIGN.get())
-                .add(ModBlocks.APPLE_WALL_HANGING_SIGN.get());
+                .add(ModBlocks.APPLE_WALL_HANGING_SIGN.get())
+
+                .add(ModBlocks.ORANGE_LOG.get())
+                .add(ModBlocks.ORANGE_WOOD.get())
+                .add(ModBlocks.STRIPPED_ORANGE_LOG.get())
+                .add(ModBlocks.STRIPPED_ORANGE_WOOD.get())
+                .add(ModBlocks.ORANGE_PLANKS.get())
+
+                .add(ModBlocks.ORANGE_STAIR.get())
+                .add(ModBlocks.ORANGE_SLAB.get())
+                .add(ModBlocks.ORANGE_BUTTON.get())
+                .add(ModBlocks.ORANGE_PRESSURE_PLATE.get())
+                .add(ModBlocks.ORANGE_TRAPDOOR.get())
+                .add(ModBlocks.ORANGE_DOOR.get())
+                .add(ModBlocks.ORANGE_FENCE.get())
+                .add(ModBlocks.ORANGE_FENCE_GATE.get())
+
+                .add(ModBlocks.ORANGE_SIGN.get())
+                .add(ModBlocks.ORANGE_WALL_SIGN.get())
+                .add(ModBlocks.ORANGE_HANGING_SIGN.get())
+                .add(ModBlocks.ORANGE_WALL_HANGING_SIGN.get());
 
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.APPLE_LEAVES.get())
-                .add(ModBlocks.GROWING_APPLE_LEAVES.get());
+                .add(ModBlocks.GROWING_APPLE_LEAVES.get())
+
+                .add(ModBlocks.ORANGE_LEAVES.get())
+                .add(ModBlocks.GROWING_ORANGE_LEAVES.get());
 
         tag(BlockTags.MAINTAINS_FARMLAND)
                 .add(Blocks.DIRT);
@@ -71,21 +94,32 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.APPLE_LOG.get())
                 .add(ModBlocks.STRIPPED_APPLE_LOG.get())
                 .add(ModBlocks.APPLE_WOOD.get())
-                .add(ModBlocks.STRIPPED_APPLE_WOOD.get());
+                .add(ModBlocks.STRIPPED_APPLE_WOOD.get())
+
+                .add(ModBlocks.ORANGE_LOG.get())
+                .add(ModBlocks.STRIPPED_ORANGE_LOG.get())
+                .add(ModBlocks.ORANGE_WOOD.get())
+                .add(ModBlocks.STRIPPED_ORANGE_WOOD.get());
 
         tag(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.APPLE_FENCE.get());
+                .add(ModBlocks.APPLE_FENCE.get())
+                .add(ModBlocks.ORANGE_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
-                .add(ModBlocks.APPLE_FENCE_GATE.get());
+                .add(ModBlocks.APPLE_FENCE_GATE.get())
+                .add(ModBlocks.ORANGE_FENCE_GATE.get());
 
         tag(BlockTags.STANDING_SIGNS)
-                .add(ModBlocks.APPLE_SIGN.get());
+                .add(ModBlocks.APPLE_SIGN.get())
+                .add(ModBlocks.ORANGE_SIGN.get());
         tag(BlockTags.WALL_SIGNS)
-                .add(ModBlocks.APPLE_WALL_SIGN.get());
+                .add(ModBlocks.APPLE_WALL_SIGN.get())
+                .add(ModBlocks.ORANGE_WALL_SIGN.get());
         tag(BlockTags.CEILING_HANGING_SIGNS)
-                .add(ModBlocks.APPLE_HANGING_SIGN.get());
+                .add(ModBlocks.APPLE_HANGING_SIGN.get())
+                .add(ModBlocks.ORANGE_HANGING_SIGN.get());
         tag(BlockTags.WALL_HANGING_SIGNS)
-                .add(ModBlocks.APPLE_WALL_HANGING_SIGN.get());
+                .add(ModBlocks.APPLE_WALL_HANGING_SIGN.get())
+                .add(ModBlocks.ORANGE_WALL_HANGING_SIGN.get());
     }
 }

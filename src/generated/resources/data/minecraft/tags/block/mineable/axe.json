@@ -30,6 +30,23 @@
     "cubanol:apple_sign",
     "cubanol:apple_wall_sign",
     "cubanol:apple_hanging_sign",
-    "cubanol:apple_wall_hanging_sign"
+    "cubanol:apple_wall_hanging_sign",
+    "cubanol:orange_log",
+    "cubanol:orange_wood",
+    "cubanol:stripped_orange_log",
+    "cubanol:stripped_orange_wood",
+    "cubanol:orange_planks",
+    "cubanol:orange_stair",
+    "cubanol:orange_slab",
+    "cubanol:orange_button",
+    "cubanol:orange_pressure_plate",
+    "cubanol:orange_trapdoor",
+    "cubanol:orange_door",
+    "cubanol:orange_fence",
+    "cubanol:orange_fence_gate",
+    "cubanol:orange_sign",
+    "cubanol:orange_wall_sign",
+    "cubanol:orange_hanging_sign",
+    "cubanol:orange_wall_hanging_sign"
   ]
 }

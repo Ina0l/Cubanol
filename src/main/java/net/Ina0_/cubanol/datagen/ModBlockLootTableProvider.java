@@ -48,6 +48,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.WARPED_TABLE.get());
         this.dropSelf(ModBlocks.BAMBOO_TABLE.get());
         this.dropSelf(ModBlocks.APPLE_TABLE.get());
+        this.dropSelf(ModBlocks.ORANGE_TABLE.get());
 
         this.dropSelf(ModBlocks.FAKE_WINE_BOTTLE.get());
 
@@ -303,6 +304,98 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.APPLE_WALL_SIGN.get());
         this.dropSelf(ModBlocks.APPLE_HANGING_SIGN.get());
         this.dropSelf(ModBlocks.APPLE_WALL_HANGING_SIGN.get());
+
+
+        this.dropSelf(ModBlocks.ORANGE_LOG.get());
+        this.dropSelf(ModBlocks.ORANGE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ORANGE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_ORANGE_WOOD.get());
+
+        this.add(
+                ModBlocks.ORANGE_LEAVES.get(),
+                this.applyExplosionDecay(
+                        ModBlocks.ORANGE_LEAVES.get(),
+                        LootTable.lootTable()
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()))
+                                                .add(LootItem.lootTableItem(ModBlocks.ORANGE_LEAVES))
+                                )
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
+                                                .add(
+                                                        LootItem.lootTableItem(Items.STICK)
+                                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                                                .when(
+                                                                        BonusLevelTableCondition.bonusLevelFlatChance(
+                                                                                enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE),
+                                                                                0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F
+                                                                        )
+                                                                )
+                                                )
+                                )
+                )
+        );
+
+        LootItemCondition.Builder lootItemConditionForOrangeTreeLeaves = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.GROWING_ORANGE_LEAVES.get())
+                .setProperties(
+                        StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(ModBlocks.GROWING_ORANGE_LEAVES.get().getAgeProperty(), ModBlocks.GROWING_ORANGE_LEAVES.get().getMaxAge())
+                );
+        this.add(
+                ModBlocks.GROWING_ORANGE_LEAVES.get(),
+                this.applyExplosionDecay(
+                        ModBlocks.GROWING_ORANGE_LEAVES.get(),
+                        LootTable.lootTable()
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()))
+                                                .add(LootItem.lootTableItem(ModBlocks.ORANGE_LEAVES))
+                                )
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .when(HAS_SHEARS.or(hasSilkTouch()).invert())
+                                                .add(
+                                                        LootItem.lootTableItem(Items.STICK)
+                                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                                                .when(
+                                                                        BonusLevelTableCondition.bonusLevelFlatChance(
+                                                                            enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE),
+                                                                            0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F
+                                                                        )
+                                                                )
+                                                )
+                                )
+                                .withPool(
+                                        LootPool.lootPool().add(
+                                                LootItem.lootTableItem(ModItems.ORANGE)
+                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                                        ).when(lootItemConditionForOrangeTreeLeaves)
+                                )
+                )
+        );
+
+        this.dropSelf(ModBlocks.ORANGE_SAPLING.get());
+
+        this.dropSelf(ModBlocks.ORANGE_PLANKS.get());
+
+        this.dropSelf(ModBlocks.ORANGE_STAIR.get());
+        this.add(ModBlocks.ORANGE_SLAB.get(), this.createSlabItemTable(ModBlocks.ORANGE_SLAB.get()));
+        this.dropSelf(ModBlocks.ORANGE_BUTTON.get());
+        this.dropSelf(ModBlocks.ORANGE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ORANGE_TRAPDOOR.get());
+        this.add(ModBlocks.ORANGE_DOOR.get(), this.createDoorTable(ModBlocks.ORANGE_DOOR.get()));
+        this.dropSelf(ModBlocks.ORANGE_FENCE.get());
+        this.dropSelf(ModBlocks.ORANGE_FENCE_GATE.get());
+
+        this.dropOther(ModBlocks.ORANGE_SAPLING_CROP.get(), ModItems.ORANGE_SEEDS);
+
+        this.dropSelf(ModBlocks.ORANGE_SIGN.get());
+        this.dropSelf(ModBlocks.ORANGE_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.ORANGE_HANGING_SIGN.get());
+        this.dropSelf(ModBlocks.ORANGE_WALL_HANGING_SIGN.get());
     }
 
     @Override

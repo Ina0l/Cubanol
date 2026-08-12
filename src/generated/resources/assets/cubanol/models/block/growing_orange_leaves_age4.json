@@ -1,0 +1,7 @@
+{
+  "parent": "cubanol:block/overlayered_block",
+  "textures": {
+    "overlay": "cubanol:block/growing_orange_leaves_age4",
+    "underlay": "cubanol:block/orange_leaves"
+  }
+}

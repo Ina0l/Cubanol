@@ -4,4 +4,5 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class ModBlockSetType {
     public static final BlockSetType APPLE = BlockSetType.register(new BlockSetType("apple"));
+    public static final BlockSetType ORANGE = BlockSetType.register(new BlockSetType("orange"));
 }

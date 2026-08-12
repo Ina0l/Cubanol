@@ -15,4 +15,11 @@ public class ModTreeGrowers {
             Optional.empty()
     );
 
+    public static final TreeGrower ORANGE_TREE = new TreeGrower(
+            Cubanol.MOD_ID + "orange_tree",
+            Optional.empty(),
+            Optional.of(ModConfiguredFeatures.ORANGE_TREE_KEY),
+            Optional.empty()
+    );
+
 }

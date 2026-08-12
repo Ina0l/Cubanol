@@ -84,6 +84,27 @@ public class ModItems {
             new Item.Properties().stacksTo(16)
     ));
 
+    public static final DeferredItem<Item> ORANGE = ITEMS.register("orange", () -> new Item(
+            new Item.Properties()
+    ));
+
+    public static final DeferredItem<BlockItem> ORANGE_SEEDS = ITEMS.register("orange_seeds", () -> new BlockItem(
+            ModBlocks.ORANGE_SAPLING_CROP.get(),
+            new Item.Properties()
+    ));
+
+    public static final DeferredItem<SignItem> ORANGE_SIGN = ITEMS.register("orange_sign", () -> new SignItem(
+            new Item.Properties().stacksTo(16),
+            ModBlocks.ORANGE_SIGN.get(),
+            ModBlocks.ORANGE_WALL_SIGN.get()
+    ));
+
+    public static final DeferredItem<HangingSignItem> ORANGE_HANGING_SIGN = ITEMS.register("orange_hanging_sign", () -> new HangingSignItem(
+            ModBlocks.ORANGE_HANGING_SIGN.get(),
+            ModBlocks.ORANGE_WALL_HANGING_SIGN.get(),
+            new Item.Properties().stacksTo(16)
+    ));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

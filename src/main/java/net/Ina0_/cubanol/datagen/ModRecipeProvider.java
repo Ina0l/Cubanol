@@ -141,6 +141,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_stripped_apple_log", has(ModBlocks.STRIPPED_APPLE_LOG))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_WOOD, 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.ORANGE_LOG)
+                .unlockedBy("has_orange_log", has(ModBlocks.ORANGE_LOG))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_ORANGE_WOOD, 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.STRIPPED_ORANGE_LOG)
+                .unlockedBy("has_stripped_orange_log", has(ModBlocks.STRIPPED_ORANGE_LOG))
+                .save(recipeOutput);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModBlocks.FAKE_WINE_BOTTLE)
                 .requires(Items.GLASS_BOTTLE)
@@ -187,6 +200,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_apple", has(Items.APPLE))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.ORANGE_SEEDS, 2)
+                .requires(ModItems.ORANGE)
+                .unlockedBy("has_orange", has(ModItems.ORANGE))
+                .save(recipeOutput);
+
         stairBuilder(ModBlocks.APPLE_STAIR, Ingredient.of(ModBlocks.APPLE_PLANKS))
                 .group("apple")
                 .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
@@ -213,11 +231,43 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group("apple")
                 .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
-
         signBuilder(ModItems.APPLE_SIGN, Ingredient.of(ModBlocks.APPLE_PLANKS))
                 .group("apple")
                 .unlockedBy("has_apple_planks", has(ModBlocks.APPLE_PLANKS))
                 .save(recipeOutput);
         hangingSign(recipeOutput, ModItems.APPLE_HANGING_SIGN, ModBlocks.STRIPPED_APPLE_LOG);
+
+
+        stairBuilder(ModBlocks.ORANGE_STAIR, Ingredient.of(ModBlocks.ORANGE_PLANKS))
+                .group("orange")
+                .unlockedBy("has_orange_planks", has(ModBlocks.ORANGE_PLANKS))
+                .save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_SLAB, ModBlocks.ORANGE_PLANKS);
+        buttonBuilder(ModBlocks.ORANGE_BUTTON, Ingredient.of(ModBlocks.ORANGE_PLANKS))
+                .group("orange")
+                .unlockedBy("has_orange_planks", has(ModBlocks.ORANGE_PLANKS))
+                .save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.ORANGE_PRESSURE_PLATE, ModBlocks.ORANGE_PLANKS);
+        trapdoorBuilder(ModBlocks.ORANGE_TRAPDOOR, Ingredient.of(ModBlocks.ORANGE_PLANKS))
+                .group("orange")
+                .unlockedBy("has_orange_planks", has(ModBlocks.ORANGE_PLANKS))
+                .save(recipeOutput);
+        doorBuilder(ModBlocks.ORANGE_DOOR, Ingredient.of(ModBlocks.ORANGE_PLANKS))
+                .group("orange")
+                .unlockedBy("has_orange_planks", has(ModBlocks.ORANGE_PLANKS))
+                .save(recipeOutput);
+        fenceBuilder(ModBlocks.ORANGE_FENCE, Ingredient.of(ModBlocks.ORANGE_PLANKS))
+                .group("orange")
+                .unlockedBy("has_orange_planks", has(ModBlocks.ORANGE_PLANKS))
+                .save(recipeOutput);
+        fenceGateBuilder(ModBlocks.ORANGE_FENCE_GATE, Ingredient.of(ModBlocks.ORANGE_PLANKS))
+                .group("orange")
+                .unlockedBy("has_orange_planks", has(ModBlocks.ORANGE_PLANKS))
+                .save(recipeOutput);
+        signBuilder(ModItems.ORANGE_SIGN, Ingredient.of(ModBlocks.ORANGE_PLANKS))
+                .group("orange")
+                .unlockedBy("has_orange_planks", has(ModBlocks.ORANGE_PLANKS))
+                .save(recipeOutput);
+        hangingSign(recipeOutput, ModItems.ORANGE_HANGING_SIGN, ModBlocks.STRIPPED_ORANGE_LOG);
     }
 }

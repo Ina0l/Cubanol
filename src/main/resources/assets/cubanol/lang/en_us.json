@@ -28,6 +28,7 @@
     "block.cubanol.warped_table": "Warped Table",
     "block.cubanol.bamboo_table": "Bamboo Table",
     "block.cubanol.apple_table": "Apple Table",
+    "block.cubanol.orange_table": "Orange Table",
 
     "block.cubanol.agave_crop": "Agave",
     "block.cubanol.agave_stem": "Agave Stem",
@@ -67,6 +68,34 @@
     "block.cubanol.apple_wall_hanging_sign": "Apple Hanging Sign",
 
     "item.cubanol.apple_seeds": "Apple Seeds",
-    "block.cubanol.apple_sapling_crop": "Apple Sapling Crop"
+    "block.cubanol.apple_sapling_crop": "Apple Seeds",
+
+    "block.cubanol.orange_log": "Orange Log",
+    "block.cubanol.stripped_orange_log": "Stripped Orange Log",
+    "block.cubanol.orange_wood": "Orange Wood",
+    "block.cubanol.stripped_orange_wood": "Stripped Orange Wood",
+
+    "block.cubanol.orange_leaves": "Orange Leaves",
+    "block.cubanol.growing_orange_leaves": "Growing Orange Leaves",
+
+    "block.cubanol.orange_sapling": "Orange Sapling",
+
+    "block.cubanol.orange_planks": "Orange Planks",
+
+    "block.cubanol.orange_stair": "Orange Stair",
+    "block.cubanol.orange_slab": "Orange Slab",
+    "block.cubanol.orange_button": "Orange Button",
+    "block.cubanol.orange_pressure_plate": "Orange Pressure Plate",
+    "block.cubanol.orange_trapdoor": "Orange Trapdoor",
+    "block.cubanol.orange_door": "Orange Door",
+    "block.cubanol.orange_fence": "Orange Fence",
+    "block.cubanol.orange_fence_gate": "Orange Fence Gate",
+    "block.cubanol.orange_sign": "Orange Sign",
+    "block.cubanol.orange_wall_sign": "Orange Sign",
+    "block.cubanol.orange_hanging_sign": "Orange Hanging Sign",
+    "block.cubanol.orange_wall_hanging_sign": "Orange Hanging Sign",
+
+    "item.cubanol.orange_seeds": "Orange Seeds",
+    "block.cubanol.orange_sapling_crop": "Orange Seeds"
 
 }

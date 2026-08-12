@@ -14,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -285,11 +286,16 @@ public class ModBlocks {
     public static final DeferredBlock<LeavesBlock> APPLE_LEAVES = registerBlock("apple_leaves", () -> new LeavesBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
     ));
-    public static final DeferredBlock<GrowingAppleTreeLeavesBlock> GROWING_APPLE_LEAVES = registerBlock("growing_apple_leaves", () -> new GrowingAppleTreeLeavesBlock(
+    public static final DeferredBlock<GrowingAppleLeavesBlock> GROWING_APPLE_LEAVES = registerBlock("growing_apple_leaves", () -> new GrowingAppleLeavesBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
     ));
 
-    public static final DeferredBlock<AppleTreeSaplingCropBlock> APPLE_SAPLING_CROP = BLOCKS.register("apple_sapling_crop", () -> new AppleTreeSaplingCropBlock(
+    public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = registerBlock("apple_sapling", () -> new SaplingBlock(
+            ModTreeGrowers.APPLE_TREE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+    ));
+
+    public static final DeferredBlock<SaplingCropBlock> APPLE_SAPLING_CROP = BLOCKS.register("apple_sapling_crop", () -> new SaplingCropBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT)
                     .noCollission()
@@ -297,12 +303,9 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never)
-    ));
-
-    public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = registerBlock("apple_sapling", () -> new SaplingBlock(
-            ModTreeGrowers.APPLE_TREE,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+                    .isRedstoneConductor(ModBlocks::never),
+            APPLE_SAPLING,
+            () -> Items.APPLE
     ));
 
     public static final DeferredBlock<Block> APPLE_PLANKS = registerBlock("apple_planks", () -> new Block(
@@ -388,6 +391,129 @@ public class ModBlocks {
                     .strength(1.0F)
                     .ignitedByLava()
                     .lootFrom(APPLE_HANGING_SIGN)
+    ));
+
+
+    public static final DeferredBlock<FlammableRotatedPillarBlock> ORANGE_LOG = registerBlock("orange_log", () -> new FlammableRotatedPillarBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+    ));
+    public static final DeferredBlock<Block> ORANGE_WOOD = registerBlock("orange_wood", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
+    ));
+    public static final DeferredBlock<FlammableRotatedPillarBlock> STRIPPED_ORANGE_LOG = registerBlock("stripped_orange_log", () -> new FlammableRotatedPillarBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)
+    ));
+    public static final DeferredBlock<Block> STRIPPED_ORANGE_WOOD = registerBlock("stripped_orange_wood", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
+    ));
+    public static final DeferredBlock<LeavesBlock> ORANGE_LEAVES = registerBlock("orange_leaves", () -> new LeavesBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+    ));
+    public static final DeferredBlock<GrowingOrangeLeavesBlock> GROWING_ORANGE_LEAVES = registerBlock("growing_orange_leaves", () -> new GrowingOrangeLeavesBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+    ));
+
+    public static final DeferredBlock<SaplingBlock> ORANGE_SAPLING = registerBlock("orange_sapling", () -> new SaplingBlock(
+            ModTreeGrowers.ORANGE_TREE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+    ));
+
+    public static final DeferredBlock<SaplingCropBlock> ORANGE_SAPLING_CROP = BLOCKS.register("orange_sapling_crop", () -> new SaplingCropBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(ModBlocks::never),
+            ORANGE_SAPLING,
+            ModItems.ORANGE
+    ));
+
+    public static final DeferredBlock<Block> ORANGE_PLANKS = registerBlock("orange_planks", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
+    ));
+
+    public static final DeferredBlock<SlabBlock> ORANGE_SLAB = registerBlock("orange_slab", () -> new SlabBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)
+    ));
+    public static final DeferredBlock<StairBlock> ORANGE_STAIR = registerBlock("orange_stair", () -> new StairBlock(
+            ORANGE_PLANKS.get().defaultBlockState(),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
+    ));
+    public static final DeferredBlock<ButtonBlock> ORANGE_BUTTON = registerBlock("orange_button", () -> new ButtonBlock(
+            ModBlockSetType.ORANGE, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)
+    ));
+    public static final DeferredBlock<PressurePlateBlock> ORANGE_PRESSURE_PLATE = registerBlock("orange_pressure_plate", () -> new PressurePlateBlock(
+            ModBlockSetType.ORANGE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)
+    ));
+    public static final DeferredBlock<TrapDoorBlock> ORANGE_TRAPDOOR = registerBlock("orange_trapdoor", () -> new TrapDoorBlock(
+            ModBlockSetType.ORANGE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
+    ));
+    public static final DeferredBlock<DoorBlock> ORANGE_DOOR = registerBlock("orange_door", () -> new DoorBlock(
+            ModBlockSetType.ORANGE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)
+    ));
+    public static final DeferredBlock<FenceBlock> ORANGE_FENCE = registerBlock("orange_fence", () -> new FenceBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)
+    ));
+    public static final DeferredBlock<FenceGateBlock> ORANGE_FENCE_GATE = registerBlock("orange_fence_gate", () -> new FenceGateBlock(
+            ModWoodTypes.ORANGE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)
+    ));
+
+    public static final DeferredBlock<TableBlock> ORANGE_TABLE = registerBlock("orange_table", () -> new TableBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(ModBlocks.ORANGE_PLANKS.get().defaultMapColor())
+                    .sound(SoundType.WOOD)
+                    .isRedstoneConductor(ModBlocks::never)
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .isViewBlocking(ModBlocks::never)
+                    .strength(1.0F)
+    ));
+
+    public static final DeferredBlock<StandingSignBlock> ORANGE_SIGN = BLOCKS.register("orange_sign", () -> new StandingSignBlock(
+            ModWoodTypes.ORANGE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(ORANGE_LOG.get().defaultMapColor())
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .ignitedByLava()
+    ));
+    public static final DeferredBlock<WallSignBlock> ORANGE_WALL_SIGN = BLOCKS.register("orange_wall_sign", () -> new WallSignBlock(
+            ModWoodTypes.ORANGE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .lootFrom(ORANGE_SIGN)
+                    .ignitedByLava()
+    ));
+    public static final DeferredBlock<CeilingHangingSignBlock> ORANGE_HANGING_SIGN = BLOCKS.register("orange_hanging_sign", () -> new CeilingHangingSignBlock(
+            ModWoodTypes.ORANGE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(ORANGE_LOG.get().defaultMapColor())
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .ignitedByLava()
+    ));
+    public static final DeferredBlock<WallHangingSignBlock> ORANGE_WALL_HANGING_SIGN = BLOCKS.register("orange_wall_hanging_sign", () -> new WallHangingSignBlock(
+            ModWoodTypes.ORANGE,
+            BlockBehaviour.Properties.of()
+                    .mapColor(ORANGE_LOG.get().defaultMapColor())
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollission()
+                    .strength(1.0F)
+                    .ignitedByLava()
+                    .lootFrom(ORANGE_HANGING_SIGN)
     ));
 
 

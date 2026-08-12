@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "orange",
+  "ingredients": [
+    {
+      "item": "cubanol:orange_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "cubanol:orange_button"
+  }
+}

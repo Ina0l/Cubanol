@@ -1,6 +1,8 @@
 {
   "values": [
     "cubanol:apple_leaves",
-    "cubanol:growing_apple_leaves"
+    "cubanol:growing_apple_leaves",
+    "cubanol:orange_leaves",
+    "cubanol:growing_orange_leaves"
   ]
 }

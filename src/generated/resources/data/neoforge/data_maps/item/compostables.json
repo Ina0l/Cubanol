@@ -9,6 +9,9 @@
     "cubanol:black_grape_seeds": {
       "chance": 0.3
     },
+    "cubanol:orange": {
+      "chance": 0.5
+    },
     "cubanol:star_anise": {
       "chance": 0.3
     },

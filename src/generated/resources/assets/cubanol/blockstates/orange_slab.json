@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubanol:block/orange_slab"
+    },
+    "type=double": {
+      "model": "cubanol:block/orange_planks"
+    },
+    "type=top": {
+      "model": "cubanol:block/orange_slab_top"
+    }
+  }
+}

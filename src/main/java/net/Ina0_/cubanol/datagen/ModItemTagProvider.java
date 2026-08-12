@@ -30,9 +30,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.APPLE_LOG.asItem())
                 .add(ModBlocks.STRIPPED_APPLE_LOG.asItem())
                 .add(ModBlocks.APPLE_WOOD.asItem())
-                .add(ModBlocks.STRIPPED_APPLE_WOOD.asItem());
+                .add(ModBlocks.STRIPPED_APPLE_WOOD.asItem())
+
+                .add(ModBlocks.ORANGE_LOG.asItem())
+                .add(ModBlocks.STRIPPED_ORANGE_LOG.asItem())
+                .add(ModBlocks.ORANGE_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_ORANGE_WOOD.asItem());
 
         tag(ItemTags.PLANKS)
-                .add(ModBlocks.APPLE_PLANKS.asItem());
+                .add(ModBlocks.APPLE_PLANKS.asItem())
+                .add(ModBlocks.ORANGE_PLANKS.asItem());
     }
 }

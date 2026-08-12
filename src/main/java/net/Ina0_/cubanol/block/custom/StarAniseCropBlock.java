@@ -1,6 +1,7 @@
 package net.Ina0_.cubanol.block.custom;
 
 import net.Ina0_.cubanol.block.ModBlocks;
+import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -20,7 +21,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 public class StarAniseCropBlock extends CropBlock {
-    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 6);
+    public static final IntegerProperty AGE = ModBlockStateProperties.AGE_6;
 
     public static final VoxelShape[] SHAPES = new VoxelShape[]{
             Block.box(7.0, 0.0, 7.0, 9.0, 1.0, 9.0),

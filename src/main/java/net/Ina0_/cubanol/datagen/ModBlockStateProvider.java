@@ -41,6 +41,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         modelFromParent(ModBlocks.WARPED_TABLE, tableParent, blockTexture(Blocks.WARPED_PLANKS));
         modelFromParent(ModBlocks.BAMBOO_TABLE, tableParent, blockTexture(Blocks.BAMBOO_PLANKS));
         modelFromParent(ModBlocks.APPLE_TABLE, tableParent, blockTexture(ModBlocks.APPLE_PLANKS.get()));
+        modelFromParent(ModBlocks.ORANGE_TABLE, tableParent, blockTexture(ModBlocks.ORANGE_PLANKS.get()));
 
         horizontalDirectionalBlockWithItemFromExistingModelFile(ModBlocks.FAKE_WINE_BOTTLE);
 
@@ -149,20 +150,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockBasedOnBlockStates(
                 ModBlocks.GROWING_APPLE_LEAVES.get(),
                 "growing_apple_leaves",
-                "growing_apple_leaves_overlay",
+                "growing_apple_leaves",
                 pair -> models().withExistingParent(pair.getFirst(), modLoc("block/overlayered_block"))
-                        .texture(
-                                "underlay",
-                                modLoc(
-                                        Arrays.stream(pair.getSecond().getPath().split("_"))
-                                                .filter(string -> !string.equals("overlay"))
-                                                .collect(Collectors.joining("_"))
-                                )
-                        )
-                        .texture("overlay", pair.getSecond()),
+                        .texture("overlay", pair.getSecond())
+                        .texture("underlay", blockTexture(ModBlocks.APPLE_LEAVES.get())),
                 null,
                 null,
-                GrowingAppleTreeLeavesBlock.AGE
+                GrowingAppleLeavesBlock.AGE
         );
         blockItem(ModBlocks.GROWING_APPLE_LEAVES, "_age8");
 
@@ -189,6 +183,57 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         this.signBlock(ModBlocks.APPLE_SIGN.get(), ModBlocks.APPLE_WALL_SIGN.get(), modLoc("block/apple_planks"));
         this.hangingSignBlock(ModBlocks.APPLE_HANGING_SIGN.get(), ModBlocks.APPLE_WALL_HANGING_SIGN.get(), modLoc("block/stripped_apple_log"));
+
+
+        logBlock(ModBlocks.ORANGE_LOG.get());
+        logBlock(ModBlocks.STRIPPED_ORANGE_LOG.get());
+        simpleBlockWithItem(ModBlocks.ORANGE_WOOD.get(), models().cubeAll(name(ModBlocks.ORANGE_WOOD.get()), blockTexture(ModBlocks.ORANGE_LOG.get())));
+        simpleBlockWithItem(ModBlocks.STRIPPED_ORANGE_WOOD.get(), models().cubeAll(name(ModBlocks.STRIPPED_ORANGE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_ORANGE_LOG.get())));
+
+        blockItem(ModBlocks.ORANGE_LOG);
+        blockItem(ModBlocks.STRIPPED_ORANGE_LOG);
+
+        leavesBlock(ModBlocks.ORANGE_LEAVES);
+        crossBlock(ModBlocks.ORANGE_SAPLING);
+
+        simpleBlockWithItem(ModBlocks.ORANGE_PLANKS);
+
+        blockBasedOnBlockStates(
+                ModBlocks.GROWING_ORANGE_LEAVES.get(),
+                "growing_orange_leaves",
+                "growing_orange_leaves",
+                pair -> models().withExistingParent(pair.getFirst(), modLoc("block/overlayered_block"))
+                        .texture("overlay", pair.getSecond())
+                        .texture("underlay", blockTexture(ModBlocks.ORANGE_LEAVES.get())),
+                null,
+                null,
+                GrowingOrangeLeavesBlock.AGE
+        );
+        blockItem(ModBlocks.GROWING_ORANGE_LEAVES, "_age8");
+
+        ResourceLocation orangeTreePlanks = blockTexture(ModBlocks.ORANGE_PLANKS.get());
+        stairsBlock(ModBlocks.ORANGE_STAIR.get(), orangeTreePlanks);
+        slabBlock(ModBlocks.ORANGE_SLAB.get(), orangeTreePlanks, orangeTreePlanks);
+        buttonBlock(ModBlocks.ORANGE_BUTTON.get(), orangeTreePlanks);
+        pressurePlateBlock(ModBlocks.ORANGE_PRESSURE_PLATE.get(), orangeTreePlanks);
+        trapdoorBlock(ModBlocks.ORANGE_TRAPDOOR.get(), modLoc("block/orange_trapdoor"), true);
+        doorBlock(ModBlocks.ORANGE_DOOR.get(), modLoc("block/orange_door_bottom"), modLoc("block/orange_door_top"));
+        fenceBlock(ModBlocks.ORANGE_FENCE.get(), orangeTreePlanks);
+        fenceGateBlock(ModBlocks.ORANGE_FENCE_GATE.get(), orangeTreePlanks);
+
+        blockItem(ModBlocks.ORANGE_STAIR);
+        blockItem(ModBlocks.ORANGE_SLAB);
+        blockItem(ModBlocks.ORANGE_BUTTON);
+        blockItem(ModBlocks.ORANGE_PRESSURE_PLATE);
+        blockItem(ModBlocks.ORANGE_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.ORANGE_DOOR);
+        blockItem(ModBlocks.ORANGE_FENCE);
+        blockItem(ModBlocks.ORANGE_FENCE_GATE);
+
+        crop(ModBlocks.ORANGE_SAPLING_CROP.get(), "orange_sapling_crop", "orange_sapling_crop", true);
+
+        this.signBlock(ModBlocks.ORANGE_SIGN.get(), ModBlocks.ORANGE_WALL_SIGN.get(), modLoc("block/orange_planks"));
+        this.hangingSignBlock(ModBlocks.ORANGE_HANGING_SIGN.get(), ModBlocks.ORANGE_WALL_HANGING_SIGN.get(), modLoc("block/stripped_orange_log"));
     }
 
     private <T extends CropBlock> void crop(T block, String modelName, String textureName, Boolean isModelCrossShaped){

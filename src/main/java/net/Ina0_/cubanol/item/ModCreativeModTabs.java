@@ -40,8 +40,12 @@ public class ModCreativeModTabs {
 
                         output.accept(ModBlocks.GROWING_APPLE_LEAVES);
                         output.accept(ModBlocks.APPLE_SAPLING);
-
                         output.accept(ModItems.APPLE_SEEDS);
+
+                        output.accept(ModItems.ORANGE);
+                        output.accept(ModBlocks.GROWING_ORANGE_LEAVES);
+                        output.accept(ModBlocks.ORANGE_SAPLING);
+                        output.accept(ModItems.ORANGE_SEEDS);
                     })
                     .build()
     );
@@ -59,7 +63,6 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.STRIPPED_APPLE_WOOD);
                         output.accept(ModBlocks.APPLE_LEAVES);
                         output.accept(ModBlocks.APPLE_PLANKS);
-
                         output.accept(ModBlocks.APPLE_STAIR);
                         output.accept(ModBlocks.APPLE_SLAB);
                         output.accept(ModBlocks.APPLE_BUTTON);
@@ -70,6 +73,23 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.APPLE_FENCE_GATE);
                         output.accept(ModItems.APPLE_SIGN);
                         output.accept(ModItems.APPLE_HANGING_SIGN);
+
+                        output.accept(ModBlocks.ORANGE_LOG);
+                        output.accept(ModBlocks.ORANGE_WOOD);
+                        output.accept(ModBlocks.STRIPPED_ORANGE_LOG);
+                        output.accept(ModBlocks.STRIPPED_ORANGE_WOOD);
+                        output.accept(ModBlocks.ORANGE_LEAVES);
+                        output.accept(ModBlocks.ORANGE_PLANKS);
+                        output.accept(ModBlocks.ORANGE_STAIR);
+                        output.accept(ModBlocks.ORANGE_SLAB);
+                        output.accept(ModBlocks.ORANGE_BUTTON);
+                        output.accept(ModBlocks.ORANGE_PRESSURE_PLATE);
+                        output.accept(ModBlocks.ORANGE_TRAPDOOR);
+                        output.accept(ModBlocks.ORANGE_DOOR);
+                        output.accept(ModBlocks.ORANGE_FENCE);
+                        output.accept(ModBlocks.ORANGE_FENCE_GATE);
+                        output.accept(ModItems.ORANGE_SIGN);
+                        output.accept(ModItems.ORANGE_HANGING_SIGN);
 
                         output.accept(ModBlocks.OAK_TABLE);
                         output.accept(ModBlocks.SPRUCE_TABLE);
@@ -83,6 +103,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.CRIMSON_TABLE);
                         output.accept(ModBlocks.WARPED_TABLE);
                         output.accept(ModBlocks.APPLE_TABLE);
+                        output.accept(ModBlocks.ORANGE_TABLE);
 
                         output.accept(ModBlocks.FAKE_WINE_BOTTLE);
                     }))

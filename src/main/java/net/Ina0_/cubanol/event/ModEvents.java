@@ -103,7 +103,9 @@ public class ModEvents {
                                 BiomeColors.getAverageFoliageColor(level, pos):
                                 FoliageColor.getDefaultColor(),
                 ModBlocks.APPLE_LEAVES.get(),
-                ModBlocks.GROWING_APPLE_LEAVES.get()
+                ModBlocks.GROWING_APPLE_LEAVES.get(),
+                ModBlocks.ORANGE_LEAVES.get(),
+                ModBlocks.GROWING_ORANGE_LEAVES.get()
         );
     }
 
@@ -115,7 +117,9 @@ public class ModEvents {
                     return event.getBlockColors().getColor(blockstate, null, null, tintIndex);
                 },
                 ModBlocks.APPLE_LEAVES.asItem(),
-                ModBlocks.GROWING_APPLE_LEAVES.asItem()
+                ModBlocks.GROWING_APPLE_LEAVES.asItem(),
+                ModBlocks.ORANGE_LEAVES.asItem(),
+                ModBlocks.GROWING_ORANGE_LEAVES.asItem()
         );
     }
 
@@ -124,12 +128,16 @@ public class ModEvents {
         event.modify(
                 BlockEntityType.SIGN,
                 ModBlocks.APPLE_SIGN.get(),
-                ModBlocks.APPLE_WALL_SIGN.get()
+                ModBlocks.APPLE_WALL_SIGN.get(),
+                ModBlocks.ORANGE_SIGN.get(),
+                ModBlocks.ORANGE_WALL_SIGN.get()
         );
         event.modify(
                 BlockEntityType.HANGING_SIGN,
                 ModBlocks.APPLE_HANGING_SIGN.get(),
-                ModBlocks.APPLE_WALL_HANGING_SIGN.get()
+                ModBlocks.APPLE_WALL_HANGING_SIGN.get(),
+                ModBlocks.ORANGE_HANGING_SIGN.get(),
+                ModBlocks.ORANGE_WALL_HANGING_SIGN.get()
         );
     }
 }

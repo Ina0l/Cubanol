@@ -4,4 +4,5 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class ModWoodTypes {
     public static final WoodType APPLE = WoodType.register(new WoodType("apple", ModBlockSetType.APPLE));
+    public static final WoodType ORANGE = WoodType.register(new WoodType("orange", ModBlockSetType.ORANGE));
 }

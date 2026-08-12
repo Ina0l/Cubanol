@@ -26,7 +26,8 @@ public class ModDataMapsProvider extends DataMapProvider {
                 .add(ModItems.BLACK_GRAPE.getId(), new Compostable(0.3f), false)
                 .add(ModItems.WHITE_GRAPE.getId(), new Compostable(0.3f), false)
                 .add(ModItems.BLACK_GRAPE_SEEDS.getId(), new Compostable(0.3f), false)
-                .add(ModItems.WHITE_GRAPE_SEEDS.getId(), new Compostable(0.3f), false);
+                .add(ModItems.WHITE_GRAPE_SEEDS.getId(), new Compostable(0.3f), false)
+                .add(ModItems.ORANGE.getId(), new Compostable(0.5f), false);
 
         this.builder(NeoForgeDataMaps.STRIPPABLES)
                 .add(ModBlocks.APPLE_LOG, new Strippable(ModBlocks.STRIPPED_APPLE_LOG.get()), false, TrueCondition.INSTANCE)

@@ -22,6 +22,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_TREE_KEY = registerKey("apple_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORANGE_TREE_KEY = registerKey("orange_tree");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
 
@@ -32,6 +33,18 @@ public class ModConfiguredFeatures {
                         SimpleWeightedRandomList.<BlockState>builder()
                             .add(ModBlocks.APPLE_LEAVES.get().defaultBlockState(), 3)
                             .add(ModBlocks.GROWING_APPLE_LEAVES.get().defaultBlockState(), 1)
+                ),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0, 2)
+        ).build());
+
+        register(context, ORANGE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.ORANGE_LOG.get()),
+                new StraightTrunkPlacer(3, 1, 0),
+                new WeightedStateProvider(
+                        SimpleWeightedRandomList.<BlockState>builder()
+                            .add(ModBlocks.ORANGE_LEAVES.get().defaultBlockState(), 3)
+                            .add(ModBlocks.GROWING_ORANGE_LEAVES.get().defaultBlockState(), 1)
                 ),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 2)

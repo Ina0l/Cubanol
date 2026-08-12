@@ -1,15 +1,15 @@
 package net.Ina0_.cubanol.block.custom;
 
-import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -18,7 +18,9 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class AppleTreeSaplingCropBlock extends CropBlock {
+import java.util.function.Supplier;
+
+public class SaplingCropBlock extends CropBlock {
 
     public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
 
@@ -31,15 +33,20 @@ public class AppleTreeSaplingCropBlock extends CropBlock {
             Block.box(0, 0, 0, 16, 16, 16),
     };
 
-    public AppleTreeSaplingCropBlock(Properties properties) {
+    public final Supplier<? extends SaplingBlock> saplingBlock;
+    public final Supplier<? extends Item> seedItem;
+
+    public SaplingCropBlock(Properties properties, Supplier<? extends SaplingBlock> saplingBlock, Supplier<? extends Item> seedItem) {
         super(properties);
+        this.saplingBlock = saplingBlock;
+        this.seedItem = seedItem;
     }
 
     @Override
     protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         super.randomTick(state, level, pos, random);
         if(this.isMaxAge(level.getBlockState(pos))){
-            level.setBlock(pos, ModBlocks.APPLE_SAPLING.get().defaultBlockState(), 3);
+            level.setBlock(pos, this.saplingBlock.get().defaultBlockState(), 3);
             level.setBlock(pos.below(), Blocks.DIRT.defaultBlockState(), 3);
         }
     }
@@ -56,7 +63,7 @@ public class AppleTreeSaplingCropBlock extends CropBlock {
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return ModItems.APPLE_SEEDS.get();
+        return this.seedItem.get();
     }
 
     @Override

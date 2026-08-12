@@ -1,6 +1,7 @@
 package net.Ina0_.cubanol.block.custom;
 
 import net.Ina0_.cubanol.block.ModBlocks;
+import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -28,7 +29,7 @@ import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.NotNull;
 
 public class GrapeCropBlock extends CropBlock{
-    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 12);
+    public static final IntegerProperty AGE = ModBlockStateProperties.AGE_12;
     public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
     public static final BooleanProperty SOUTH = BlockStateProperties.SOUTH;
     public static final BooleanProperty EAST = BlockStateProperties.EAST;

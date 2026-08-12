@@ -1,6 +1,6 @@
 package net.Ina0_.cubanol.block.custom;
 
-import net.Ina0_.cubanol.block.ModBlockStateProperties;
+import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
