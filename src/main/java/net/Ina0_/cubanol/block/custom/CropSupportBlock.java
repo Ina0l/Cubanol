@@ -1,6 +1,7 @@
 package net.Ina0_.cubanol.block.custom;
 
 import net.Ina0_.cubanol.block.ModBlocks;
+import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -26,7 +27,7 @@ public class CropSupportBlock extends Block{
     public static final BooleanProperty SOUTH = BlockStateProperties.SOUTH;
     public static final BooleanProperty EAST = BlockStateProperties.EAST;
     public static final BooleanProperty WEST = BlockStateProperties.WEST;
-    public static final IntegerProperty WIRE_COUNT = IntegerProperty.create("wire_count", 0, 4);
+    public static final IntegerProperty WIRE_COUNT = ModBlockStateProperties.WIRE_COUNT;
 
     private static final VoxelShape BASE_SHAPE = Block.box(7.0, 0.0, 7.0, 9.0, 16.0, 9.0);
     private static final VoxelShape NORTH_CABLE = Block.box(7.0, 11.0, 0.0, 9.0, 13.0, 8.0);

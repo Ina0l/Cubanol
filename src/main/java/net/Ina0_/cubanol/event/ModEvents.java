@@ -3,6 +3,8 @@ package net.Ina0_.cubanol.event;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
+import net.Ina0_.cubanol.block.entity.ModBlockEntities;
+import net.Ina0_.cubanol.block.entity.renderer.TableBlockEntityRenderer;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
@@ -139,5 +142,10 @@ public class ModEvents {
                 ModBlocks.ORANGE_HANGING_SIGN.get(),
                 ModBlocks.ORANGE_WALL_HANGING_SIGN.get()
         );
+    }
+
+    @SubscribeEvent
+    public static void onRegisterBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event){
+        event.registerBlockEntityRenderer(ModBlockEntities.TABLE_BLOCK_ENTITY.get(), TableBlockEntityRenderer::new);
     }
 }

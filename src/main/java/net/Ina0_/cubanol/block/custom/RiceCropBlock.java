@@ -1,6 +1,7 @@
 package net.Ina0_.cubanol.block.custom;
 
 import net.Ina0_.cubanol.block.ModBlocks;
+import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -29,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class RiceCropBlock extends CropBlock implements SimpleWaterloggedBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
-    public static final BooleanProperty SUPPORTING = BooleanProperty.create("supporting");
+    public static final BooleanProperty SUPPORTING = ModBlockStateProperties.SUPPORTING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{

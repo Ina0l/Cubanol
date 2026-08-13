@@ -50,6 +50,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> SPRUCE_TABLE = registerBlock("spruce_table", () -> new TableBlock(
@@ -61,6 +62,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> BIRCH_TABLE = registerBlock("birch_table", () -> new TableBlock(
@@ -72,6 +74,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> JUNGLE_TABLE = registerBlock("jungle_table", () -> new TableBlock(
@@ -83,6 +86,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> ACACIA_TABLE = registerBlock("acacia_table", () -> new TableBlock(
@@ -94,6 +98,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> DARK_OAK_TABLE = registerBlock("dark_oak_table", () -> new TableBlock(
@@ -105,6 +110,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> MANGROVE_TABLE = registerBlock("mangrove_table", () -> new TableBlock(
@@ -116,6 +122,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> CHERRY_TABLE = registerBlock("cherry_table", () -> new TableBlock(
@@ -127,6 +134,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
 
@@ -138,6 +146,7 @@ public class ModBlocks {
                     .forceSolidOn()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> WARPED_TABLE = registerBlock("warped_table", () -> new TableBlock(
@@ -148,6 +157,7 @@ public class ModBlocks {
                     .forceSolidOn()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<TableBlock> BAMBOO_TABLE = registerBlock("bamboo_table", () -> new TableBlock(
@@ -159,6 +169,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
 
@@ -348,6 +359,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<StandingSignBlock> APPLE_SIGN = BLOCKS.register("apple_sign", () -> new StandingSignBlock(
@@ -471,6 +483,7 @@ public class ModBlocks {
                     .ignitedByLava()
                     .isViewBlocking(ModBlocks::never)
                     .strength(1.0F)
+                    .pushReaction(PushReaction.IGNORE)
     ));
 
     public static final DeferredBlock<StandingSignBlock> ORANGE_SIGN = BLOCKS.register("orange_sign", () -> new StandingSignBlock(

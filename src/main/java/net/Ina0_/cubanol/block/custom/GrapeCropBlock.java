@@ -36,7 +36,7 @@ public class GrapeCropBlock extends CropBlock{
     public static final BooleanProperty WEST = BlockStateProperties.WEST;
     public static final DirectionProperty VINE_HANGING_SIDE = BlockStateProperties.HORIZONTAL_FACING;
 
-    public static final BooleanProperty WHITE = BooleanProperty.create("white");
+    public static final BooleanProperty WHITE = ModBlockStateProperties.WHITE;
 
 
     private static final VoxelShape BASE_SHAPE;
