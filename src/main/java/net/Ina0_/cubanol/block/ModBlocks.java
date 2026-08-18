@@ -546,7 +546,6 @@ public class ModBlocks {
      * @param blockSupplier a supplier returning the block
      */
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> blockSupplier){
-
         DeferredBlock<T> toReturn = BLOCKS.register(name, blockSupplier);
         registerBlockItem(name, toReturn);
         return toReturn;

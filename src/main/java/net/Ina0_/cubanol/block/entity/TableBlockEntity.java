@@ -41,7 +41,6 @@ public class TableBlockEntity extends BlockEntity {
 
     public void clearInventory(){
         inventory.extractItem(0, 1, false);
-        inventory.insertItem(0, ItemStack.EMPTY, false);
     }
 
     public ItemStack getStack(){
@@ -60,7 +59,7 @@ public class TableBlockEntity extends BlockEntity {
     public void dropContent(){
          SimpleContainer inv = new SimpleContainer(1);
          inv.setItem(0, inventory.getStackInSlot(0));
-        Containers.dropContents(Objects.requireNonNull(this.level), this.getBlockPos(), inv);
+         Containers.dropContents(Objects.requireNonNull(this.level), this.getBlockPos(), inv);
     }
 
     @Override

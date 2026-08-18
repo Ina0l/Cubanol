@@ -23,19 +23,19 @@ public class BottleBlock extends DirectionalBlock{
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
+        return this.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, context.getHorizontalDirection());
     }
 
     protected @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         Vec3 vec3 = state.getOffset(level, pos);
         Direction direction = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
-        if(direction == Direction.EAST){
+        if(direction == Direction.WEST){
             vec3 = vec3.add((double) 1 /16, 0, (double) 1 /16);
         }
-        if(direction == Direction.SOUTH){
+        if(direction == Direction.NORTH){
             vec3 = vec3.add(0, 0, (double) 1 /16);
         }
-        if(direction == Direction.NORTH){
+        if(direction == Direction.SOUTH){
             vec3 = vec3.add((double) 1 /16, 0, 0);
         }
         return this.fullBottleShape.get().move(vec3.x, vec3.y, vec3.z);
