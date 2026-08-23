@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
+    private final ResourceLocation NULL = modLoc("block/null");
+
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Cubanol.MOD_ID, exFileHelper);
     }
@@ -289,7 +291,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 }
             }
             String filePath = "block/" + textureName + blockStatesPropertiesValues;
-            ResourceLocation resourceLocation = modLoc(finalIsExistingFile.apply(state)? filePath: "block/null");
+            ResourceLocation resourceLocation = finalIsExistingFile.apply(state)? modLoc(filePath): NULL;
             configuredModels[0] = new ConfiguredModel(modelType.apply(
                     Pair.of(
                             modelName + blockStatesPropertiesValues,

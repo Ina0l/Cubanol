@@ -2,6 +2,7 @@ package net.Ina0_.cubanol.block;
 
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.custom.*;
+import net.Ina0_.cubanol.block.fluids.ModFluids;
 import net.Ina0_.cubanol.block.properties.ModBlockSetType;
 import net.Ina0_.cubanol.block.properties.ModWoodTypes;
 import net.Ina0_.cubanol.item.ModItems;
@@ -529,6 +530,18 @@ public class ModBlocks {
                     .lootFrom(ORANGE_HANGING_SIGN)
     ));
 
+
+    public static final DeferredBlock<LiquidBlock> TROD_BLACK_GRAPE = BLOCKS.register("trod_black_grape", () -> new LiquidBlock(
+            ModFluids.TROD_BLACK_GRAPE.get(),
+            BlockBehaviour.Properties.of()
+                    .replaceable()
+                    .noCollission()
+                    .strength(100.0F)
+                    .pushReaction(PushReaction.DESTROY)
+                    .noLootTable()
+                    .liquid()
+                    .sound(SoundType.EMPTY)
+    ));
 
 
     /**

@@ -5,9 +5,11 @@ import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
 import net.Ina0_.cubanol.block.entity.ModBlockEntities;
 import net.Ina0_.cubanol.block.entity.renderer.TableBlockEntityRenderer;
+import net.Ina0_.cubanol.block.fluids.ModFluids;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.Entity;
@@ -23,10 +25,13 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -147,5 +152,38 @@ public class ModEvents {
     @SubscribeEvent
     public static void onRegisterBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event){
         event.registerBlockEntityRenderer(ModBlockEntities.TABLE_BLOCK_ENTITY.get(), TableBlockEntityRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterClientExtensions(RegisterClientExtensionsEvent event){
+        event.registerFluidType(
+                new IClientFluidTypeExtensions() {
+                    private static final ResourceLocation TROD_BLACK_GRAPE_STILL = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/trod_black_grape_still");
+                    private static final ResourceLocation TROD_BLACK_GRAPE_FLOW = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/trod_black_grape_flow");
+                    private static final ResourceLocation TROD_BLACK_GRAPE_OVERLAY = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/trod_black_grape_overlay");
+
+                    @Override
+                    public int getTintColor() {
+                        return 0xFF351FA4;
+                    }
+
+                    @Override
+                    public @NotNull ResourceLocation getStillTexture() {
+                        return TROD_BLACK_GRAPE_STILL;
+                    }
+
+                    @Override
+                    public @NotNull ResourceLocation getFlowingTexture() {
+                        return TROD_BLACK_GRAPE_FLOW;
+                    }
+
+                    @Override
+                    public @NotNull ResourceLocation getOverlayTexture() {
+                        return TROD_BLACK_GRAPE_OVERLAY;
+                    }
+
+                },
+                ModFluids.TROD_BLACK_GRAPE_TYPE.get()
+        );
     }
 }

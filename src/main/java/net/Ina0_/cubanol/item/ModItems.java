@@ -3,12 +3,12 @@ package net.Ina0_.cubanol.item;
 import com.google.gson.JsonObject;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
+import net.Ina0_.cubanol.block.fluids.ModFluids;
 import net.Ina0_.cubanol.item.custom.AgaveSyrupItem;
 import net.Ina0_.cubanol.item.custom.GrapeSeedsItem;
 import net.Ina0_.cubanol.item.custom.WireItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.protocol.game.ClientboundPlayerInfoUpdatePacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -115,6 +115,11 @@ public class ModItems {
             ModBlocks.ORANGE_HANGING_SIGN.get(),
             ModBlocks.ORANGE_WALL_HANGING_SIGN.get(),
             new Item.Properties().stacksTo(16)
+    ));
+
+    public static final DeferredItem<BucketItem> TROD_BLACK_GRAPE_BUCKET = ITEMS.register("trod_black_grape_bucket", () -> new BucketItem(
+            ModFluids.TROD_BLACK_GRAPE.get(),
+            new Item.Properties()
     ));
 
     public static void register(IEventBus eventBus){
