@@ -530,6 +530,9 @@ public class ModBlocks {
                     .lootFrom(ORANGE_HANGING_SIGN)
     ));
 
+    public static final DeferredBlock<CaskBlock> CASK = BLOCKS.register("cask", () -> new CaskBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL).noLootTable().noOcclusion()
+    ));
 
     public static final DeferredBlock<LiquidBlock> TROD_BLACK_GRAPE = BLOCKS.register("trod_black_grape", () -> new LiquidBlock(
             ModFluids.TROD_BLACK_GRAPE.get(),
