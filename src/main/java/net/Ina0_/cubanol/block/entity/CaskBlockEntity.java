@@ -9,7 +9,6 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +20,7 @@ public class CaskBlockEntity extends BlockEntity {
 
     public static final int TANK_CAPACITY = FluidType.BUCKET_VOLUME * 4;
 
-    public FluidTank tank = new FluidTank(TANK_CAPACITY, stack -> true){
+    public final FluidTank tank = new FluidTank(TANK_CAPACITY, stack -> true){
         @Override
         protected void onContentsChanged() {
             setChanged();

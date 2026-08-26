@@ -198,11 +198,6 @@ public class ModEvents {
                     private static final ResourceLocation DESTEMMED_BLACK_GRAPE_FLOWING = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/destemmed_black_grape_flowing");
 
                     @Override
-                    public int getTintColor() {
-                        return 0xFFFFFFFF;
-                    }
-
-                    @Override
                     public @NotNull ResourceLocation getStillTexture() {
                         return DESTEMMED_BLACK_GRAPE_STILL;
                     }
