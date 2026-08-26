@@ -3,7 +3,7 @@ package net.Ina0_.cubanol.item;
 import com.google.gson.JsonObject;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.fluids.ModFluids;
+import net.Ina0_.cubanol.fluids.ModFluids;
 import net.Ina0_.cubanol.item.custom.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,7 +18,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 //this is there to access the vanilla examples
-import net.minecraft.world.item.Items;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -39,6 +38,16 @@ public class ModItems {
             )
     ));
 
+    public static final DeferredItem<GrapeSeedsItem> BLACK_GRAPE_SEEDS = ITEMS.register("black_grape_seeds", () -> new GrapeSeedsItem(
+            new Item.Properties(),
+            false
+    ));
+
+    public static final DeferredItem<GrapeSeedsItem> WHITE_GRAPE_SEEDS = ITEMS.register("white_grape_seeds", () -> new GrapeSeedsItem(
+            new Item.Properties(),
+            true
+    ));
+
     public static final DeferredItem<ItemNameBlockItem> STAR_ANISE = ITEMS.register("star_anise", () -> new ItemNameBlockItem(
             ModBlocks.STAR_ANISE_CROP.get(),
             new Item.Properties()
@@ -56,16 +65,6 @@ public class ModItems {
 
     public static final DeferredItem<Item> WIRE = ITEMS.register("wire", () -> new WireItem(
             new Item.Properties()
-    ));
-
-    public static final DeferredItem<GrapeSeedsItem> BLACK_GRAPE_SEEDS = ITEMS.register("black_grape_seeds", () -> new GrapeSeedsItem(
-            new Item.Properties(),
-            false
-    ));
-
-    public static final DeferredItem<GrapeSeedsItem> WHITE_GRAPE_SEEDS = ITEMS.register("white_grape_seeds", () -> new GrapeSeedsItem(
-            new Item.Properties(),
-            true
     ));
 
     public static final DeferredItem<ItemNameBlockItem> RICE = ITEMS.register("rice", () -> new ItemNameBlockItem(

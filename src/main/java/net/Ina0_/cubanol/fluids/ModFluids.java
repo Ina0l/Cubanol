@@ -1,4 +1,4 @@
-package net.Ina0_.cubanol.block.fluids;
+package net.Ina0_.cubanol.fluids;
 
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.sound.ModSoundEvents;

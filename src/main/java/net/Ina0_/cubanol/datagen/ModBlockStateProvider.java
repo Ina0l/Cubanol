@@ -3,7 +3,7 @@ package net.Ina0_.cubanol.datagen;
 import com.mojang.datafixers.util.Pair;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.custom.*;
+import net.Ina0_.cubanol.block.custom.crops.*;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;

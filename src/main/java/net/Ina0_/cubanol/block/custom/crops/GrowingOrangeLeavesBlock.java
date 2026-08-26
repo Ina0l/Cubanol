@@ -1,15 +1,15 @@
-package net.Ina0_.cubanol.block.custom;
+package net.Ina0_.cubanol.block.custom.crops;
 
 import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
-import net.minecraft.world.item.Items;
+import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
-public class GrowingAppleLeavesBlock extends FruitGrowingLeavesBlock {
+public class GrowingOrangeLeavesBlock extends FruitGrowingLeavesBlock {
 
     public static final IntegerProperty AGE = ModBlockStateProperties.AGE_8;
 
-    public GrowingAppleLeavesBlock(Properties properties) {
-        super(properties, () -> Items.APPLE);
+    public GrowingOrangeLeavesBlock(Properties properties) {
+        super(properties, ModItems.ORANGE);
     }
 
     @Override

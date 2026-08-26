@@ -50,14 +50,16 @@ public class ModCreativeModTabs {
                     .build()
     );
 
-    public static final Supplier<CreativeModeTab> MACHINERY_TAB = CREATIVE_MODE_TABS.register(
-            "machinery_tab",
+    public static final Supplier<CreativeModeTab> ALCOOL_PRODUCTION_TAB = CREATIVE_MODE_TABS.register(
+            "alcool_production_tab",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModItems.CASK.get()))
                     .title(Component.translatable("creative_mode_tab.cubanol.machinery_tab"))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "crops_tab"))
                     .displayItems(((parameters, output) -> {
                         output.accept(ModItems.CASK);
+                        output.accept(ModItems.DESTEMMED_BLACK_GRAPE_BUCKET);
+                        output.accept(ModItems.TROD_BLACK_GRAPE_BUCKET);
                     }))
                     .build()
     );
@@ -67,7 +69,7 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModBlocks.OAK_TABLE.asItem()))
                     .title(Component.translatable("creative_mode_tab.cubanol.decorations_tab"))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "machinery_tab"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "alcool_production_tab"))
                     .displayItems(((parameters, output) -> {
                         output.accept(ModBlocks.APPLE_LOG);
                         output.accept(ModBlocks.APPLE_WOOD);

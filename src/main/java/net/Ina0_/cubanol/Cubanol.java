@@ -2,7 +2,7 @@ package net.Ina0_.cubanol;
 
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.entity.ModBlockEntities;
-import net.Ina0_.cubanol.block.fluids.ModFluids;
+import net.Ina0_.cubanol.fluids.ModFluids;
 import net.Ina0_.cubanol.item.ModCreativeModTabs;
 import net.Ina0_.cubanol.item.ModItems;
 import net.Ina0_.cubanol.item.properties.ModDataComponentTypes;

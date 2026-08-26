@@ -1,7 +1,7 @@
 package net.Ina0_.cubanol.datagen;
 
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.custom.*;
+import net.Ina0_.cubanol.block.custom.crops.*;
 import net.Ina0_.cubanol.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;

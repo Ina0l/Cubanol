@@ -1,4 +1,4 @@
-package net.Ina0_.cubanol.block.custom;
+package net.Ina0_.cubanol.block.custom.crops;
 
 import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
 import net.Ina0_.cubanol.block.ModBlocks;

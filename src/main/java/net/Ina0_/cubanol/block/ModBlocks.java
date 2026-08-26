@@ -2,7 +2,8 @@ package net.Ina0_.cubanol.block;
 
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.custom.*;
-import net.Ina0_.cubanol.block.fluids.ModFluids;
+import net.Ina0_.cubanol.block.custom.crops.*;
+import net.Ina0_.cubanol.fluids.ModFluids;
 import net.Ina0_.cubanol.block.properties.ModBlockSetType;
 import net.Ina0_.cubanol.block.properties.ModWoodTypes;
 import net.Ina0_.cubanol.item.ModItems;

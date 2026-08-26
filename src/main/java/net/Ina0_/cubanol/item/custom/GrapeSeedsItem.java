@@ -1,8 +1,8 @@
 package net.Ina0_.cubanol.item.custom;
 
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.custom.CropSupportBlock;
-import net.Ina0_.cubanol.block.custom.GrapeCropBlock;
+import net.Ina0_.cubanol.block.custom.crops.CropSupportBlock;
+import net.Ina0_.cubanol.block.custom.crops.GrapeCropBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;

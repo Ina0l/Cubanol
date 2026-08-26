@@ -1,4 +1,4 @@
-package net.Ina0_.cubanol.block.fluids;
+package net.Ina0_.cubanol.fluids;
 
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.item.ModItems;

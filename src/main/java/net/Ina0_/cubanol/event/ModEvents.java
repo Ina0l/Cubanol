@@ -2,12 +2,12 @@ package net.Ina0_.cubanol.event;
 
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
-import net.Ina0_.cubanol.block.custom.CropSupportBlock;
+import net.Ina0_.cubanol.block.custom.crops.CropSupportBlock;
 import net.Ina0_.cubanol.block.entity.CaskBlockEntity;
 import net.Ina0_.cubanol.block.entity.ModBlockEntities;
 import net.Ina0_.cubanol.block.entity.renderer.CaskBlockEntityRenderer;
 import net.Ina0_.cubanol.block.entity.renderer.TableBlockEntityRenderer;
-import net.Ina0_.cubanol.block.fluids.ModFluids;
+import net.Ina0_.cubanol.fluids.ModFluids;
 import net.Ina0_.cubanol.item.ModItems;
 import net.Ina0_.cubanol.item.properties.ModDataComponentTypes;
 import net.minecraft.client.renderer.BiomeColors;

@@ -1,4 +1,4 @@
-package net.Ina0_.cubanol.block.custom;
+package net.Ina0_.cubanol.block.custom.crops;
 
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.properties.ModBlockStateProperties;
@@ -75,7 +75,7 @@ public class CropSupportBlock extends Block{
         if(!level.isClientSide()){
             if(pos.getY() == neighborPos.getY()){
                 Direction neighborDirection = ModBlocks.getNeighborDirection(pos, neighborPos);
-                if (level.getBlockState(neighborPos).getBlock() instanceof CropSupportBlock || level.getBlockState(neighborPos).getBlock() instanceof  GrapeCropBlock) {
+                if (level.getBlockState(neighborPos).getBlock() instanceof CropSupportBlock || level.getBlockState(neighborPos).getBlock() instanceof GrapeCropBlock) {
                     if(!state.getValue(getPropertyFromDirection(neighborDirection)) && level.getBlockState(neighborPos).getValue(getPropertyFromDirection(neighborDirection.getOpposite()))) {
                         level.playSound(null, pos, SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS);
                         level.setBlock(neighborPos, level.getBlockState(neighborPos).setValue(getPropertyFromDirection(neighborDirection.getOpposite()), false), 3);
