@@ -56,11 +56,11 @@ public class ModCreativeModTabs {
                     .icon(() -> new ItemStack(ModItems.CASK.get()))
                     .title(Component.translatable("creative_mode_tab.cubanol.machinery_tab"))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "crops_tab"))
-                    .displayItems(((parameters, output) -> {
+                    .displayItems((parameters, output) -> {
                         output.accept(ModItems.CASK);
                         output.accept(ModItems.DESTEMMED_BLACK_GRAPE_BUCKET);
                         output.accept(ModItems.TROD_BLACK_GRAPE_BUCKET);
-                    }))
+                    })
                     .build()
     );
 

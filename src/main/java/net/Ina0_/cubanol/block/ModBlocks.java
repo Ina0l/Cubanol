@@ -17,7 +17,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,17 +39,19 @@ import java.util.function.Supplier;
 
 
 public class ModBlocks {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Cubanol.MOD_ID);
+    private static final BlockBehaviour.StatePredicate never = (state, blockGetter, pos) -> false;
 
+
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Cubanol.MOD_ID);
 
     public static final DeferredBlock<TableBlock> OAK_TABLE = registerBlock("oak_table", () -> new TableBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.OAK_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -59,10 +60,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.SPRUCE_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -71,10 +72,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.BIRCH_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -83,10 +84,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.JUNGLE_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -95,10 +96,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.ACACIA_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -107,10 +108,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.DARK_OAK_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -119,10 +120,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.MANGROVE_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -131,10 +132,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.CHERRY_PLANKS.defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -144,9 +145,9 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.CRIMSON_PLANKS.defaultMapColor())
                     .sound(SoundType.NETHER_WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -155,9 +156,9 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.WARPED_PLANKS.defaultMapColor())
                     .sound(SoundType.NETHER_WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -166,10 +167,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor())
                     .sound(SoundType.BAMBOO_WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -179,7 +180,7 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .sound(SoundType.GLASS)
                     .forceSolidOn()
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .dynamicShape()
@@ -200,7 +201,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
     ));
 
     public static final DeferredBlock<AgaveStemBlock> AGAVE_STEM = BLOCKS.register("agave_stem", () -> new AgaveStemBlock(
@@ -212,7 +213,7 @@ public class ModBlocks {
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
                     .noLootTable()
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
     ));
 
     public static final DeferredBlock<AgaveFlowerBlock> AGAVE_FLOWER = BLOCKS.register("agave_flower", () -> new AgaveFlowerBlock(
@@ -223,7 +224,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
     ));
 
 
@@ -234,8 +235,8 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.WOOD)
                     .pushReaction(PushReaction.DESTROY)
-                    .isViewBlocking(ModBlocks::never)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isViewBlocking(never)
+                    .isRedstoneConductor(never)
                     .strength(0.1f)
     ));
 
@@ -246,8 +247,8 @@ public class ModBlocks {
                     .noOcclusion()
                     .dynamicShape()
                     .pushReaction(PushReaction.DESTROY)
-                    .isViewBlocking(ModBlocks::never)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isViewBlocking(never)
+                    .isRedstoneConductor(never)
                     .strength(0.5f)
     ));
 
@@ -259,7 +260,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
     ));
 
     public static final DeferredBlock<RicePaniclesBlock> RICE_PANICLES = BLOCKS.register("rice_panicles", () -> new RicePaniclesBlock(
@@ -270,7 +271,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
     ));
 
     public static final DeferredBlock<StarAniseCropBlock> STAR_ANISE_CROP = BLOCKS.register("star_anise_crop", () -> new StarAniseCropBlock(
@@ -281,7 +282,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
     ));
 
     public static final DeferredBlock<FlammableRotatedPillarBlock> APPLE_LOG = registerBlock("apple_log", () -> new FlammableRotatedPillarBlock(
@@ -316,7 +317,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never),
+                    .isRedstoneConductor(never),
             APPLE_SAPLING,
             () -> Items.APPLE
     ));
@@ -356,10 +357,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(ModBlocks.APPLE_PLANKS.get().defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -440,7 +441,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
-                    .isRedstoneConductor(ModBlocks::never),
+                    .isRedstoneConductor(never),
             ORANGE_SAPLING,
             ModItems.ORANGE
     ));
@@ -480,10 +481,10 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(ModBlocks.ORANGE_PLANKS.get().defaultMapColor())
                     .sound(SoundType.WOOD)
-                    .isRedstoneConductor(ModBlocks::never)
+                    .isRedstoneConductor(never)
                     .forceSolidOn()
                     .ignitedByLava()
-                    .isViewBlocking(ModBlocks::never)
+                    .isViewBlocking(never)
                     .strength(1.0F)
                     .pushReaction(PushReaction.IGNORE)
     ));
@@ -551,15 +552,6 @@ public class ModBlocks {
                     .liquid()
                     .sound(SoundType.EMPTY)
     ));
-
-
-    /**
-     * Used instead of the Block::never used in vanilla BlockProperties, which is private
-     * @return false
-     */
-    private static boolean never(BlockState state, BlockGetter blockGetter, BlockPos pos){
-        return false;
-    }
 
 
     /**

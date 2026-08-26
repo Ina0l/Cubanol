@@ -58,7 +58,7 @@ public class UnplaceableBucketItem extends BucketItem {
             } else if (containedFluidStack.isPresent() && this.content.getFluidType().isVaporizedOnPlacement(level, pos, containedFluidStack.get())) {
                 this.content.getFluidType().onVaporize(player, level, pos, containedFluidStack.get());
                 return true;
-            } else if (level.dimensionType().ultraWarm() && this.content.is(FluidTags.WATER)) {
+            } else if (level.dimensionType().ultraWarm() && this.content.defaultFluidState().is(FluidTags.WATER)) {
                 int l = pos.getX();
                 int i = pos.getY();
                 int j = pos.getZ();
