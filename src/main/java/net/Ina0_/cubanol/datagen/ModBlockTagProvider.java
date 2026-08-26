@@ -78,7 +78,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ORANGE_SIGN.get())
                 .add(ModBlocks.ORANGE_WALL_SIGN.get())
                 .add(ModBlocks.ORANGE_HANGING_SIGN.get())
-                .add(ModBlocks.ORANGE_WALL_HANGING_SIGN.get());
+                .add(ModBlocks.ORANGE_WALL_HANGING_SIGN.get())
+
+                .add(ModBlocks.CASK.get());
 
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.APPLE_LEAVES.get())

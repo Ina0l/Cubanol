@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.Objects;
 
@@ -59,17 +60,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ORANGE_HANGING_SIGN.get());
     }
 
-    private ItemModelBuilder withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture, String key){
-        return withExistingParent(getPath(item), parent)
+    private void withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture, String key){
+        withExistingParent(getPath(item), parent)
                 .texture(key, texture);
     }
 
-    private ItemModelBuilder withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture){
-        return withExistingParent(item, parent, texture, "texture");
+    private void withExistingParent(Item item, ResourceLocation parent, ResourceLocation texture){
+        withExistingParent(item, parent, texture, "texture");
     }
 
-    private ItemModelBuilder basicItemFromAbsolutePath(Item item, ResourceLocation textureLocation){
-        return withExistingParent(item, mcLoc("item/generated"), textureLocation, "layer0");
+    private void basicItemFromAbsolutePath(Item item, ResourceLocation textureLocation){
+        withExistingParent(item, mcLoc("item/generated"), textureLocation, "layer0");
     }
 
     private String getPath(Item item){

@@ -4,6 +4,7 @@ import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
 import net.Ina0_.cubanol.block.entity.ModBlockEntities;
+import net.Ina0_.cubanol.block.entity.renderer.CaskBlockEntityRenderer;
 import net.Ina0_.cubanol.block.entity.renderer.TableBlockEntityRenderer;
 import net.Ina0_.cubanol.block.fluids.ModFluids;
 import net.Ina0_.cubanol.item.ModItems;
@@ -152,6 +153,7 @@ public class ModEvents {
     @SubscribeEvent
     public static void onRegisterBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event){
         event.registerBlockEntityRenderer(ModBlockEntities.TABLE_BLOCK_ENTITY.get(), TableBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.CASK_BLOCK_ENTITY.get(), CaskBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

@@ -234,6 +234,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         this.signBlock(ModBlocks.ORANGE_SIGN.get(), ModBlocks.ORANGE_WALL_SIGN.get(), modLoc("block/orange_planks"));
         this.hangingSignBlock(ModBlocks.ORANGE_HANGING_SIGN.get(), ModBlocks.ORANGE_WALL_HANGING_SIGN.get(), modLoc("block/stripped_orange_log"));
+
+        this.simpleBlockFromExistingModelFile(ModBlocks.CASK);
     }
 
     private <T extends CropBlock> void crop(T block, String modelName, String textureName, Boolean isModelCrossShaped){
@@ -309,7 +311,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void simpleBlockWithItemFromExistingModelFile(DeferredBlock<? extends Block> deferredBlock){
-        simpleBlockWithItem(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()));
+        simpleBlockFromExistingModelFile(deferredBlock);
+        simpleBlockItemFromExistingModelFile(deferredBlock);
+    }
+
+    private void simpleBlockFromExistingModelFile(DeferredBlock<? extends Block> deferredBlock){
+        simpleBlock(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()));
+    }
+
+    private void simpleBlockItemFromExistingModelFile(DeferredBlock<? extends Block> deferredBlock){
+        simpleBlockItem(deferredBlock.get(), models().getExistingFile(deferredBlock.getId()));
     }
 
     private void horizontalDirectionalBlockWithItemFromExistingModelFile(DeferredBlock<? extends Block> deferredBlock){

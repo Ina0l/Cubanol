@@ -5,6 +5,7 @@ import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.fluids.ModFluids;
 import net.Ina0_.cubanol.item.custom.AgaveSyrupItem;
+import net.Ina0_.cubanol.item.custom.CaskBlockItem;
 import net.Ina0_.cubanol.item.custom.GrapeSeedsItem;
 import net.Ina0_.cubanol.item.custom.WireItem;
 import net.minecraft.client.Minecraft;
@@ -119,6 +120,11 @@ public class ModItems {
 
     public static final DeferredItem<BucketItem> TROD_BLACK_GRAPE_BUCKET = ITEMS.register("trod_black_grape_bucket", () -> new BucketItem(
             ModFluids.TROD_BLACK_GRAPE.get(),
+            new Item.Properties()
+    ));
+
+    public static final DeferredItem<CaskBlockItem> CASK = ITEMS.register("cask", () -> new CaskBlockItem(
+            ModBlocks.CASK.get(),
             new Item.Properties()
     ));
 

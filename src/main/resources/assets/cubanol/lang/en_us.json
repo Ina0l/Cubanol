@@ -1,5 +1,6 @@
 {
     "creative_mode_tab.cubanol.crops_tab": "Cubanol Crops",
+    "creative_mode_tab.cubanol.machinery_tab": "Cubanol Machinery",
     "creative_mode_tab.cubanol.decorations_tab": "Cubanol Decorations",
 
     "item.cubanol.star_anise": "Star Anise",
@@ -98,6 +99,12 @@
     "block.cubanol.orange_wall_hanging_sign": "Orange Hanging Sign",
 
     "item.cubanol.orange_seeds": "Orange Seeds",
-    "block.cubanol.orange_sapling_crop": "Orange Seeds"
+    "block.cubanol.orange_sapling_crop": "Orange Seeds",
+
+    "block.cubanol.cask": "Cask",
+
+    "tooltip.cubanol.cask_tooltip": "Press §eShift§r for content",
+    "tooltip.cubanol.cask_content_tooltip": "Cask's Content:",
+    "tooltip.cubanol.empty": "Empty"
 
 }

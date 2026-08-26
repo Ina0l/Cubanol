@@ -5,9 +5,8 @@ import net.Ina0_.cubanol.block.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
 
 @SuppressWarnings("DataFlowIssue")
 public class ModBlockEntities {
@@ -15,7 +14,7 @@ public class ModBlockEntities {
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, Cubanol.MOD_ID);
 
 
-    public static final Supplier<BlockEntityType<TableBlockEntity>> TABLE_BLOCK_ENTITY =
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TableBlockEntity>> TABLE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("table_block_entity", () -> BlockEntityType.Builder.of(
                     TableBlockEntity::new,
                     ModBlocks.OAK_TABLE.get(),
@@ -31,6 +30,12 @@ public class ModBlockEntities {
                     ModBlocks.BAMBOO_TABLE.get(),
                     ModBlocks.APPLE_TABLE.get(),
                     ModBlocks.ORANGE_TABLE.get()
+            ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CaskBlockEntity>> CASK_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("cask_block_entity", () -> BlockEntityType.Builder.of(
+                    CaskBlockEntity::new,
+                    ModBlocks.CASK.get()
             ).build(null));
 
 
