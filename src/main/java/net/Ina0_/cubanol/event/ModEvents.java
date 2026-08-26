@@ -3,11 +3,13 @@ package net.Ina0_.cubanol.event;
 import net.Ina0_.cubanol.Cubanol;
 import net.Ina0_.cubanol.block.ModBlocks;
 import net.Ina0_.cubanol.block.custom.CropSupportBlock;
+import net.Ina0_.cubanol.block.entity.CaskBlockEntity;
 import net.Ina0_.cubanol.block.entity.ModBlockEntities;
 import net.Ina0_.cubanol.block.entity.renderer.CaskBlockEntityRenderer;
 import net.Ina0_.cubanol.block.entity.renderer.TableBlockEntityRenderer;
 import net.Ina0_.cubanol.block.fluids.ModFluids;
 import net.Ina0_.cubanol.item.ModItems;
+import net.Ina0_.cubanol.item.properties.ModDataComponentTypes;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -24,6 +26,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
@@ -32,6 +36,7 @@ import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -185,7 +190,38 @@ public class ModEvents {
                     }
 
                 },
-                ModFluids.TROD_BLACK_GRAPE_TYPE.get()
+                ModFluids.TROD_BLACK_GRAPE_TYPE
+        );
+        event.registerFluidType(
+                new IClientFluidTypeExtensions() {
+                    private static final ResourceLocation DESTEMMED_BLACK_GRAPE_STILL = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/destemmed_black_grape_still");
+                    private static final ResourceLocation DESTEMMED_BLACK_GRAPE_FLOWING = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/destemmed_black_grape_flowing");
+
+                    @Override
+                    public int getTintColor() {
+                        return 0xFFFFFFFF;
+                    }
+
+                    @Override
+                    public @NotNull ResourceLocation getStillTexture() {
+                        return DESTEMMED_BLACK_GRAPE_STILL;
+                    }
+
+                    @Override
+                    public @NotNull ResourceLocation getFlowingTexture() {
+                        return DESTEMMED_BLACK_GRAPE_FLOWING;
+                    }
+                },
+                ModFluids.DESTEMMED_BLACK_GRAPE_TYPE
+        );
+    }
+
+    @SubscribeEvent
+    public static void onRegisterCapabilities(RegisterCapabilitiesEvent event){
+        event.registerItem(
+                Capabilities.FluidHandler.ITEM,
+                (stack, ctx) -> new FluidHandlerItemStack(ModDataComponentTypes.SIMPLE_FLUID_CONTENT, stack, CaskBlockEntity.TANK_CAPACITY),
+                ModItems.CASK
         );
     }
 }

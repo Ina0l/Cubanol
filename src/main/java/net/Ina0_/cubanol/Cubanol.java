@@ -5,7 +5,9 @@ import net.Ina0_.cubanol.block.entity.ModBlockEntities;
 import net.Ina0_.cubanol.block.fluids.ModFluids;
 import net.Ina0_.cubanol.item.ModCreativeModTabs;
 import net.Ina0_.cubanol.item.ModItems;
+import net.Ina0_.cubanol.item.properties.ModDataComponentTypes;
 import net.Ina0_.cubanol.lootmodifiers.ModLootModifiers;
+import net.Ina0_.cubanol.sound.ModSoundEvents;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,6 +39,9 @@ public class Cubanol {
 
         ModLootModifiers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+
+        ModDataComponentTypes.register(modEventBus);
+        ModSoundEvents.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

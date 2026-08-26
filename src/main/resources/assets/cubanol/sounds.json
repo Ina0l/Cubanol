@@ -1,0 +1,8 @@
+{
+    "destemmed_grapes_bucket_empty": {
+        "subtitle": "sounds.cubanol.destemmed_grapes_bucket_empty",
+        "sounds": [
+            "cubanol:destemmed_grapes_bucket_empty"
+        ]
+    }
+}

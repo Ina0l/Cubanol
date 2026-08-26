@@ -33,7 +33,9 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -211,9 +213,9 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
             ItemStack stack = new ItemStack(this);
             if (level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity) {
                 if(!caskBlockEntity.tank.isEmpty()){
-                    CompoundTag tag = new CompoundTag(1);
-                    caskBlockEntity.tank.writeToNBT(level.registryAccess(), tag);
-                    stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
+                    FluidUtil.getFluidHandler(stack).ifPresent(
+                            fluidHandler -> fluidHandler.fill(caskBlockEntity.tank.getFluid(), IFluidHandler.FluidAction.EXECUTE)
+                    );
                 }
             }
             popResource(level, pos, stack);
@@ -226,9 +228,9 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
         ItemStack stack = new ItemStack(this);
         if(level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity){
             if(!caskBlockEntity.tank.isEmpty()){
-                CompoundTag tag = new CompoundTag(1);
-                caskBlockEntity.tank.writeToNBT(level.registryAccess(), tag);
-                stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
+                FluidUtil.getFluidHandler(stack).ifPresent(
+                        fluidHandler -> fluidHandler.fill(caskBlockEntity.tank.getFluid(), IFluidHandler.FluidAction.EXECUTE)
+                );
             }
         }
         return stack;

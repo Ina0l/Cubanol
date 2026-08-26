@@ -534,6 +534,11 @@ public class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL).noLootTable().noOcclusion()
     ));
 
+    public static final DeferredBlock<LiquidBlock> DESTEMMED_BLACK_GRAPE = BLOCKS.register("destemmed_black_grape", () -> new LiquidBlock(
+            ModFluids.DESTEMMED_BLACK_GRAPE.get(),
+            BlockBehaviour.Properties.of()
+    ));
+
     public static final DeferredBlock<LiquidBlock> TROD_BLACK_GRAPE = BLOCKS.register("trod_black_grape", () -> new LiquidBlock(
             ModFluids.TROD_BLACK_GRAPE.get(),
             BlockBehaviour.Properties.of()

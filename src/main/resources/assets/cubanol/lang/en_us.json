@@ -1,4 +1,6 @@
 {
+    "sounds.cubanol.destemmed_grapes_bucket_empty": "Destemmed bucket emptying",
+
     "creative_mode_tab.cubanol.crops_tab": "Cubanol Crops",
     "creative_mode_tab.cubanol.machinery_tab": "Cubanol Machinery",
     "creative_mode_tab.cubanol.decorations_tab": "Cubanol Decorations",
@@ -105,6 +107,10 @@
 
     "tooltip.cubanol.cask_tooltip": "Press §eShift§r for content",
     "tooltip.cubanol.cask_content_tooltip": "Cask's Content:",
-    "tooltip.cubanol.empty": "Empty"
+    "tooltip.cubanol.empty": "Empty",
 
+    "item.cubanol.destemmed_black_grape_bucket": "Destemmed Black Grape Bucket",
+    "block.cubanol.destemmed_black_grape": "Destemmed Black Grape",
+
+    "block.cubanol.trod_black_grape": "Trod Black Grape"
 }
