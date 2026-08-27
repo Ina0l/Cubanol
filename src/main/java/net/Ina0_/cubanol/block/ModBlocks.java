@@ -539,6 +539,13 @@ public class ModBlocks {
     public static final DeferredBlock<LiquidBlock> DESTEMMED_BLACK_GRAPE = BLOCKS.register("destemmed_black_grape", () -> new LiquidBlock(
             ModFluids.DESTEMMED_BLACK_GRAPE.get(),
             BlockBehaviour.Properties.of()
+                    .replaceable()
+                    .noCollission()
+                    .strength(100.0F)
+                    .pushReaction(PushReaction.DESTROY)
+                    .noLootTable()
+                    .liquid()
+                    .sound(SoundType.EMPTY)
     ));
 
     public static final DeferredBlock<LiquidBlock> TROD_BLACK_GRAPE = BLOCKS.register("trod_black_grape", () -> new LiquidBlock(

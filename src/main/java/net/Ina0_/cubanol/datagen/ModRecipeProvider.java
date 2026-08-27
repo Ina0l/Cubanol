@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
@@ -154,6 +155,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_stripped_orange_log", has(ModBlocks.STRIPPED_ORANGE_LOG))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CASK)
+                .pattern("#S#")
+                .pattern("IBI")
+                .pattern("#S#")
+                .define('#', ItemTags.PLANKS)
+                .define('S', ItemTags.WOODEN_SLABS)
+                .define('I', Items.IRON_INGOT)
+                .define('B', Items.BUCKET)
+                .unlockedBy("has_bucket", has(Items.BUCKET))
+                .save(recipeOutput);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModBlocks.FAKE_WINE_BOTTLE)
                 .requires(Items.GLASS_BOTTLE)
@@ -204,6 +216,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.ORANGE)
                 .unlockedBy("has_orange", has(ModItems.ORANGE))
                 .save(recipeOutput);
+
 
         stairBuilder(ModBlocks.APPLE_STAIR, Ingredient.of(ModBlocks.APPLE_PLANKS))
                 .group("apple")

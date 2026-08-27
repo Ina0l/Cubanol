@@ -36,9 +36,5 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.STRIPPED_ORANGE_LOG.asItem())
                 .add(ModBlocks.ORANGE_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_ORANGE_WOOD.asItem());
-
-        tag(ItemTags.PLANKS)
-                .add(ModBlocks.APPLE_PLANKS.asItem())
-                .add(ModBlocks.ORANGE_PLANKS.asItem());
     }
 }

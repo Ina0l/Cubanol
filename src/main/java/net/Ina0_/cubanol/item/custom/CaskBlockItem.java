@@ -14,11 +14,21 @@ import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Optional;
 
 public class CaskBlockItem extends BlockItem {
     public CaskBlockItem(Block block, Properties properties) {
         super(block, properties);
+    }
+
+    @Override
+    public int getMaxStackSize(@NotNull ItemStack stack) {
+        FluidStack fluidStack = FluidUtil.getFluidHandler(stack).map(
+                fluidHandler -> ((FluidHandlerItemStack) fluidHandler).getFluid()
+        ).orElse(FluidStack.EMPTY);
+        if(!fluidStack.isEmpty()){
+            return 1;
+        }
+        return super.getMaxStackSize(stack);
     }
 
     @Override
@@ -34,8 +44,8 @@ public class CaskBlockItem extends BlockItem {
 
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
-        FluidStack fluidStack = FluidUtil.getFluidHandler(stack).flatMap(
-                fluidHandler -> Optional.of(((FluidHandlerItemStack) fluidHandler).getFluid())
+        FluidStack fluidStack = FluidUtil.getFluidHandler(stack).map(
+                fluidHandler -> ((FluidHandlerItemStack) fluidHandler).getFluid()
         ).orElse(FluidStack.EMPTY);
 
         tooltipComponents.add(Component.translatable("tooltip.cubanol.cask_content_tooltip"));

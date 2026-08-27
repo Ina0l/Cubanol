@@ -103,10 +103,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ORANGE_WOOD.get())
                 .add(ModBlocks.STRIPPED_ORANGE_WOOD.get());
 
-        tag(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.APPLE_FENCE.get())
-                .add(ModBlocks.ORANGE_FENCE.get());
-
         tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.APPLE_FENCE_GATE.get())
                 .add(ModBlocks.ORANGE_FENCE_GATE.get());
@@ -123,5 +119,37 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.WALL_HANGING_SIGNS)
                 .add(ModBlocks.APPLE_WALL_HANGING_SIGN.get())
                 .add(ModBlocks.ORANGE_WALL_HANGING_SIGN.get());
+
+        tag(BlockTags.PLANKS)
+                .add(ModBlocks.APPLE_PLANKS.get())
+                .add(ModBlocks.ORANGE_PLANKS.get());
+
+        tag(BlockTags.WOODEN_SLABS)
+                .add(ModBlocks.APPLE_SLAB.get())
+                .add(ModBlocks.ORANGE_SLAB.get());
+
+        tag(BlockTags.WOODEN_BUTTONS)
+                .add(ModBlocks.APPLE_BUTTON.get())
+                .add(ModBlocks.ORANGE_BUTTON.get());
+
+        tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.APPLE_DOOR.get())
+                .add(ModBlocks.ORANGE_DOOR.get());
+
+        tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.APPLE_FENCE.get())
+                .add(ModBlocks.ORANGE_FENCE.get());
+
+        tag(BlockTags.WOODEN_STAIRS)
+                .add(ModBlocks.APPLE_STAIR.get())
+                .add(ModBlocks.ORANGE_STAIR.get());
+
+        tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(ModBlocks.APPLE_PRESSURE_PLATE.get())
+                .add(ModBlocks.ORANGE_PRESSURE_PLATE.get());
+
+        tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.APPLE_TRAPDOOR.get())
+                .add(ModBlocks.ORANGE_TRAPDOOR.get());
     }
 }

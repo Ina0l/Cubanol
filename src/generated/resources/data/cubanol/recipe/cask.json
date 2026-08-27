@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "IBI",
+    "#S#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cubanol:cask"
+  }
+}
