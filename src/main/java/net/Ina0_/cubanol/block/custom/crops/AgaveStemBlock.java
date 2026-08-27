@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 
 public class AgaveStemBlock extends CropBlock {
     public static final IntegerProperty AGE = ModBlockStateProperties.AGE_6;
@@ -47,12 +46,12 @@ public class AgaveStemBlock extends CropBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(AGE, CUT, DRIED);
     }
 
     @Override
-    protected @NotNull IntegerProperty getAgeProperty() {
+    protected IntegerProperty getAgeProperty() {
         return AGE;
     }
 
@@ -62,12 +61,12 @@ public class AgaveStemBlock extends CropBlock {
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE_BY_AGE[state.getValue(AGE)];
     }
 
     @Override
-    protected @NotNull ItemLike getBaseSeedId() {
+    protected ItemLike getBaseSeedId() {
         return ModItems.AGAVE_SEEDS.get();
     }
 
@@ -77,7 +76,7 @@ public class AgaveStemBlock extends CropBlock {
     }
 
     @Override
-    protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if(state.getValue(DRIED)){
             return;
         }
@@ -113,7 +112,7 @@ public class AgaveStemBlock extends CropBlock {
     }
 
     @Override
-    protected void neighborChanged(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
         super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
         if(!level.isClientSide()){
             if (!level.getBlockState(pos.above()).is(ModBlocks.AGAVE_STEM.get()) && !level.getBlockState(pos.above()).is(ModBlocks.AGAVE_FLOWER.get())){
@@ -127,7 +126,7 @@ public class AgaveStemBlock extends CropBlock {
     }
 
     @Override
-    public void performBonemeal(@NotNull ServerLevel level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         super.performBonemeal(level, random, pos, state);
         if (this.isMaxAge(level.getBlockState(pos))) {
             if (level.getBlockState(pos.above()).is(Blocks.AIR)) {
@@ -151,12 +150,12 @@ public class AgaveStemBlock extends CropBlock {
     }
 
     @Override
-    protected boolean canSurvive(@NotNull BlockState state, LevelReader level, BlockPos pos) {
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return level.getBlockState(pos.below()).is(ModBlocks.AGAVE_STEM.get()) || level.getBlockState(pos.below()).is(ModBlocks.AGAVE_CROP.get());
     }
 
     @Override
-    public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         if(state.getValue(CUT)){
             return false;
         }

@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -25,7 +24,8 @@ public class UnplaceableBucketItem extends BucketItem {
     }
 
     @Override
-    public boolean emptyContents(@Nullable Player player, @NotNull Level level, @NotNull BlockPos pos, @Nullable BlockHitResult result, @Nullable ItemStack container) {
+    public boolean emptyContents(@Nullable Player player, Level level, BlockPos pos, @Nullable BlockHitResult result, @Nullable ItemStack container) {
+        // that's just the BucketItem.emptyContents but without the last if block containing the level.setBlock
         if (!(this.content instanceof FlowingFluid flowingfluid)) {
             return false;
         } else {

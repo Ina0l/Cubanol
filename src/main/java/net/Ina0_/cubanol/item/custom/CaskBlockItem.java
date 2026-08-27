@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStack;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class CaskBlockItem extends BlockItem {
     }
 
     @Override
-    public int getMaxStackSize(@NotNull ItemStack stack) {
+    public int getMaxStackSize(ItemStack stack) {
         FluidStack fluidStack = FluidUtil.getFluidHandler(stack).map(
                 fluidHandler -> ((FluidHandlerItemStack) fluidHandler).getFluid()
         ).orElse(FluidStack.EMPTY);
@@ -32,7 +31,7 @@ public class CaskBlockItem extends BlockItem {
     }
 
     @Override
-    protected boolean placeBlock(@NotNull BlockPlaceContext context, @NotNull BlockState state) {
+    protected boolean placeBlock(BlockPlaceContext context, BlockState state) {
         boolean toReturn = super.placeBlock(context, state);
         if(context.getLevel().getBlockEntity(context.getClickedPos()) instanceof CaskBlockEntity caskBlockEntity) {
             FluidUtil.getFluidHandler(context.getItemInHand()).ifPresent(
@@ -43,7 +42,7 @@ public class CaskBlockItem extends BlockItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         FluidStack fluidStack = FluidUtil.getFluidHandler(stack).map(
                 fluidHandler -> ((FluidHandlerItemStack) fluidHandler).getFluid()
         ).orElse(FluidStack.EMPTY);

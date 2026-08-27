@@ -26,7 +26,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
-import org.jetbrains.annotations.NotNull;
 
 public class GrapeCropBlock extends CropBlock{
     public static final IntegerProperty AGE = ModBlockStateProperties.AGE_12;
@@ -68,17 +67,17 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    protected @NotNull IntegerProperty getAgeProperty() {
+    protected IntegerProperty getAgeProperty() {
         return AGE;
     }
 
     @Override
-    public @NotNull ItemStack getCloneItemStack(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return new ItemStack(state.getValue(WHITE)? ModItems.WHITE_GRAPE_SEEDS.get(): ModItems.BLACK_GRAPE_SEEDS.get());
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         VoxelShape shape = BASE_SHAPE;
 
         if(state.getValue(NORTH)){
@@ -97,7 +96,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    protected void neighborChanged(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
         if(!level.isClientSide()){
             Direction neighborDirection = ModBlocks.getNeighborDirection(pos, neighborPos);
             if(neighborDirection.getAxis().isHorizontal()){
@@ -142,7 +141,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if(state.getValue(AGE) == this.getMaxAge()){
             if(!level.isClientSide()) {
                 level.setBlock(pos, state.setValue(AGE, 8), 3);
@@ -155,7 +154,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    public void destroy(@NotNull LevelAccessor levelAccessor, @NotNull BlockPos pos, @NotNull BlockState state) {
+    public void destroy(LevelAccessor levelAccessor, BlockPos pos, BlockState state) {
         if(!levelAccessor.isClientSide()) {
             ModBlocks.dropItemsFromState((ServerLevel) levelAccessor, state, pos, null);
             levelAccessor.setBlock(pos, CropSupportBlock.getBlockStateFromGrapeCropState(state), 3);
@@ -163,7 +162,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (!level.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (level.getRawBrightness(pos, 0) >= 9) {
             int i = this.getAge(state);
@@ -178,7 +177,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    public void growCrops(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state) {
+    public void growCrops(Level level, BlockPos pos, BlockState state) {
         int i;
         if(state.getValue(AGE) < 8){
             i = this.getAge(state) + this.getBonemealAgeIncrease(level);
@@ -198,7 +197,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    protected boolean isRandomlyTicking(@NotNull BlockState state) {
+    protected boolean isRandomlyTicking(BlockState state) {
         if(getFacingPropertiesCount(state) > 1) {
             return super.isRandomlyTicking(state);
         } else {
@@ -206,7 +205,7 @@ public class GrapeCropBlock extends CropBlock{
         }
     }
 
-    public static int getFacingPropertiesCount(@NotNull BlockState state){
+    public static int getFacingPropertiesCount(BlockState state){
         int toReturn = 0;
         if(state.getValue(NORTH)){
             toReturn += 1;
@@ -227,7 +226,7 @@ public class GrapeCropBlock extends CropBlock{
         return CropBlock.getGrowthSpeed(state, blockGetter, pos) * ((getFacingPropertiesCount(state) - 2) * 0.25f + 1) / (state.getValue(AGE) < 9? 1: 1.25F);
     }
 
-    public static BlockState getBlockStateFromCropSupportState(@NotNull BlockState state){
+    public static BlockState getBlockStateFromCropSupportState(BlockState state){
         if(!state.is(ModBlocks.CROP_SUPPORT)){
             throw new IllegalArgumentException("state argument should be a grape crop state, got "+state.getBlock().getName()+" instead");
         }
@@ -239,7 +238,7 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    public void onBlockStateChange(@NotNull LevelReader level, @NotNull BlockPos pos, @NotNull BlockState oldState, BlockState newState) {
+    public void onBlockStateChange(LevelReader level, BlockPos pos, BlockState oldState, BlockState newState) {
         if(newState.is(ModBlocks.GRAPE_CROP)){
             if(!newState.getValue(CropSupportBlock.getPropertyFromDirection(newState.getValue(VINE_HANGING_SIDE)))){
                 newState.getBlock().destroy((LevelAccessor) level, pos, newState);
@@ -249,12 +248,12 @@ public class GrapeCropBlock extends CropBlock{
     }
 
     @Override
-    protected boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return super.canSurvive(state, level, pos) && state.getValue(CropSupportBlock.getPropertyFromDirection(state.getValue(VINE_HANGING_SIDE)));
     }
 
     @Override
-    protected @NotNull BlockState updateShape(@NotNull BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
+    protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         return state;
     }
 

@@ -25,7 +25,6 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.CommonHooks;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -47,7 +46,7 @@ public class FruitGrowingLeavesBlock extends LeavesBlock implements Bonemealable
     }
 
     @Override
-    protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (this.decaying(state)) {
             dropResources(state, level, pos);
             level.removeBlock(pos, false);
@@ -86,7 +85,7 @@ public class FruitGrowingLeavesBlock extends LeavesBlock implements Bonemealable
     }
 
     @Override
-    protected boolean isRandomlyTicking(@NotNull BlockState state) {
+    protected boolean isRandomlyTicking(BlockState state) {
         return !this.isMaxAge(state) || state.getValue(DISTANCE) == 7 && !state.getValue(PERSISTENT);
     }
 
@@ -107,22 +106,22 @@ public class FruitGrowingLeavesBlock extends LeavesBlock implements Bonemealable
     }
 
     @Override
-    public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, @NotNull BlockState state) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return !this.isMaxAge(state);
     }
 
     @Override
-    public boolean isBonemealSuccess(@NotNull Level level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
+    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
         return true;
     }
 
     @Override
-    public void performBonemeal(@NotNull ServerLevel level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         this.growCrops(level, pos, state);
     }
 
     @Override
-    protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if(this.isMaxAge(state)){
             if(!level.isClientSide()) {
                 List<ItemStack> drops = state.getDrops(

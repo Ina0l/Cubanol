@@ -17,14 +17,13 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
 public record TableBlockEntityRenderer(BlockEntityRendererProvider.Context context) implements BlockEntityRenderer<TableBlockEntity> {
 
     @Override
-    public void render(@NotNull TableBlockEntity blockEntity, float partialTick, @NotNull PoseStack poseStack, @NotNull MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
+    public void render(TableBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         ItemStack stack = blockEntity.getStack();
         Direction facing = blockEntity.getBlockState().getValue(TableBlock.FACING);
@@ -44,7 +43,7 @@ public record TableBlockEntityRenderer(BlockEntityRendererProvider.Context conte
         poseStack.popPose();
     }
 
-    public static int getLightLevel(@NotNull Level level, BlockPos pos) {
+    public static int getLightLevel(Level level, BlockPos pos) {
         int blockLight = level.getBrightness(LightLayer.BLOCK, pos);
         int skyLight = level.getBrightness(LightLayer.SKY, pos);
         return LightTexture.pack(blockLight, skyLight);

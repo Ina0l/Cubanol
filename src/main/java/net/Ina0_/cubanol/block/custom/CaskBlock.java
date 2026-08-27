@@ -33,9 +33,8 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.Optional;
 
 public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBlockContainer {
@@ -48,27 +47,28 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
     }
 
     @Override
-    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
+    protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
     }
 
     @Override
-    public @Nullable BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
+    @Nullable
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new CaskBlockEntity(pos, state);
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
     @Override
-    protected @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
+    protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
     }
 
     @Override
-    public @NotNull ItemStack pickupBlock(@Nullable Player player, LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockState state) {
+    public ItemStack pickupBlock(@Nullable Player player, LevelAccessor level, BlockPos pos, BlockState state) {
         if(level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity){
             if(caskBlockEntity.tank.getFluidAmount() >= FluidType.BUCKET_VOLUME){
                 ItemStack bucket = new ItemStack(caskBlockEntity.getFluid().getBucket());
@@ -87,12 +87,12 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
 
     @Override
     @Deprecated
-    public @NotNull Optional<SoundEvent> getPickupSound() {
+    public Optional<SoundEvent> getPickupSound() {
         return Optional.empty();
     }
 
     @Override
-    public boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Fluid fluid) {
+    public boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
         if(level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity){
             return caskBlockEntity.tank.fill(new FluidStack(fluid, FluidType.BUCKET_VOLUME), IFluidHandler.FluidAction.SIMULATE) == FluidType.BUCKET_VOLUME;
         }
@@ -100,7 +100,7 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
     }
 
     @Override
-    public boolean placeLiquid(LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull FluidState fluidState) {
+    public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluidState) {
         if(level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity){
             if(caskBlockEntity.tank.fill(new FluidStack(fluidState.getType(), FluidType.BUCKET_VOLUME), IFluidHandler.FluidAction.SIMULATE) == FluidType.BUCKET_VOLUME){
                 caskBlockEntity.tank.fill(new FluidStack(fluidState.getType(), FluidType.BUCKET_VOLUME), IFluidHandler.FluidAction.EXECUTE);
@@ -111,7 +111,7 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
     }
 
     @Override
-    protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack stack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity){
             boolean isFluidWater = caskBlockEntity.getFluid().isSame(Fluids.WATER);
             boolean canAcceptWaterBottle = (isFluidWater && caskBlockEntity.tank.getSpace() >= 250) || caskBlockEntity.getFluid().isSame(Fluids.EMPTY);
@@ -149,7 +149,7 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
     }
 
     @Override
-    public boolean onDestroyedByPlayer(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, boolean willHarvest, @NotNull FluidState fluid) {
+    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
         if(!player.hasInfiniteMaterials()){
             ItemStack stack = new ItemStack(this);
             if (level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity) {
@@ -165,7 +165,7 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
     }
 
     @Override
-    public @NotNull ItemStack getCloneItemStack(@NotNull BlockState state, @NotNull HitResult target, @NotNull LevelReader level, @NotNull BlockPos pos, @NotNull Player player) {
+    public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
         ItemStack stack = new ItemStack(this);
         if(level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity){
             if(!caskBlockEntity.tank.isEmpty()){

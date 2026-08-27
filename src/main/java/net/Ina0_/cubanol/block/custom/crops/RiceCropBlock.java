@@ -25,8 +25,8 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+
+import javax.annotation.Nullable;
 
 public class RiceCropBlock extends CropBlock implements SimpleWaterloggedBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
@@ -58,27 +58,27 @@ public class RiceCropBlock extends CropBlock implements SimpleWaterloggedBlock {
     }
 
     @Override
-    protected @NotNull IntegerProperty getAgeProperty() {
+    protected IntegerProperty getAgeProperty() {
         return AGE;
     }
 
     @Override
-    protected @NotNull ItemLike getBaseSeedId() {
+    protected ItemLike getBaseSeedId() {
         return ModItems.RICE;
     }
 
     @Override
-    protected boolean isRandomlyTicking(@NotNull BlockState state) {
+    protected boolean isRandomlyTicking(BlockState state) {
         return super.isRandomlyTicking(state) || !state.getValue(SUPPORTING);
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE_BY_AGE[this.getAge(state) + (state.getValue(SUPPORTING) ? 1: 0)];
     }
 
     @Override
-    protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if(!level.isClientSide()) {
             if(this.isMaxAge(state) && level.getBlockState(pos.above()).is(Blocks.AIR)) {
                 float f = getGrowthSpeed(state, level, pos);
@@ -93,7 +93,7 @@ public class RiceCropBlock extends CropBlock implements SimpleWaterloggedBlock {
     }
 
     @Override
-    protected void neighborChanged(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
         if(!level.isClientSide()){
             if (!level.getBlockState(pos.above()).is(ModBlocks.RICE_PANICLES)) {
                 level.setBlock(pos, state.setValue(SUPPORTING, false), 3);
@@ -103,18 +103,19 @@ public class RiceCropBlock extends CropBlock implements SimpleWaterloggedBlock {
     }
 
     @Override
-    protected boolean canSurvive(@NotNull BlockState state, LevelReader level, BlockPos pos) {
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return level.getBlockState(pos.below()).is(Blocks.FARMLAND) && state.getValue(WATERLOGGED);
     }
 
     @Override
-    public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
+    @Nullable
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
         Boolean isWaterlogged = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
         return this.defaultBlockState().setValue(WATERLOGGED, isWaterlogged);
     }
 
     @Override
-    protected @NotNull FluidState getFluidState(BlockState state) {
+    protected FluidState getFluidState(BlockState state) {
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 

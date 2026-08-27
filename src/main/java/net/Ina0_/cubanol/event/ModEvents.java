@@ -37,7 +37,6 @@ import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStack;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -175,17 +174,17 @@ public class ModEvents {
                     }
 
                     @Override
-                    public @NotNull ResourceLocation getStillTexture() {
+                    public ResourceLocation getStillTexture() {
                         return TROD_BLACK_GRAPE_STILL;
                     }
 
                     @Override
-                    public @NotNull ResourceLocation getFlowingTexture() {
+                    public ResourceLocation getFlowingTexture() {
                         return TROD_BLACK_GRAPE_FLOW;
                     }
 
                     @Override
-                    public @NotNull ResourceLocation getOverlayTexture() {
+                    public ResourceLocation getOverlayTexture() {
                         return TROD_BLACK_GRAPE_OVERLAY;
                     }
 
@@ -198,12 +197,12 @@ public class ModEvents {
                     private static final ResourceLocation DESTEMMED_BLACK_GRAPE_FLOWING = ResourceLocation.fromNamespaceAndPath(Cubanol.MOD_ID, "block/destemmed_black_grape_flowing");
 
                     @Override
-                    public @NotNull ResourceLocation getStillTexture() {
+                    public ResourceLocation getStillTexture() {
                         return DESTEMMED_BLACK_GRAPE_STILL;
                     }
 
                     @Override
-                    public @NotNull ResourceLocation getFlowingTexture() {
+                    public ResourceLocation getFlowingTexture() {
                         return DESTEMMED_BLACK_GRAPE_FLOWING;
                     }
                 },

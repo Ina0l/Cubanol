@@ -12,12 +12,11 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
-import org.jetbrains.annotations.NotNull;
 
 public record CaskBlockEntityRenderer(BlockEntityRendererProvider.Context context) implements BlockEntityRenderer<CaskBlockEntity> {
 
     @Override
-    public void render(@NotNull CaskBlockEntity blockEntity, float partialTick, @NotNull PoseStack poseStack, @NotNull MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
+    public void render(CaskBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         FluidStack stack = blockEntity.tank.getFluid();
         float pixelWidth = 1.0f / 16;
 

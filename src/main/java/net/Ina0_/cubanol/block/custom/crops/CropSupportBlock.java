@@ -20,7 +20,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 
 public class CropSupportBlock extends Block{
     public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
@@ -52,7 +51,7 @@ public class CropSupportBlock extends Block{
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         VoxelShape shape = BASE_SHAPE;
 
         if(state.getValue(NORTH)){
@@ -71,7 +70,7 @@ public class CropSupportBlock extends Block{
     }
 
     @Override
-    protected void neighborChanged(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Block neighborBlock, @NotNull BlockPos neighborPos, boolean movedByPiston) {
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
         if(!level.isClientSide()){
             if(pos.getY() == neighborPos.getY()){
                 Direction neighborDirection = ModBlocks.getNeighborDirection(pos, neighborPos);
@@ -98,7 +97,7 @@ public class CropSupportBlock extends Block{
         super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
     }
 
-    public static BooleanProperty getPropertyFromDirection(@NotNull Direction direction){
+    public static BooleanProperty getPropertyFromDirection(Direction direction){
         return switch (direction) {
             case Direction.EAST -> BlockStateProperties.EAST;
             case Direction.WEST -> BlockStateProperties.WEST;
@@ -109,21 +108,21 @@ public class CropSupportBlock extends Block{
     }
 
     @Override
-    protected boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockpos = pos.below();
         BlockState blockstate = level.getBlockState(blockpos);
         return blockstate.isFaceSturdy(level, blockpos, Direction.UP) || blockstate.is(Blocks.FARMLAND);
     }
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState neighborState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
+    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         if(!state.canSurvive(level, pos)){
             return Blocks.AIR.defaultBlockState();
         }
         return state;
     }
 
-    public static BlockState getBlockStateFromGrapeCropState(@NotNull BlockState state){
+    public static BlockState getBlockStateFromGrapeCropState(BlockState state){
         if(!state.is(ModBlocks.GRAPE_CROP)){
             throw new IllegalArgumentException("state argument should be a grape crop state, got "+state.getBlock().getName()+" instead");
         }

@@ -31,7 +31,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -617,7 +616,7 @@ public class ModBlocks {
         }
     }
 
-    public static @NotNull Direction getNeighborDirection(@NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
+    public static Direction getNeighborDirection(BlockPos pos, BlockPos neighborPos) {
         Direction neighborDirection = null;
         for (Direction direction : Direction.values()) {
             if (pos.getX() + direction.getStepX() == neighborPos.getX()){
