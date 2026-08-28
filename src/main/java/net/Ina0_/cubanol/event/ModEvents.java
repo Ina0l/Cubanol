@@ -215,7 +215,17 @@ public class ModEvents {
         event.registerItem(
                 Capabilities.FluidHandler.ITEM,
                 (stack, ctx) -> new FluidHandlerItemStack(ModDataComponentTypes.SIMPLE_FLUID_CONTENT, stack, CaskBlockEntity.TANK_CAPACITY),
-                ModItems.CASK
+                ModItems.CASK.get()
+        );
+        event.registerBlock(
+                Capabilities.FluidHandler.BLOCK,
+                (level, pos, state, blockEntity, context) -> {
+                    if(level.getBlockEntity(pos) instanceof CaskBlockEntity caskBlockEntity) {
+                        return caskBlockEntity.tank;
+                    }
+                    throw new RuntimeException();
+                },
+                ModBlocks.CASK.get()
         );
     }
 }

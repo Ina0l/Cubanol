@@ -19,7 +19,7 @@ public class CaskBlockEntity extends BlockEntity {
 
     public static final int TANK_CAPACITY = FluidType.BUCKET_VOLUME * 4;
 
-    public final FluidTank tank = new FluidTank(TANK_CAPACITY, stack -> true){
+    public final FluidTank tank = new FluidTank(TANK_CAPACITY){
         @Override
         protected void onContentsChanged() {
             setChanged();
@@ -34,20 +34,20 @@ public class CaskBlockEntity extends BlockEntity {
     }
 
     public Fluid getFluid(){
-        return tank.getFluid().getFluid();
+        return this.tank.getFluid().getFluid();
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
         tag.put("tank", new CompoundTag(1));
-        tank.writeToNBT(registries, tag.getCompound("tank"));
+        this.tank.writeToNBT(registries, tag.getCompound("tank"));
     }
 
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
-        tank.readFromNBT(registries, tag.getCompound("tank"));
+        this.tank.readFromNBT(registries, tag.getCompound("tank"));
     }
 
     @Override

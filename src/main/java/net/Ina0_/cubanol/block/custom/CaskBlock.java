@@ -233,7 +233,14 @@ public class CaskBlock extends BaseEntityBlock implements BucketPickup, LiquidBl
                 Block.box(3, 13, 12, 4, 15, 13),
                 Block.box(12, 13, 12, 13, 15, 13),
                 Block.box(3, 13, 3, 4, 15, 4),
-                Block.box(12, 13, 3, 13, 15, 4)
-        ).optimize();
+                Block.box(12, 13, 3, 13, 15, 4),
+                Block.box(5, 14, 2,  11, 15, 3),
+                Block.box(4, 14, 3,  12, 15, 4),
+                Block.box(3, 14, 4,  13, 15, 5),
+                Block.box(2, 14, 5,  14, 15, 11),
+                Block.box(3, 14, 11, 13, 15, 12),
+                Block.box(4, 14, 12, 12, 15, 13),
+                Block.box(5, 14, 13, 11, 15, 14)
+        );
     }
 }
